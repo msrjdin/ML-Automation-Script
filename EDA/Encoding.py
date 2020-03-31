@@ -13,14 +13,14 @@ class Encoding:
         self.one_hot_encoding()
         self.label_encode()
 
-    # encoding the categorical columns exclusing the target column
+    # encoding the categorical columns excluding the target column
     def one_hot_encoding(self):
         df1 = self.df.copy(deep=True)
         df_y = pd.DataFrame()
         df1 = pd.get_dummies(df1, drop_first=True, columns=list(self.colTypes['Categorical']))
         self.all_dfs.append(self.target_encode(df1))
 
-    # encoding the categorical columns exclusing the target column
+    # encoding the categorical columns excluding the target column
     def label_encode(self):
         df1 = self.df.copy(deep=True)
         df_y = pd.DataFrame()
