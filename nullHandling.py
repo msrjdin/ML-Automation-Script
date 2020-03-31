@@ -1,4 +1,4 @@
-class NullHandling():
+class nullHandling():
   
     def __init__(self, df):
         self.dict_isnull = (df.isnull().sum() / len(df)).to_dict()
@@ -7,7 +7,7 @@ class NullHandling():
 		self.remove_columns()
  
     #Removing columns which have more than 75 percent nulls
-    def remove_columns(self):
+    def removeColumns(self):
         cols_remove=[]
         for key in self.dict_isnull:
             if(self.dict_isnull[key]>0.75):
@@ -28,14 +28,14 @@ class NullHandling():
         
 
     #Imputing the null values with the mean value of the column
-    def continuous_impute_mean(self):
+    def continuousImputeMean(self):
         df_temp=self.df.copy()
         imputer = SimpleImputer(strategy='mean')
         df_temp[self.colTypes['Numeric']] = imputer.fit_transform(df_temp[self.colTypes['Numeric']])
         return df_temp
 		
     #Imputing the null values using KNN
-    def continuous_impute_knn(self):
+    def continuousImputeKnn(self):
         df_temp=self.df.copy()
         imputer = KNNImputer(n_neighbors=5) 
         df_temp[self.colTypes['Numeric']] = imputer.fit_transform(df_temp[self.colTypes['Numeric']])
@@ -45,7 +45,7 @@ class NullHandling():
     def impute(self,strategy,fill_value = 0, fill_categorical = '-1'):
         df_temp=self.df
         
-        #Dealing with Continuous cols
+        #Dealing wit Continuous cols
         if strategy is None:
             df_temp[self.colTypes['Numeric']]=df_temp[self.colTypes['Numeric']].fillna(fill_value)
         elif strategy == 'mean':
