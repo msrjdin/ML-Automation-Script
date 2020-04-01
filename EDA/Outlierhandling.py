@@ -1,9 +1,14 @@
+import copy
+import pandas as pd
+import numpy as np
 class OutlierHandling():
-    def __init__(self, df):
+    def __init__(self, df,colTypes,y,target_type):
         self.df = df.copy()
+        self.y=y
+        self.target_type=target_type
         self.colTypes = copy.deepcopy(colTypes)
 
-        self.colTypes[target_type].remove(y)
+        self.colTypes[self.target_type].remove(self.y)
 
         self.colTypes['Numeric'] = set(colTypes['Numeric']).intersection(set(df.columns))
 
@@ -35,7 +40,7 @@ class OutlierHandling():
             lower = q1 - 1.5 * iqr
             upper = q3 + 1.5 * iqr
             df_out = df_out.loc[(df_out[col_name] > lower) & (df_out[col_name] < upper)]
-            df_final = pd.concat([df_in, df_out], axis=1, join='inner')
+        df_final = pd.concat([df_in, df_out], axis=1, join='inner')
         self.all_dfs.append(df_final)
 
     # removing values which are less than predefined zscore value

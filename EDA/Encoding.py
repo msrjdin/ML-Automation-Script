@@ -1,12 +1,17 @@
+import copy
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import LabelEncoder
 class Encoding:
 
-    def __init__(self, df):
+    def __init__(self, df,colTypes,y):
+        self.y=y
         self.colTypes = copy.deepcopy(colTypes)
         # fetching column types for the columns in the current df
         self.colTypes['Categorical'] = set(df.columns).intersection(set(colTypes['Categorical']))
         # removing the target column for the list of categorical columns
-        if y in self.colTypes['Categorical']:
-            self.colTypes['Categorical'].remove(y)
+        if self.y in self.colTypes['Categorical']:
+            self.colTypes['Categorical'].remove(self.y)
 
         self.df = df.copy()
         self.all_dfs = []
@@ -30,8 +35,8 @@ class Encoding:
 
     # encoding the categorical target column
     def target_encode(self, t_df):
-        if y not in self.colTypes['Numeric']:
-            t_df[y] = LabelEncoder.fit_transform(t_df, y=t_df[y])
+        if self.y not in self.colTypes['Numeric']:
+            t_df[self.y] = LabelEncoder.fit_transform(t_df, y=t_df[self.y])
         return t_df
 
     # returns the dict of dataframes updated in this class

@@ -1,12 +1,15 @@
+import copy
+import numpy as np
 class FeatureReduction:
 
-    def __init__(self,df):
+    def __init__(self,df,colTypes,y,target_type):
         self.df=df
         self.colTypes=copy.deepcopy(colTypes)
-
-        self.colTypes[target_type].remove(y)
+        self.y=y
+        self.target_type=target_type
+        self.colTypes[self.target_type].remove(self.y)
         self.all_dfs=[]
-        self.pearsons_corr()
+        self.pearson_corr()
 #removing the continuous column with a correlation of above 0.8
     def pearson_corr(self):
         self.colTypes['Numeric']=set(self.colTypes['Numeric']).intersection(set(self.df.columns))
