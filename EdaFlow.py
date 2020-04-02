@@ -2,11 +2,11 @@
 
 import sys
 import pandas as pd
-from OutlierHandling import *
-from NullHandling import *
-from ColumnTypeIdentification import *
-from Encoding import *
-from FeatureReduction import *
+from EDA.OutlierHandling import *
+from EDA.NullHandling import *
+from EDA.ColumnTypeIdentification import *
+from EDA.Encoding import *
+from EDA.FeatureReduction import *
 
 
 #Reading command line arguments into data and target   
