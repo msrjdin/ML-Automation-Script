@@ -1,10 +1,15 @@
+import copy
+from sklearn.impute import  SimpleImputer
+from missingpy import KNNImputer
+
 class NullHandling():
   
-    def __init__(self, df):
+    def __init__(self, df,colTypes,y):
         self.dict_isnull = (df.isnull().sum() / len(df)).to_dict()
         self.df=df
-        self.colTypes=colTypes.copy()
-		self.remove_columns()
+        self.y=y
+        self.colTypes=copy.deepcopy(colTypes)
+        self.remove_columns()
  
     #Removing columns which have more than 75 percent nulls
     def remove_columns(self):
@@ -19,8 +24,8 @@ class NullHandling():
                 for j in self.colTypes.keys():
                     if i in self.colTypes[j]:
                         self.colTypes[j].remove(i)
-        if y in cols_remove:
-            cols_remove.remove(y)
+        if self.y in cols_remove:
+            cols_remove.remove(self.y)
         
         self.df.drop(cols_remove,axis=1, inplace=True)
         
