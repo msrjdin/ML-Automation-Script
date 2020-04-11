@@ -1,13 +1,14 @@
 import copy
 import pandas as pd
 import numpy as np
-class OutlierHandling():
+
+
+class OutlierHandling:
     def __init__(self, df,colTypes,y,target_type):
         self.df = df.copy()
         self.y=y
         self.target_type=target_type
         self.colTypes = copy.deepcopy(colTypes)
-
         self.colTypes[self.target_type].remove(self.y)
 
         self.colTypes['Numeric'] = set(colTypes['Numeric']).intersection(set(df.columns))

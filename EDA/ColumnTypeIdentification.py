@@ -1,7 +1,6 @@
 
 
 class ColumnTypeIdentification:
-    
     def __init__(self, df,y):
         self.dtypes={}
         self.df=df 

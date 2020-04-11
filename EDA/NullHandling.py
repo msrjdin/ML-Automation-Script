@@ -2,7 +2,7 @@ import copy
 from sklearn.impute import  SimpleImputer
 from missingpy import KNNImputer
 
-class NullHandling():
+class NullHandling:
   
     def __init__(self, df,colTypes,y):
         self.dict_isnull = (df.isnull().sum() / len(df)).to_dict()

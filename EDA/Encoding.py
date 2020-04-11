@@ -2,8 +2,9 @@ import copy
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
-class Encoding:
 
+
+class Encoding:
     def __init__(self, df,colTypes,y):
         self.y=y
         self.colTypes = copy.deepcopy(colTypes)
