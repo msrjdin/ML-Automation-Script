@@ -43,11 +43,13 @@ class MLAccelerator:
     def __init__(self, df, y):
         self.df=df
         self.y=y
+        self.pathFollowed={}
 
         self.final_dfs=[]
 
         mainThread=flowThread("Main Thread", self.colIdentification, self.df, self.y)
         mainThread.start()
+
         mainThread.join()
 
     def colIdentification(self, args):
@@ -94,6 +96,7 @@ class MLAccelerator:
                 name="outlierHandling_{}".format(i[0])
                 outlierHandlingThreads[name]=flowThread(name, self.encodingColumnsStep, i[1])
                 outlierHandlingThreads[name].start()
+
         for nme in outlierHandlingThreads.keys():
             outlierHandlingThreads[nme].join()
 
@@ -103,7 +106,7 @@ class MLAccelerator:
         all_dfs=en.return_dfs()
 
         self.final_dfs.extend(all_dfs)
-        encodingColumnsThreads={}
+        # encodingColumnsThreads={}
         # if len(all_dfs)!=0:
         #     for i in enumerate(all_dfs):
         #         name="encodingColumns_{}".format(i[0])
