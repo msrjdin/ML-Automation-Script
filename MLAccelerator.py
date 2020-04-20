@@ -12,6 +12,8 @@ warnings.filterwarnings("ignore")
 import threading
 from Modelling.Classification import Classification
 from sklearn.metrics import accuracy_score,f1_score
+from itertools import product
+from pathlib import Path
 
 #Reading command line arguments into data and target
 # if __name__ == "__main__":
@@ -45,83 +47,117 @@ class MLAccelerator:
     def __init__(self, df, y):
         self.df=df
         self.y=y
-        self.pathFollowed={}
 
-        self.final_dfs=[]
+        self.execute()
 
-        edaThread=flowThread("EDA Thread", self.colIdentification, self.df, self.y)
-        edaThread.start()
+    def execute(self):
+        results=[]
 
-        edaThread.join()
-        self.modellingStep()
+        #Usage
+        # nullHandlingFlag, featureReductionFlag, outlierHandlingFlag, encodingFlag, modellingClass,
+        # nullHandlingMethod, featureReductionMethod, outlierHandlingMethod, encodingMethod, modellingMetric
+        allParams={'nullHandlingFlag':      [True],
+                   'featureReductionFlag':  [True],
+                   'outlierHandlingFlag':   [True],
+                   'encodingFlag':          [True],
+                   'modellingClass':        ['classification'],
+                   'nullHandlingMethod'   : ['knn', None],
+                   'featureReductionMethod':['pearson'],
+                   'outlierHandlingMethod': ['capping'],
+                   'encodingMethod':        ['one-hot'],
+                   'modellingMetric':       [accuracy_score]}
 
-    def colIdentification(self, args):
-        colIdentObj = ColumnTypeIdentification(args[0], args[1])
+        keys = allParams.keys()
+        values = (allParams[key] for key in keys)
+        possibilities= [dict(zip(keys, combination)) for combination in product(*values)]
+
+        for combNo, combParam in enumerate(possibilities):
+            combParam['threadId']=combNo
+            results.append(self.acceleratorExecution(**combParam))
+
+        return self.bestModel(results)
+
+
+    def acceleratorExecution(self, **kwargs):
+                             # nullHandlingFlag, featureReductionFlag, outlierHandlingFlag, encodingFlag, modellingClass,
+                             # nullHandlingMethod, featureReductionMethod, outlierHandlingMethod, encodingMethod, modellingMetric):
+        # print(kwargs)
+        loggingSteps=''
+        df=self.df.copy()
+        self.colIdentification(df, self.y)
+        loggingSteps+='colIdentification\n'
+        self.logData(df, 'colIdentification', kwargs['threadId'], loggingSteps)
+
+        if kwargs['nullHandlingFlag']:
+            df=self.nullHandlingStep(df, self.y, kwargs['nullHandlingMethod'])
+            loggingSteps += 'nullHandling with method {}\n'.format(str(kwargs['nullHandlingMethod']))
+            self.logData(df, 'nullHandling', kwargs['threadId'], loggingSteps)
+
+        if kwargs['featureReductionFlag']:
+            df=self.featureReductionStep(df, self.colTypes, self.y, self.targetType, kwargs['featureReductionMethod'])
+            loggingSteps += 'featureReduction with method {}\n'.format(str(kwargs['featureReductionMethod']))
+            self.logData(df, 'Feature Reduction', kwargs['threadId'], loggingSteps)
+
+        if kwargs['outlierHandlingFlag']:
+            df=self.outlierHandlingStep(df, kwargs['outlierHandlingMethod'])
+            loggingSteps += 'outlierHandling with method {}\n'.format(str(kwargs['outlierHandlingMethod']))
+            self.logData(df, 'Outlier Handling', kwargs['threadId'], loggingSteps)
+
+        if kwargs['encodingFlag']:
+            df=self.encodingColumnsStep(df, kwargs['encodingMethod'])
+            loggingSteps += 'encoding with method {}\n'.format(str(kwargs['encodingMethod']))
+            self.logData(df, 'Encoding', kwargs['threadId'], loggingSteps)
+
+        if kwargs['modellingClass']=='classification':
+            loggingSteps += 'Building Classification Model'
+            # result=pd.DataFrame(self.classificationStep(df, self.y, self.colTypes, kwargs['modellingMetric']))
+            # self.logData(result, 'Modelling_{}'.format(kwargs['modellingClass']), kwargs['threadId'], loggingSteps)
+            return [self.classificationStep(df, self.y, self.colTypes, kwargs['modellingMetric']), loggingSteps]
+
+    def bestModel(self, results):
+        best_model=results[0]
+        for i in results[1:]:
+            if best_model[0]['score']<i[0]['score']:
+                best_model=i
+
+        return best_model
+
+    def logData(self, df, stepName, threadId, logSteps):
+        output_dir = Path('intermediateFiles/thread_{}'.format(threadId))
+        output_dir.mkdir(parents=True, exist_ok=True)
+        df.to_csv('intermediateFiles/thread_{}/{}.csv'.format(threadId, stepName), index=False)
+
+
+    def colIdentification(self, df, y):
+        colIdentObj = ColumnTypeIdentification(df, y)
         self.colTypes = colIdentObj.colTypes
         self.targetType = colIdentObj.target_type
 
-        self.nullhandlingStep()
 
-    def nullhandlingStep(self):
-        nullHndlngObj = NullHandling(self.df, self.colTypes, self.y)
+    def nullHandlingStep(self, df, y, strategy):
+        nullHndlngObj = NullHandling(df, self.colTypes, y)
+        return nullHndlngObj.impute(strategy)
 
-        nullHandlingThreads={}
-        for strategy in [None, 'mean', 'knn']:
-            dfStrategy=nullHndlngObj.impute(strategy)
-            name="nullHandlingThread{}".format(str(strategy))
-            nullHandlingThreads[name]=flowThread(name, self.featureReductionStep, dfStrategy)
-            nullHandlingThreads[name].start()
-
-        for nme in nullHandlingThreads.keys():
-            nullHandlingThreads[nme].join()
-
-    def featureReductionStep(self, args):
-        fRdctionObj = FeatureReduction(args[0], self.colTypes, self.y, self.targetType)
-
-        featureReductionThreads={}
-        all_dfs=fRdctionObj.return_dfs()
-        if len(all_dfs)!=0:
-            for i in enumerate(all_dfs):
-                name="featureReduction_{}".format(i[0])
-                featureReductionThreads[name]=flowThread(name, self.outlierHandlingStep, i[1])
-                featureReductionThreads[name].start()
-
-        for nme in featureReductionThreads.keys():
-            featureReductionThreads[nme].join()
+    def featureReductionStep(self, df, colTypes, y, targetType, method):
+        fRdctionObj = FeatureReduction(df, colTypes, y, targetType, method)
+        return fRdctionObj.return_result()
 
 
-    def outlierHandlingStep(self, args):
-        OH = OutlierHandling(args[0], self.colTypes, self.y, self.targetType)
-        all_dfs=OH.return_dfs()
-        outlierHandlingThreads={}
-        if len(all_dfs)!=0:
-            for i in enumerate(all_dfs):
-                name="outlierHandling_{}".format(i[0])
-                outlierHandlingThreads[name]=flowThread(name, self.encodingColumnsStep, i[1])
-                outlierHandlingThreads[name].start()
+    def outlierHandlingStep(self, df, method):
+        OH = OutlierHandling(df, self.colTypes, self.y, self.targetType, method)
+        return OH.return_result()
 
-        for nme in outlierHandlingThreads.keys():
-            outlierHandlingThreads[nme].join()
+    def encodingColumnsStep(self, df, method):
+        en = Encoding(df, self.colTypes, self.y, method)
+        return en.return_result()
 
+    def classificationStep(self, df, y, colTypes, metric):
+        classification=Classification(df, y, colTypes, metric)
+        return classification.return_results()
 
-    def encodingColumnsStep(self, args):
-        en = Encoding(args[0], self.colTypes, self.y)
-        all_dfs=en.return_dfs()
-
-        self.final_dfs.extend(all_dfs)
-
-    def modellingStep(self):
-
-        classification=Classification(self.final_dfs, self.y, accuracy_score, self.colTypes)
-        self.results=classification.return_results()
-
-    def return_results(self):
-        return(self.results)
 
 
 ml=MLAccelerator(df,y)
-a=ml.return_results()
+a=ml.execute()
 
-# print(ml.colTypes)
-# print(len(a))
 print(a)

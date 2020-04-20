@@ -6,7 +6,7 @@ class NullHandling:
   
     def __init__(self, df,colTypes,y):
         self.dict_isnull = (df.isnull().sum() / len(df)).to_dict()
-        self.df=df
+        self.df=df.copy()
         self.y=y
         self.colTypes=copy.deepcopy(colTypes)
         self.remove_columns()
@@ -48,15 +48,15 @@ class NullHandling:
     
      #Common method calling all the impute functions   
     def impute(self,strategy,fill_value = 0, fill_categorical = '-1'):
-        df_temp=self.df
+        df_temp=self.df.copy()
         
         #Dealing with Continuous cols
         if strategy is None:
             df_temp[self.colTypes['Numeric']]=df_temp[self.colTypes['Numeric']].fillna(fill_value)
         elif strategy == 'mean':
-            self.continuous_impute_mean()
+            df_temp=self.continuous_impute_mean()
         elif strategy == 'knn':
-            self.continuous_impute_knn()
+            df_temp=self.continuous_impute_knn()
             
         #dealing with categorical Cols 
         df_temp[self.colTypes['Categorical']]=df_temp[self.colTypes['Categorical']].fillna(fill_categorical)

@@ -14,11 +14,11 @@ import numpy as np
 #List of dfs, targetCol and the metric under consideration
 
 class Classification:
-    def __init__(self, dfs, targetCol, metric, colTypes, test_size=0.2):
-        self.dfs = dfs
+    def __init__(self, dfs, targetCol, colTypes, metric, test_size=0.2):
+        self.dfs = [dfs]
         self.y = targetCol
         self.metric = metric
-        self.colTypes=colTypes
+        self.colTypes=copy.deepcopy(colTypes)
         self.test_size=test_size
         # self.test_score = {}
         self.final_results={}
@@ -68,9 +68,10 @@ class Classification:
                                              }
                                         ])
 
-        score_key = str(self.metric) + '_score'
+        score_key = 'score'
 
         for i, df in enumerate(self.dfs):
+            # print(df)
             df.drop(self.colTypes['Text'], axis=1, inplace=True)#must be taken care in EDA
             df.drop('PassengerId', axis=1, inplace=True)  # must be taken care in EDA
             self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(df.drop(self.y, axis=1), df[self.y], test_size=self.test_size)
