@@ -3,13 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="56bfc456-dd0b-4ab3-b390-4f258df50132" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EDA/Encoding.py" beforeDir="false" afterPath="$PROJECT_DIR$/EDA/Encoding.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EDA/FeatureReduction.py" beforeDir="false" afterPath="$PROJECT_DIR$/EDA/FeatureReduction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EDA/NullHandling.py" beforeDir="false" afterPath="$PROJECT_DIR$/EDA/NullHandling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EDA/OutlierHandling.py" beforeDir="false" afterPath="$PROJECT_DIR$/EDA/OutlierHandling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MLAccelerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLAccelerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modelling/Classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modelling/Classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst.py" beforeDir="false" afterPath="$PROJECT_DIR$/tst.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Encoding.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Feature Reduction.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Outlier Handling.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/colIdentification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/colIdentification.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/nullHandling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/nullHandling.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Encoding.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Feature Reduction.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Outlier Handling.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/colIdentification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/colIdentification.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/nullHandling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/nullHandling.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
