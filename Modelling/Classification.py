@@ -71,9 +71,7 @@ class Classification:
         score_key = 'score'
 
         for i, df in enumerate(self.dfs):
-            # print(df)
-            df.drop(self.colTypes['Text'], axis=1, inplace=True)#must be taken care in EDA
-            df.drop('PassengerId', axis=1, inplace=True)  # must be taken care in EDA
+            df.drop(self.colTypes['Identity'], axis=1, inplace=True) #Dropping Identity cols
             self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(df.drop(self.y, axis=1), df[self.y], test_size=self.test_size)
             trials = Trials()
 

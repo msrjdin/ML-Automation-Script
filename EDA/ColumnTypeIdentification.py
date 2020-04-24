@@ -9,7 +9,7 @@ class ColumnTypeIdentification:
         for i in self.df.columns:
             self.dtypes[i]=(self.df[i].dtypes)
 #         print(self.dtypes)
-        self.colTypes={'Categorical': [], 'Text':[], 'Numeric': []}
+        self.colTypes={'Categorical': [], 'Text':[], 'Numeric': [], 'Identity': []}
         
         #saving the final col type (Categorical, Text or Numeric)
         self.detecting_col_types()
@@ -23,18 +23,23 @@ class ColumnTypeIdentification:
     
     #Categorical if the type is object and there are 20 distinct values in the first 95 %ile of the data else Text
     #Categorical if the type is not object and distinct values are 5% of all the total records
+    #Identity column.. Which is uique to each row
     #Else Numeric
     def detecting_col_types(self):
         for i in self.dtypes.keys():
             if self.dtypes[i]=='O':
                 if (self.df[i].fillna('',axis=0).apply(lambda x: len(x))).quantile(q=0.95)<20:
                     self.colTypes['Categorical'].append(i)
+                elif self.df[i].nunique() >= int(0.98*(self.df[i].shape[0])):
+                    self.colTypes['Identity'].append(i)
                 else:
                     self.colTypes['Text'].append(i)
             else: 
                 distinctValues = self.df[i].nunique()
                 if distinctValues < int((self.df[i].shape[0])*0.05):
                     self.colTypes['Categorical'].append(i)
+                elif self.df[i].nunique() >= int(0.98 * (self.df[i].shape[0])):
+                    self.colTypes['Identity'].append(i)
                 else:
                     self.colTypes['Numeric'].append(i)
     

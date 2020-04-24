@@ -41,5 +41,6 @@ featureReduction with method pearson
 outlierHandling with method capping
 encoding with method one-hot
 Building Classification Model
-{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 186.37589542662306, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.8491620111731844}
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 2102.384530049046, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.8659217877094972}
 
