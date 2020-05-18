@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56bfc456-dd0b-4ab3-b390-4f258df50132" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Modelling/CrossValidation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EDA/ColumnTypeIdentification.py" beforeDir="false" afterPath="$PROJECT_DIR$/EDA/ColumnTypeIdentification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MLAccelerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLAccelerator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modelling/Classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modelling/Classification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/thread_Result/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Output/thread_Result/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Encoding.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Feature Reduction.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Outlier Handling.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Modelling classification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Modelling classification.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/nullHandling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/nullHandling.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Encoding.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Feature Reduction.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Modelling classification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Modelling classification.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Outlier Handling.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/log.txt" afterDir="false" />
     </list>
@@ -29,18 +31,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/Automarion ML.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-        <option value="$PROJECT_DIR$/.idea/.gitignore" />
-      </list>
-    </option>
   </component>
   <component name="ProjectId" id="1aFxCLdE4uYH48xI0kk9NcUi50h" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

@@ -54,20 +54,19 @@ class MLAccelerator:
         [nullHandlingFlag, featureReductionFlag, outlierHandlingFlag, encodingFlag, modellingClass,
         nullHandlingMethod, featureReductionMethod, outlierHandlingMethod, encodingMethod, modellingMetric]"""
 
-        allParams={'nullHandlingFlag'       :[True],
-                   'featureReductionFlag'   :[True],
-                   'outlierHandlingFlag'    :[True],
-                   'encodingFlag'           :[True],
-                   'modellingClass'         :['classification'],
+        allParams={'modellingClass'         :['classification'],
                    'nullHandlingMethod'     :['knn', None],
-                   'featureReductionMethod' :['pearson'],
+                   'featureReductionMethod' :[None],
                    'outlierHandlingMethod'  :['capping'],
                    'encodingMethod'         :['one-hot'],
                    'modellingMetric'        :[accuracy_score]}
 
         keys = allParams.keys()
         values = (allParams[key] for key in keys)
+        print('Keys: {}'.format(keys))
+        print('Values: {}'.format(values))
         possibilities = [dict(zip(keys, combination)) for combination in product(*values)]
+        print(possibilities)
 
         threads=[]
 
@@ -96,22 +95,23 @@ class MLAccelerator:
         loggingSteps = loggingSteps + 'colIdentification\n'
         self.logData(df, 'colIdentification', kwargs['threadId'], loggingSteps, flush=True)
 
-        if kwargs['nullHandlingFlag']:
+        if kwargs['nullHandlingMethod']:
             df=self.nullHandlingStep(df, self.y, kwargs['nullHandlingMethod'])
             loggingSteps = loggingSteps + 'nullHandling with method {}\n'.format(str(kwargs['nullHandlingMethod']))
             self.logData(df, 'nullHandling', kwargs['threadId'], loggingSteps)
 
-        if kwargs['featureReductionFlag']:
+        if kwargs['featureReductionMethod']:
             df=self.featureReductionStep(df, self.colTypes, self.y, self.targetType, kwargs['featureReductionMethod'])
             loggingSteps = loggingSteps+ 'featureReduction with method {}\n'.format(str(kwargs['featureReductionMethod']))
             self.logData(df, 'Feature Reduction', kwargs['threadId'], loggingSteps)
 
-        if kwargs['outlierHandlingFlag']:
+        if kwargs['outlierHandlingMethod']:
             df=self.outlierHandlingStep(df, kwargs['outlierHandlingMethod'])
             loggingSteps = loggingSteps+ 'outlierHandling with method {}\n'.format(str(kwargs['outlierHandlingMethod']))
             self.logData(df, 'Outlier Handling', kwargs['threadId'], loggingSteps)
 
-        if kwargs['encodingFlag']:
+
+        if kwargs['encodingMethod']:
             df=self.encodingColumnsStep(df, kwargs['encodingMethod'])
             loggingSteps = loggingSteps+ 'encoding with method {}\n'.format(str(kwargs['encodingMethod']))
             self.logData(df, 'Encoding', kwargs['threadId'], loggingSteps)
