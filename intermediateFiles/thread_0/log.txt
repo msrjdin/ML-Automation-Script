@@ -1,0 +1,46 @@
+At Step: colIdentification 
+Sequence executed:
+colIdentification
+
+
+At Step: nullHandling 
+Sequence executed:
+colIdentification
+nullHandling with method knn
+
+
+At Step: Feature Reduction 
+Sequence executed:
+colIdentification
+nullHandling with method knn
+featureReduction with method pearson
+
+
+At Step: Outlier Handling 
+Sequence executed:
+colIdentification
+nullHandling with method knn
+featureReduction with method pearson
+outlierHandling with method capping
+
+
+At Step: Encoding 
+Sequence executed:
+colIdentification
+nullHandling with method knn
+featureReduction with method pearson
+outlierHandling with method capping
+encoding with method one-hot
+
+
+At Step: Modelling classification 
+Sequence executed:
+colIdentification
+nullHandling with method knn
+featureReduction with method pearson
+outlierHandling with method capping
+encoding with method one-hot
+Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 810.2455732806649, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.8715083798882681}
+
