@@ -88,11 +88,36 @@ class MLAccelerator:
             th.join()
 
         #print(self.results)
-        bestResult= self.bestModel(self.results)
-        final_log = bestResult.pop('log')+str(bestResult)
-        self.logData(None, 'Result', 'Result', final_log, path='Output', flush=True)
-        return final_log
-
+        #bestResult= self.bestModel(self.results)
+        #final_log = bestResult.pop('log')+str(bestResult)
+        #self.logData(None, 'Result', 'Result', final_log, path='Output', flush=True)
+        #return final_log
+        result_final = []
+        for key in self.results:
+            result_final.append(self.results[key])
+        l = []
+        for dict_ in result_final:
+            sample_ = dict_
+            d1 = {}
+            i = 0
+            dict_1 = sample_['Hyperparameter']
+            d1['model'] = dict_1['model']
+            d1['score'] = sample_['score']
+            d1['log'] = sample_['log']
+            d1['log']
+            l.append(d1)
+        temp = 0
+        for d2 in l:
+            if d2['score'] > temp:
+                temp = d2['score']
+        l1 = []
+        for d2 in l:
+            if d2['score'] == temp:
+                d2['best_flag'] = 'Yes'
+            else:
+                d2['best_flag'] = 'No'
+            l1.append(d2)
+        return l1
 
     def acceleratorExecution(self, **kwargs):
                              # nullHandlingFlag, featureReductionFlag, outlierHandlingFlag, encodingFlag, modellingClass,
@@ -101,34 +126,34 @@ class MLAccelerator:
         loggingSteps=''
         df=self.df.copy()
         self.colIdentification(df, self.y)
-        loggingSteps = loggingSteps + 'colIdentification\n'
+        loggingSteps = loggingSteps
         self.logData(df, 'colIdentification', kwargs['threadId'], loggingSteps, flush=True)
 
         if kwargs['nullHandlingMethod']:
             df=self.nullHandlingStep(df, self.y, kwargs['nullHandlingMethod'])
-            loggingSteps = loggingSteps + 'nullHandling with method {}\n'.format(str(kwargs['nullHandlingMethod']))
+            loggingSteps = loggingSteps + 'Null Handling with {},'.format(str(kwargs['nullHandlingMethod']))
             self.logData(df, 'nullHandling', kwargs['threadId'], loggingSteps)
 
         if kwargs['featureReductionMethod']:
             df=self.featureReductionStep(df, self.colTypes, self.y, self.targetType, kwargs['featureReductionMethod'])
-            loggingSteps = loggingSteps+ 'featureReduction with method {}\n'.format(str(kwargs['featureReductionMethod']))
+            loggingSteps = loggingSteps+ '  Feature Reduction with {},'.format(str(kwargs['featureReductionMethod']))
             self.logData(df, 'Feature Reduction', kwargs['threadId'], loggingSteps)
 
         if kwargs['outlierHandlingMethod']:
             df=self.outlierHandlingStep(df, kwargs['outlierHandlingMethod'])
-            loggingSteps = loggingSteps+ 'outlierHandling with method {}\n'.format(str(kwargs['outlierHandlingMethod']))
+            loggingSteps = loggingSteps+ '  Outlier Handling with {},'.format(str(kwargs['outlierHandlingMethod']))
             self.logData(df, 'Outlier Handling', kwargs['threadId'], loggingSteps)
 
         if kwargs['encodingMethod']:
             df=self.encodingColumnsStep(df, kwargs['encodingMethod'])
-            loggingSteps = loggingSteps+ 'encoding with method {}\n'.format(str(kwargs['encodingMethod']))
+            loggingSteps = loggingSteps+ '  Encoding with {},'.format(str(kwargs['encodingMethod']))
             self.logData(df, 'Encoding', kwargs['threadId'], loggingSteps)
 
         if kwargs['modellingClass']=='classification':
-            loggingSteps = loggingSteps+ 'Building Classification Model\n'
+            loggingSteps = loggingSteps+ '  Building Classification Model'
             result= self.classificationStep(df, self.y, self.colTypes, kwargs['modellingMetric'])
             data=result.pop('Data')
-            self.logData(data, 'Modelling {}'.format(kwargs['modellingClass']), kwargs['threadId'], loggingSteps+'\n'+str(result))
+            self.logData(data, 'Modelling {}'.format(kwargs['modellingClass']), kwargs['threadId'], loggingSteps+','+str(result))
             result['log']=loggingSteps
             self.results[kwargs['threadId']]=result
 
