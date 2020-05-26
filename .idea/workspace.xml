@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56bfc456-dd0b-4ab3-b390-4f258df50132" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Automarion ML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Automarion ML.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/flask-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/flask-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flask.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/MLAccelerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLAccelerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Output/thread_Result/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Output/thread_Result/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/flask.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelling/Classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modelling/Classification.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Encoding.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Feature Reduction.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Modelling classification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Modelling classification.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Outlier Handling.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/colIdentification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/colIdentification.csv" afterDir="false" />
@@ -24,8 +17,20 @@
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/colIdentification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/colIdentification.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/nullHandling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/nullHandling.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/Encoding.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/Feature Reduction.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/Outlier Handling.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/colIdentification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/colIdentification.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/nullHandling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/nullHandling.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/Encoding.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/Feature Reduction.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/Outlier Handling.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/colIdentification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/colIdentification.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/nullHandling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/nullHandling.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Output.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Output.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,11 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modelling/Classification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="-402">
+              <caret line="46" column="53" lean-forward="true" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -78,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MLAccelerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="686">
-              <caret line="133" column="65" selection-start-line="133" selection-start-column="65" selection-end-line="133" selection-end-column="65" />
+            <state relative-caret-position="295">
+              <caret line="175" column="58" lean-forward="true" selection-start-line="175" selection-start-column="58" selection-end-line="175" selection-end-column="58" />
               <folding>
                 <element signature="e#41#51#0" expanded="true" />
               </folding>
@@ -150,7 +155,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1890" />
     <option name="height" value="960" />
   </component>
@@ -284,7 +289,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
@@ -407,16 +412,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modelling/Classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="737">
@@ -426,10 +421,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MLAccelerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="133" column="65" selection-start-line="133" selection-start-column="65" selection-end-line="133" selection-end-column="65" />
+        <state relative-caret-position="295">
+          <caret line="175" column="58" lean-forward="true" selection-start-line="175" selection-start-column="58" selection-end-line="175" selection-end-column="58" />
           <folding>
             <element signature="e#41#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modelling/Classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-402">
+          <caret line="46" column="53" lean-forward="true" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>

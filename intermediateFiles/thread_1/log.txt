@@ -4,17 +4,17 @@ Sequence executed:
 
 At Step: nullHandling 
 Sequence executed:
-Null Handling with mean,
+Null Handling with knn,
 
 At Step: Outlier Handling 
 Sequence executed:
-Null Handling with mean,  Outlier Handling with capping,
+Null Handling with knn,  Outlier Handling with capping,
 
 At Step: Encoding 
 Sequence executed:
-Null Handling with mean,  Outlier Handling with capping,  Encoding with one-hot,
+Null Handling with knn,  Outlier Handling with capping,  Encoding with one-hot,
 
 At Step: Modelling classification 
 Sequence executed:
-Null Handling with mean,  Outlier Handling with capping,  Encoding with one-hot,  Building Classification Model,{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 1.8711387393584957, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.8547486033519553}
+Null Handling with knn,  Outlier Handling with capping,  Encoding with one-hot,  Building Classification Model,{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 5.075675527550302, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.8}
 

@@ -58,7 +58,6 @@ class MLAccelerator:
         metric_list = []
         for i in self.final_list['metric']:
             metric_list.append(self.metric_dict[i])
-        print(metric_list)
         allParams={#'nullHandlingFlag'       :[self.flag_list['nullhandle']],
                    #'featureReductionFlag'   :[self.flag_list['feature']],
                    #'outlierHandlingFlag'    :[self.flag_list['outlier']],
@@ -95,29 +94,49 @@ class MLAccelerator:
         result_final = []
         for key in self.results:
             result_final.append(self.results[key])
+
         l = []
         for dict_ in result_final:
             sample_ = dict_
             d1 = {}
-            i = 0
             dict_1 = sample_['Hyperparameter']
-            d1['model'] = dict_1['model']
+            d1['model'] = dict_1['model'].__name__
             d1['score'] = sample_['score']
             d1['log'] = sample_['log']
-            d1['log']
+            d1['metric'] = sample_['metric']
             l.append(d1)
-        temp = 0
-        for d2 in l:
-            if d2['score'] > temp:
-                temp = d2['score']
-        l1 = []
-        for d2 in l:
-            if d2['score'] == temp:
-                d2['best_flag'] = 'Yes'
-            else:
-                d2['best_flag'] = 'No'
-            l1.append(d2)
-        return l1
+        print(l)
+
+
+        metric_list_temp = []
+        for d in l:
+            metric_list_temp.append(d['metric'])
+        metric_list_1 = list(set(metric_list_temp))
+        print(metric_list_1)
+
+
+        l_final = []
+        for metric in metric_list_1:
+            temp = 0
+            l_metric = []
+            for d in l:
+                if d['metric'] == metric:
+                    l_metric.append(d)
+            for d1 in l_metric:
+                if d1['score'] > temp:
+                    temp = d1['score']
+            l_temp = []
+            for d2 in l_metric:
+                if d2['score'] == temp:
+                    d2['best_flag'] = 'Yes'
+                else:
+                    d2['best_flag'] = 'No'
+                l_temp.append(d2)
+            l_final.append(l_temp)
+        l_final = [j for i in l_final for j in i]
+
+
+        return l_final
 
     def acceleratorExecution(self, **kwargs):
                              # nullHandlingFlag, featureReductionFlag, outlierHandlingFlag, encodingFlag, modellingClass,
@@ -154,8 +173,10 @@ class MLAccelerator:
             result= self.classificationStep(df, self.y, self.colTypes, kwargs['modellingMetric'])
             data=result.pop('Data')
             self.logData(data, 'Modelling {}'.format(kwargs['modellingClass']), kwargs['threadId'], loggingSteps+','+str(result))
+            result['metric'] = kwargs['modellingMetric'].__name__
             result['log']=loggingSteps
             self.results[kwargs['threadId']]=result
+
 
     def bestModel(self, results):
         best_model = 0

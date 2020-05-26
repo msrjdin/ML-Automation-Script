@@ -106,7 +106,6 @@ table {
    border: 3px solid #FFDAB9;
 }
 
-	
 
 </style>
 </head>
@@ -131,14 +130,16 @@ function goBack() {
 
 {% for i in data %}
 <br><br>
-<table align="center">
+<div style="padding-left:50px;">
+<table style="width:1000px",cellspacing="1" cellpadding="1">
 {% for key in i %}
    <tr>
-        <th> {{ key }} :</th>
+        <th style="vertical-align:top;width:100px"> {{ key }} :</th>
         <td> {{ i[key] }} </td>
    </tr>
 {% endfor %}
 </table>
+</div>
 {% endfor %}
 
 

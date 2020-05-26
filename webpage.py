@@ -74,11 +74,10 @@ def submit():
                 final_list[key] = [None]
             else:
                 final_list[key] = flag_list[key]
-        print(final_list)
         y = request.form['target']
         df=pd.read_csv('dataframe.csv')
         ml=MLAccelerator(df[cols_list],y,final_list,metric_dict)
-        result=ml.execute()
+        result=ml.execute()	
         return render_template('Output.html',data = result)
         
 
