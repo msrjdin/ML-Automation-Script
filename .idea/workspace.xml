@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56bfc456-dd0b-4ab3-b390-4f258df50132" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MLAccelerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLAccelerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modelling/Classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modelling/Classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Encoding.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Modelling classification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Modelling classification.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Outlier Handling.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/colIdentification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/colIdentification.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/nullHandling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/nullHandling.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Encoding.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Feature Reduction.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Modelling classification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Modelling classification.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Outlier Handling.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/colIdentification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/colIdentification.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/nullHandling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/nullHandling.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/Encoding.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/Feature Reduction.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/Outlier Handling.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/colIdentification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/colIdentification.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_2/nullHandling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_2/nullHandling.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/Encoding.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/Feature Reduction.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/Outlier Handling.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/colIdentification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/colIdentification.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_3/nullHandling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_3/nullHandling.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Output.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Output.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpage.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpage.py" afterDir="false" />
-    </list>
+    <list default="true" id="ab31b65b-37f2-4eac-9576-7ffec7be331f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +10,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modelling/Classification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-402">
-              <caret line="46" column="53" lean-forward="true" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+            <state relative-caret-position="-351">
+              <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -83,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MLAccelerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="175" column="58" lean-forward="true" selection-start-line="175" selection-start-column="58" selection-end-line="175" selection-end-column="58" />
+            <state relative-caret-position="234">
+              <caret line="131" column="21" lean-forward="true" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
               <folding>
                 <element signature="e#41#51#0" expanded="true" />
               </folding>
@@ -111,19 +81,10 @@
         <entry file="file://$PROJECT_DIR$/EDA/FeatureReduction.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="53" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="53" />
+              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="53" column="80" selection-start-line="53" selection-start-column="80" selection-end-line="53" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -357,16 +318,7 @@
         <state relative-caret-position="-792" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#50#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/flask.py" />
     <entry file="file://$PROJECT_DIR$/EDA/ColumnTypeIdentification.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306" />
@@ -395,7 +347,7 @@
     <entry file="file://$PROJECT_DIR$/EDA/FeatureReduction.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="53" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="53" />
+          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -421,8 +373,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MLAccelerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="175" column="58" lean-forward="true" selection-start-line="175" selection-start-column="58" selection-end-line="175" selection-end-column="58" />
+        <state relative-caret-position="234">
+          <caret line="131" column="21" lean-forward="true" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
           <folding>
             <element signature="e#41#51#0" expanded="true" />
           </folding>
@@ -431,8 +383,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Modelling/Classification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-402">
-          <caret line="46" column="53" lean-forward="true" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+        <state relative-caret-position="-351">
+          <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
