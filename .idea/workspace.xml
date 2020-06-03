@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="ab31b65b-37f2-4eac-9576-7ffec7be331f" name="Default Changelist" comment="" />
 =======
     <list default="true" id="56bfc456-dd0b-4ab3-b390-4f258df50132" name="Default Changelist" comment="" />
 >>>>>>> skbranch
+=======
+    <list default="true" id="56bfc456-dd0b-4ab3-b390-4f258df50132" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Modelling/CrossValidation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MLAccelerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/MLAccelerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelling/Classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modelling/Classification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/thread_Result/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Output/thread_Result/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Encoding.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/Modelling classification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/Modelling classification.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_0/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_0/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Encoding.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Encoding.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Feature Reduction.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Feature Reduction.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Modelling classification.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Modelling classification.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/Outlier Handling.csv" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/Outlier Handling.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediateFiles/thread_1/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intermediateFiles/thread_1/log.txt" afterDir="false" />
+    </list>
+>>>>>>> 7db86ccf9079027446285fcbf67bdc0a735f8a71
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +130,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -135,6 +154,8 @@
     <option name="width" value="1890" />
     <option name="height" value="960" />
   </component>
+=======
+>>>>>>> 7db86ccf9079027446285fcbf67bdc0a735f8a71
   <component name="ProjectId" id="1aFxCLdE4uYH48xI0kk9NcUi50h" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">

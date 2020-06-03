@@ -14,12 +14,13 @@ import numpy as np
 #List of dfs, targetCol and the metric under consideration
 
 class Classification:
-    def __init__(self, dfs, targetCol, colTypes, metric, test_size=0.2):
-        self.dfs = [dfs]
+    def __init__(self, dfs, targetCol, colTypes, metric, test_size=0.2, kfold=10):
+        self.df = dfs
         self.y = targetCol
         self.metric = metric
         self.colTypes=copy.deepcopy(colTypes)
         self.test_size=test_size
+        self.kfold=kfold
         # self.test_score = {}
         self.final_results={}
 
@@ -70,25 +71,28 @@ class Classification:
 
         score_key = 'score'
 
+<<<<<<< HEAD
 
         for i, df in enumerate(self.dfs):
             df.drop(self.colTypes['Identity'], axis=1, inplace=True) #Dropping Identity cols
             self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(df.drop(self.y, axis=1), df[self.y], test_size=self.test_size)
             trials = Trials()
+=======
+        df=self.df.copy()
+>>>>>>> 7db86ccf9079027446285fcbf67bdc0a735f8a71
 
-            hyperparam = space_eval(self.space,
-                                         fmin(self.objective_func, self.space, trials=trials, algo=tpe.suggest, max_evals=100))
-            score = -min(trials.losses())
+        df.drop(self.colTypes['Identity'], axis=1, inplace=True) #Dropping Identity cols
 
-            if i==0:
-                self.final_results['Hyperparameter']=hyperparam
-                self.final_results[score_key]=score
-                self.final_results['Data']=df
+        self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(df.drop(self.y, axis=1), df[self.y], test_size=self.test_size)
+        trials = Trials()
 
-            if self.final_results[score_key]>score:
-                self.final_results['Hyperparameter'] = hyperparam
-                self.final_results[score_key] = score
-                self.final_results['Data'] = df
+        hyperparam = space_eval(self.space,
+                                     fmin(self.objective_func, self.space, trials=trials, algo=tpe.suggest, max_evals=100))
+        score = -min(trials.losses())
+
+        self.final_results['Hyperparameter']=hyperparam
+        self.final_results[score_key]=score
+        self.final_results['Data']=df
 
     def return_results(self):
         return self.final_results
