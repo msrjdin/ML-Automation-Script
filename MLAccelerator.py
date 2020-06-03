@@ -11,6 +11,7 @@ import warnings
 warnings.filterwarnings("ignore")
 import threading
 from Modelling.Classification import Classification
+from Modelling.Regression import Regression
 from sklearn.metrics import accuracy_score,f1_score
 from itertools import product
 from pathlib import Path
@@ -28,6 +29,10 @@ from shutil import rmtree
 #y='Survived'
 
 #df = pd.read_csv(data)
+
+
+
+
 
 
 class flowThread(threading.Thread):
@@ -177,6 +182,15 @@ class MLAccelerator:
             result['log']=loggingSteps
             self.results[kwargs['threadId']]=result
 
+        if kwargs['modellingClass'] == 'regression':
+            loggingSteps = loggingSteps + 'Building Regression Model\n'
+            result = self.regressionStep(df, self.y, self.colTypes, kwargs['modellingMetric'])
+            data = result.pop('Data')
+            self.logData(data, 'Modelling {}'.format(kwargs['modellingClass']), kwargs['threadId'],
+                            loggingSteps + '\n' + str(result))
+            result['log'] = loggingSteps
+            self.results[kwargs['threadId']] = result
+
 
     def bestModel(self, results):
         best_model = 0
@@ -227,6 +241,10 @@ class MLAccelerator:
     def classificationStep(self, df, y, colTypes, metric):
         classification=Classification(df, y, colTypes, metric)
         return classification.return_results()
+
+    def regressionStep(self, df, y, colTypes, metric):
+        regression=Regression(df, y, colTypes, metric)
+        return regression.return_results()
 
 
 

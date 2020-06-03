@@ -14,10 +14,18 @@ import warnings
 warnings.filterwarnings("ignore")
 import threading
 from Modelling.Classification import Classification
+from Modelling.Regression import Regression
 from sklearn.metrics import accuracy_score,f1_score
 from itertools import product
 from pathlib import Path
 import json 
+import matplotlib.pyplot as plt
+import seaborn as sn
+
+
+
+
+
 
 
 # In[2]:
@@ -44,6 +52,19 @@ def index():
 def upload():
     if request.method == 'POST':
         df = pd.read_csv(request.files.get('file'),delimiter=',')
+        df.to_csv('dataframe.csv',index= False)
+        corrMatrix = df.corr()
+        svm=sn.heatmap(corrMatrix, annot=True, cmap='coolwarm', linewidth=2)
+        figure = svm.get_figure()    
+        figure.savefig('C:\\Users\\SindhuKarnati\\Desktop\\MLAccelarator\\static\\corr_pic.png', dpi=400)
+        return render_template('corr_page.html')
+
+
+
+@app.route('/upload1', methods=['POST', 'GET'])
+def upload1():
+    if request.method == 'POST':
+        df=pd.read_csv('dataframe.csv')
         df.to_csv('dataframe.csv',index= False)
         cols= list(df)
         return redirect(url_for('push_data', columns=cols))

@@ -16,5 +16,5 @@ Null Handling with mean,  Outlier Handling with capping,  Encoding with one-hot,
 
 At Step: Modelling classification 
 Sequence executed:
-Null Handling with mean,  Outlier Handling with capping,  Encoding with one-hot,  Building Classification Model,{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 2.382353689379967, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.8142857142857143}
+Null Handling with mean,  Outlier Handling with capping,  Encoding with one-hot,  Building Classification Model,{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 0.27669756430826464, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.7633587786259542}
 
