@@ -16,7 +16,7 @@ from sklearn.metrics import accuracy_score,f1_score
 from itertools import product
 from pathlib import Path
 from shutil import rmtree
-from TextProcessing import TextProcessing
+from TextProcessing.TextProcessing import TextProcessing
 
 #Reading command line arguments into data and target
 # if __name__ == "__main__":
@@ -263,7 +263,7 @@ class MLAccelerator:
         return en.return_result()
 
     def textProcessingStep(self, df, method):
-        txtHandling-TextProcessing(df, self.colTypes, method)
+        txtHandling=TextProcessing(df, self.colTypes, method)
         return txtHandling.return_result()
 
     def classificationStep(self, df, y, colTypes, metric):
