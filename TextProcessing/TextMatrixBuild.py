@@ -24,6 +24,7 @@ class TextMatrixBuild:
 
 
 
+
     def corpusBuild(self):
         for col in self.txtCols:
             self.df[col] = self.df[col].apply(lambda x: word_tokenize(x.lower()))
@@ -42,6 +43,7 @@ class TextMatrixBuild:
             mtrx = cv.fit_transform(self.df[col])
             mtrx=pd.DataFrame(mtrx)
             mtrx.columns='col_'+mtrx.columns
+
             self.df=self.df.merge(mtrs, how='left', left_index=True, right_index=True)
 
     def return_dfs(self):
