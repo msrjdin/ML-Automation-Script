@@ -3,6 +3,8 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from nltk.corpus import stopwords
 
+# nlp_data ='train_nlp.json'
+
 data = pd.read_json(r'C:\Users\SatyaSindhuMolleti\Desktop\train.json')
 
 y = 'cuisine'
@@ -66,3 +68,4 @@ class TextProcessing:
         return self.df
 
 tp = TextProcessing(data, y, colTypes, "BOW")
+print(tp.return_dfs().head())

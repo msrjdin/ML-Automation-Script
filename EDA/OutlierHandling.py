@@ -72,3 +72,4 @@ class OutlierHandling:
 
     def return_result(self):
         return self.return_df
+
