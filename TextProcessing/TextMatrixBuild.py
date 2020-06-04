@@ -41,7 +41,7 @@ class TextMatrixBuild:
             # cv = CountVectorizer()
             mtrx = cv.fit_transform(self.df[col])
             mtrx=pd.DataFrame(mtrx)
-            mtrx.columns='col_'+mtrx.columns
+            mtrx.columns=['col_'+str(i) for i in mtrx.columns]
             self.df=self.df.merge(mtrs, how='left', left_index=True, right_index=True)
 
     def return_dfs(self):
