@@ -16,12 +16,13 @@ class TextMatrixBuild:
 
         if method=='BOW':
             cv=CountVectorizer()
+            self.matrixBuild(cv)
         elif method=='Tfidf':
             cv=TfidfVectorizer
-        else:
-            assert(method is not None)
+            self.matrixBuild(cv)
 
-        self.matrixBuild(cv)
+
+
 
     def corpusBuild(self):
         for col in self.txtCols:
@@ -40,7 +41,7 @@ class TextMatrixBuild:
             # cv = CountVectorizer()
             mtrx = cv.fit_transform(self.df[col])
             mtrx=pd.DataFrame(mtrx)
-            mtrx.columns='col_bow_'mtrx.columns
+            mtrx.columns='col_'+mtrx.columns
             self.df=self.df.merge(mtrs, how='left', left_index=True, right_index=True)
 
     def return_dfs(self):
