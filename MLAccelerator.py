@@ -16,6 +16,7 @@ from sklearn.metrics import accuracy_score,f1_score
 from itertools import product
 from pathlib import Path
 from shutil import rmtree
+from TextProcessing import TextProcessing
 
 #Reading command line arguments into data and target
 # if __name__ == "__main__":
@@ -60,7 +61,7 @@ class MLAccelerator:
         """Usage:
         [nullHandlingFlag, featureReductionFlag, outlierHandlingFlag, encodingFlag, modellingClass,
         nullHandlingMethod, featureReductionMethod, outlierHandlingMethod, encodingMethod, modellingMetric]"""
-<<<<<<< HEAD
+
         metric_list = []
         for i in self.final_list['metric']:
             metric_list.append(self.metric_dict[i])
@@ -80,13 +81,13 @@ class MLAccelerator:
         #print('keys:{}'.format(keys))
         #print('values:{}'.format(values))
         possibilities = [dict(zip(keys, combination)) for combination in product(*values)]
-=======
 
         allParams={'modellingClass'         :['classification'],
                    'nullHandlingMethod'     :['knn', None],
                    'featureReductionMethod' :[None],
                    'outlierHandlingMethod'  :['capping'],
                    'encodingMethod'         :['one-hot'],
+                   'textProcessing'         :['BOW', 'Tfidf'],
                    'modellingMetric'        :[accuracy_score]}
 
         keys = allParams.keys()
@@ -96,7 +97,6 @@ class MLAccelerator:
         possibilities = [dict(zip(keys, combination)) for combination in product(*values)]
         print(possibilities)
 
->>>>>>> 7db86ccf9079027446285fcbf67bdc0a735f8a71
         threads=[]
 
         for combNo, combParam in enumerate(possibilities):
@@ -186,14 +186,16 @@ class MLAccelerator:
             loggingSteps = loggingSteps+ '  Outlier Handling with {},'.format(str(kwargs['outlierHandlingMethod']))
             self.logData(df, 'Outlier Handling', kwargs['threadId'], loggingSteps)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7db86ccf9079027446285fcbf67bdc0a735f8a71
         if kwargs['encodingMethod']:
             df=self.encodingColumnsStep(df, kwargs['encodingMethod'])
             loggingSteps = loggingSteps+ '  Encoding with {},'.format(str(kwargs['encodingMethod']))
             self.logData(df, 'Encoding', kwargs['threadId'], loggingSteps)
+
+        if len(self.colTypes['Text'])>0:
+            df=self.textProcessingStep(df, kwargs['textProcessing'])
+            loggingSteps = loggingSteps + '  txtProcessing with {},'.format(str(kwargs['textProcessing']))
+            self.logData(df, 'textProcessing', kwargs['threadId'], loggingSteps)
+
 
         if kwargs['modellingClass']=='classification':
             loggingSteps = loggingSteps+ '  Building Classification Model'
@@ -204,7 +206,7 @@ class MLAccelerator:
             result['log']=loggingSteps
             self.results[kwargs['threadId']]=result
 
-        if kwargs['modellingClass'] == 'regression':
+        elif kwargs['modellingClass'] == 'regression':
             loggingSteps = loggingSteps + 'Building Regression Model\n'
             result = self.regressionStep(df, self.y, self.colTypes, kwargs['modellingMetric'])
             data = result.pop('Data')
@@ -259,6 +261,10 @@ class MLAccelerator:
     def encodingColumnsStep(self, df, method):
         en = Encoding(df, self.colTypes, self.y, method)
         return en.return_result()
+
+    def textProcessingStep(self, df, method):
+        txtHandling-TextProcessing(df, self.colTypes, method)
+        return txtHandling.return_result()
 
     def classificationStep(self, df, y, colTypes, metric):
         classification=Classification(df, y, colTypes, metric)
