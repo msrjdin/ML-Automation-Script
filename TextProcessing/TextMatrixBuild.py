@@ -23,8 +23,6 @@ class TextMatrixBuild:
 
 
 
-
-
     def corpusBuild(self):
         for col in self.txtCols:
             self.df[col] = self.df[col].apply(lambda x: word_tokenize(x.lower()))
