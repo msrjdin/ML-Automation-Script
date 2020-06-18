@@ -1,35 +1,20 @@
 At Step: colIdentification 
 Sequence executed:
-colIdentification
 
 
 At Step: nullHandling 
 Sequence executed:
-colIdentification
-nullHandling with method imputezero
-
+Null Handling with mean,
 
 At Step: Feature Reduction 
 Sequence executed:
-colIdentification
-nullHandling with method imputezero
-featureReduction with method pearson
-
+Null Handling with mean,  Feature Reduction with pearson,
 
 At Step: Outlier Handling 
 Sequence executed:
-colIdentification
-nullHandling with method imputezero
-featureReduction with method pearson
-outlierHandling with method capping
-
+Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with removing,
 
 At Step: Encoding 
 Sequence executed:
-colIdentification
-nullHandling with method imputezero
-featureReduction with method pearson
-outlierHandling with method capping
-encoding with method label
-
+Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with removing,  Encoding with one-hot,
 

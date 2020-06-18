@@ -4,17 +4,31 @@ Sequence executed:
 
 At Step: nullHandling 
 Sequence executed:
-Null Handling with knn,
+Null Handling with mean,
+
+At Step: Feature Reduction 
+Sequence executed:
+Null Handling with mean,  Feature Reduction with pearson,
 
 At Step: Outlier Handling 
 Sequence executed:
-Null Handling with knn,  Outlier Handling with capping,
+Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with removing,
 
 At Step: Encoding 
 Sequence executed:
-Null Handling with knn,  Outlier Handling with capping,  Encoding with one-hot,
+Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with removing,  Encoding with one-hot,
 
 At Step: Modelling classification 
 Sequence executed:
-Null Handling with knn,  Outlier Handling with capping,  Encoding with one-hot,  Building Classification Model,{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 1.8647092669687784, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.7969924812030075}
+Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with removing,  Encoding with one-hot,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 13, 'max_features': 4, 'n_estimators': 1}}, 'score': 0.6415094339622641, 'conf_matrix': array([[68, 15],
+       [23, 34]], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with removing,  Encoding with one-hot,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 275.4041886669112, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.6930693069306932, 'conf_matrix': array([[74, 14],
+       [17, 35]], dtype=int64)}
 

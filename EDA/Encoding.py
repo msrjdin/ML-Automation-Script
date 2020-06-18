@@ -36,7 +36,8 @@ class Encoding:
         df1 = df
         for x in self.colTypes['Categorical']:
             df1[x] = LabelEncoder.fit_transform(df1, y=df1[x])
-        self.return_df = df1
+        df2=self.target_encode(df1)
+        self.return_df = df2
 
     # encoding the categorical target column
     def target_encode(self, t_df):

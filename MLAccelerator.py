@@ -12,10 +12,11 @@ warnings.filterwarnings("ignore")
 import threading
 from Modelling.Classification import Classification
 from Modelling.Regression import Regression
-from sklearn.metrics import accuracy_score,f1_score
+from sklearn.metrics import accuracy_score,f1_score,mean_squared_error
 from itertools import product
 from pathlib import Path
 from shutil import rmtree
+from TextProcessing.TextProcessing import TextProcessing
 
 #Reading command line arguments into data and target
 # if __name__ == "__main__":
@@ -53,14 +54,14 @@ class MLAccelerator:
         self.y=y
         self.final_list = final_list
         self.metric_dict = metric_dict
+        self.results1 = {}
+        self.results2 = {}
         self.results = {}
-
 
     def execute(self):
         """Usage:
         [nullHandlingFlag, featureReductionFlag, outlierHandlingFlag, encodingFlag, modellingClass,
         nullHandlingMethod, featureReductionMethod, outlierHandlingMethod, encodingMethod, modellingMetric]"""
-<<<<<<< HEAD
         metric_list = []
         for i in self.final_list['metric']:
             metric_list.append(self.metric_dict[i])
@@ -73,6 +74,7 @@ class MLAccelerator:
                    'featureReductionMethod' :self.final_list['feature'],
                    'outlierHandlingMethod'  :self.final_list['outlier'],
                    'encodingMethod'         :self.final_list['encoding'],
+                   'textProcessing'         :self.final_list['vector'],
                    'modellingMetric'        :metric_list}
 
         keys = allParams.keys()
@@ -80,23 +82,7 @@ class MLAccelerator:
         #print('keys:{}'.format(keys))
         #print('values:{}'.format(values))
         possibilities = [dict(zip(keys, combination)) for combination in product(*values)]
-=======
-
-        allParams={'modellingClass'         :['classification'],
-                   'nullHandlingMethod'     :['knn', None],
-                   'featureReductionMethod' :[None],
-                   'outlierHandlingMethod'  :['capping'],
-                   'encodingMethod'         :['one-hot'],
-                   'modellingMetric'        :[accuracy_score]}
-
-        keys = allParams.keys()
-        values = (allParams[key] for key in keys)
-        print('Keys: {}'.format(keys))
-        print('Values: {}'.format(values))
-        possibilities = [dict(zip(keys, combination)) for combination in product(*values)]
         print(possibilities)
-
->>>>>>> 7db86ccf9079027446285fcbf67bdc0a735f8a71
         threads=[]
 
         for combNo, combParam in enumerate(possibilities):
@@ -114,6 +100,15 @@ class MLAccelerator:
         #final_log = bestResult.pop('log')+str(bestResult)
         #self.logData(None, 'Result', 'Result', final_log, path='Output', flush=True)
         #return final_log
+
+        j = len(self.results2)
+        for i in range(len(self.results2)):
+            self.results2[i + j] = self.results2.pop(i)
+
+        self.results1.update(self.results2)
+
+        self.results = self.results1
+
         result_final = []
         for key in self.results:
             result_final.append(self.results[key])
@@ -127,15 +122,28 @@ class MLAccelerator:
             d1['score'] = sample_['score']
             d1['log'] = sample_['log']
             d1['metric'] = sample_['metric']
+            d1['conf_matrix'] = sample_['conf_matrix']
             l.append(d1)
-        print(l)
+
+
+        l_modified = []
+        for d in l:
+            conf_matrix = d['conf_matrix']
+            headers = self.df[self.y].tolist()
+            print(type(headers))
+            cm_df = pd.DataFrame(conf_matrix, columns=set(headers))
+            cm_df['index'] = set(headers)
+            cm_df.set_index('index', inplace=True)
+            #del cm_df.index.name
+            d['conf_matrix'] = cm_df
+            l_modified.append(d)
 
 
         metric_list_temp = []
         for d in l:
             metric_list_temp.append(d['metric'])
         metric_list_1 = list(set(metric_list_temp))
-        print(metric_list_1)
+
 
 
         l_final = []
@@ -186,23 +194,35 @@ class MLAccelerator:
             loggingSteps = loggingSteps+ '  Outlier Handling with {},'.format(str(kwargs['outlierHandlingMethod']))
             self.logData(df, 'Outlier Handling', kwargs['threadId'], loggingSteps)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7db86ccf9079027446285fcbf67bdc0a735f8a71
         if kwargs['encodingMethod']:
             df=self.encodingColumnsStep(df, kwargs['encodingMethod'])
             loggingSteps = loggingSteps+ '  Encoding with {},'.format(str(kwargs['encodingMethod']))
             self.logData(df, 'Encoding', kwargs['threadId'], loggingSteps)
 
+
+        if kwargs['textProcessing']:
+            df = self.textProcessingStep(df, kwargs['textProcessing'])
+            loggingSteps = loggingSteps + '  Text Processing with {},'.format(str(kwargs['textProcessing']))
+            self.logData(df, 'textProcessing', kwargs['threadId'], loggingSteps)
+
+
+
         if kwargs['modellingClass']=='classification':
-            loggingSteps = loggingSteps+ '  Building Classification Model'
-            result= self.classificationStep(df, self.y, self.colTypes, kwargs['modellingMetric'])
-            data=result.pop('Data')
-            self.logData(data, 'Modelling {}'.format(kwargs['modellingClass']), kwargs['threadId'], loggingSteps+','+str(result))
-            result['metric'] = kwargs['modellingMetric'].__name__
-            result['log']=loggingSteps
-            self.results[kwargs['threadId']]=result
+            loggingSteps = loggingSteps+ 'Building Classification Model\n'
+            result1,result2= self.classificationStep(df, self.y, self.colTypes, kwargs['modellingMetric'])
+            #print(result1)
+            data=result1.pop('Data')
+            self.logData(data, 'Modelling {}'.format(kwargs['modellingClass']), kwargs['threadId'], loggingSteps+'\n'+str(result1))
+            result1['log']=loggingSteps
+            result1['metric'] = kwargs['modellingMetric'].__name__
+            self.results1[kwargs['threadId']]=result1
+            data=result2.pop('Data')
+            self.logData(data, 'Modelling {}'.format(kwargs['modellingClass']), kwargs['threadId'], loggingSteps+'\n'+str(result2))
+            result2['log']=loggingSteps
+            result2['metric'] = kwargs['modellingMetric'].__name__
+            self.results2[kwargs['threadId']]=result2
+
+
 
         if kwargs['modellingClass'] == 'regression':
             loggingSteps = loggingSteps + 'Building Regression Model\n'
@@ -210,6 +230,7 @@ class MLAccelerator:
             data = result.pop('Data')
             self.logData(data, 'Modelling {}'.format(kwargs['modellingClass']), kwargs['threadId'],
                             loggingSteps + '\n' + str(result))
+            result['metric'] = kwargs['modellingMetric'].__name__
             result['log'] = loggingSteps
             self.results[kwargs['threadId']] = result
 
@@ -259,6 +280,10 @@ class MLAccelerator:
     def encodingColumnsStep(self, df, method):
         en = Encoding(df, self.colTypes, self.y, method)
         return en.return_result()
+
+    def textProcessingStep(self, df, method):
+        txtHandling=TextProcessing(df, self.colTypes, method)
+        return txtHandling.return_result()
 
     def classificationStep(self, df, y, colTypes, metric):
         classification=Classification(df, y, colTypes, metric)

@@ -145,8 +145,7 @@ font-weight: bold;
 </div>	
 </div>
 
-
-<div style="padding-top:20px;padding-left:50px">
+<div style="padding-top:20px;padding-left:50px;float: left";>
 <p>Null Handling:</p>
 <div>
   <input type="checkbox" id="imputezero" name="nullhandle" value="imputezero">
@@ -164,9 +163,26 @@ font-weight: bold;
 </div>
 </div>
 
+<div style="padding-top:20px;padding-left:400px;width:600px;float:center;">
+<p>Model:</p>
+<div>
+  <input type="checkbox" id="classify" name="model" value="classification">
+  <label for="classify">classification</label>
+</div>
+
+<div>
+  <input type="checkbox" id="regression" name="model" value="regression">
+  <label for="regression">regression</label>
+</div>
+</div>
 
 
-<div style="padding-top:20px;padding-left:30px;width:400px;float: right;">
+
+
+
+
+
+<div style="padding-top:30px;padding-left:30px;width:400px;float: right;">
 <p>Encoding:</p>
 <div>
   <input type="checkbox" id="one-hot" name="encoding" value="one-hot">
@@ -180,7 +196,7 @@ font-weight: bold;
 </div>
 
 
-<div style="padding-top:20px;padding-left:50px">
+<div style="padding-top:30px;padding-left:50px">
 <p>Outlier Handling:</p>
 <div>
   <input type="checkbox" id="remove" name="outlier" value="removing">
@@ -199,20 +215,20 @@ font-weight: bold;
 </div>
 
 
-<div style="padding-top:20px;padding-left:30px;width:400px;float: right;">
-<p>Model:</p>
+<div style="padding-top:10px;padding-left:30px;width:400px;float: right;">
+<p>Vectorizer:</p>
 <div>
-  <input type="checkbox" id="classify" name="model" value="classification">
-  <label for="classify">classification</label>
+  <input type="checkbox" id="BOW" name="vector" value="BOW">
+  <label for="BOW">BOW</label>
 </div>
 
 <div>
-  <input type="checkbox" id="regression" name="model" value="regression">
-  <label for="regression">regression</label>
+  <input type="checkbox" id="Tfidf" name="vector" value="Tfidf">
+  <label for="Tfidf">Tfidf</label>
 </div>
 </div>
 
-<div style="padding-top:20px;padding-left:50px">
+<div style="padding-top:10px;padding-left:50px">
 <p>Modelling Metric:</p>
 <div>
   <input type="checkbox" id="accuracy" name="metric" value="accuracy_score">
@@ -223,7 +239,15 @@ font-weight: bold;
   <input type="checkbox" id="f1_score" name="metric" value="f1_score">
   <label for="f1_score">f1_score</label>
 </div>
+
+<div>
+  <input type="checkbox" id="mean_squared_error" name="metric" value="mean_squared_error">
+  <label for="mean_squared_error">mean squared error</label>
 </div>
+</div>
+
+
+
 
 
 

@@ -30,16 +30,16 @@ class ColumnTypeIdentification:
             if self.dtypes[i]=='O':
                 if (self.df[i].fillna('',axis=0).apply(lambda x: len(x))).quantile(q=0.95)<20:
                     self.colTypes['Categorical'].append(i)
-                elif self.df[i].nunique() >= int(0.98*(self.df[i].shape[0])):
-                    self.colTypes['Identity'].append(i)
+                #elif self.df[i].nunique() >= int(0.98*(self.df[i].shape[0])):
+                    #self.colTypes['Identity'].append(i)
                 else:
                     self.colTypes['Text'].append(i)
             else: 
                 distinctValues = self.df[i].nunique()
                 if distinctValues < int((self.df[i].shape[0])*0.05):
                     self.colTypes['Categorical'].append(i)
-                elif self.df[i].nunique() >= int(0.98 * (self.df[i].shape[0])):
-                    self.colTypes['Identity'].append(i)
+                #elif self.df[i].nunique() >= int(0.98 * (self.df[i].shape[0])):
+                    #self.colTypes['Identity'].append(i)
                 else:
                     self.colTypes['Numeric'].append(i)
     

@@ -10,7 +10,11 @@ from sklearn.metrics import accuracy_score, f1_score
 import copy
 import pandas as pd
 import numpy as np
-
+from sklearn.metrics import accuracy_score, f1_score,mean_squared_error
+import matplotlib.pyplot as plt
+from sklearn.metrics import (confusion_matrix, precision_recall_curve, auc,
+                             roc_curve, recall_score, classification_report, f1_score,
+                             precision_recall_fscore_support)
 
 # Parameters
 # List of dfs, targetCol and the metric under consideration
@@ -47,20 +51,14 @@ class Regression:
         mse = metrics.mean_squared_error(self.y_train, y_pred_train)
         rmse = np.sqrt(mse)
         score = metrics.mean_squared_error(y_pred_test, self.y_test)
-        # loss = log_loss(self.y_train, y_pred_train)
-        # score = self.metric(y_pred_test, self.y_test)
-        # print("Test Score:", self.metric(y_pred_test, self.y_test))
-        # print("Train Score:", self.metric(y_pred_train, self.y_train))
-        # print("\n===============")
-        # return {'loss': score,'status': STATUS_OK,'model': clf}
-        return (score)
+        return {'loss': -score,'status': STATUS_OK,'other_stuff':y_pred_test}
 
     def execute(self):
         # using Hyperopt for parameter tuning
         self.space = hp.choice('regression', [
             {'model': RandomForestRegressor,
              'param': {'max_depth': hp.choice('max_depth', range(1, 20)),
-                       'max_features': hp.choice('max_features', range(1, 5)),
+                       'max_features': hp.choice('max_features', range(1, 2)),
                        'n_estimators': hp.choice('n_estimators', range(1, 20)),
                        'criterion': hp.choice('criterion', ["mse", "mae"])
                        }
@@ -82,7 +80,15 @@ class Regression:
             hyperparam = space_eval(self.space,
                                     fmin(self.objective_func, self.space, trials=trials, algo=tpe.suggest,
                                          max_evals=100))
-            score = -min(trials.losses())
+            score = min(trials.losses())
+
+            for d in trials.results:
+                if d['loss'] == score:
+                    final_d = d
+
+            y_pred_test = final_d['other_stuff']
+
+
 
             if i == 0:
                 self.final_results['Hyperparameter'] = hyperparam
@@ -93,6 +99,9 @@ class Regression:
                 self.final_results['Hyperparameter'] = hyperparam
                 self.final_results[score_key] = score
                 self.final_results['Data'] = df
+
+
+
 
     def return_results(self):
         return self.final_results

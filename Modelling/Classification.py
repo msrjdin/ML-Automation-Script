@@ -9,20 +9,21 @@ from sklearn.metrics import accuracy_score, f1_score
 import copy
 import pandas as pd
 import numpy as np
+from sklearn.metrics import confusion_matrix
 
 #Parameters
 #List of dfs, targetCol and the metric under consideration
 
 class Classification:
-    def __init__(self, dfs, targetCol, colTypes, metric, test_size=0.2, kfold=10):
-        self.df = dfs
+    def __init__(self, dfs, targetCol, colTypes, metric, test_size=0.2):
+        self.dfs = dfs
         self.y = targetCol
         self.metric = metric
         self.colTypes=copy.deepcopy(colTypes)
         self.test_size=test_size
-        self.kfold=kfold
         # self.test_score = {}
         self.final_results={}
+        self.final_results1={}
 
         self.execute()
 
@@ -35,11 +36,11 @@ class Classification:
             max_depth = args['param']['max_depth']
             max_features = args['param']['max_features']
             clf = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features)
-        elif args['model'] == LogisticRegression:
-            penalty = args['param']['penalty']
-            C = args['param']['C']
-            solver = args['param']['solver']
-            clf = LogisticRegression(penalty=penalty, C=C, solver=solver)
+        #elif args['model'] == LogisticRegression:
+        #    penalty = args['param']['penalty']
+        #    C = args['param']['C']
+        #    solver = args['param']['solver']
+        #    clf = LogisticRegression(penalty=penalty, C=C, solver=solver)
 
         clf.fit(self.x_train, self.y_train)
         y_pred_train = clf.predict(self.x_train)
@@ -49,8 +50,33 @@ class Classification:
         # print("Test Score:", self.metric(y_pred_test, self.y_test))
         # print("Train Score:", self.metric(y_pred_train, self.y_train))
         # print("\n===============")
-        # return {'loss': score,'status': STATUS_OK,'model': clf}
-        return (-score)
+        return {'loss': -score,'status': STATUS_OK,'other_stuff':y_pred_test}
+
+
+
+    def objective_func_1(self, args):
+        clf=None
+
+        #if args['model'] == RandomForestClassifier:
+        #    n_estimators = args['param']['n_estimators']
+        #    max_depth = args['param']['max_depth']
+        #    max_features = args['param']['max_features']
+        #    clf = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features)
+        if args['model'] == LogisticRegression:
+             penalty = args['param']['penalty']
+             C = args['param']['C']
+             solver = args['param']['solver']
+             clf = LogisticRegression(penalty=penalty, C=C, solver=solver)
+
+        clf.fit(self.x_train, self.y_train)
+        y_pred_train = clf.predict(self.x_train)
+        y_pred_test = clf.predict(self.x_test)
+        loss = log_loss(self.y_train, y_pred_train)
+        score = self.metric(y_pred_test, self.y_test)
+        # print("Test Score:", self.metric(y_pred_test, self.y_test))
+        # print("Train Score:", self.metric(y_pred_train, self.y_train))
+        # print("\n===============")
+        return {'loss': -score,'status': STATUS_OK,'other_stuff':y_pred_test}
 
     def execute(self):
         #using Hyperopt for parameter tuning
@@ -61,38 +87,60 @@ class Classification:
                                             'n_estimators': hp.choice('n_estimators', range(1, 20)),
                                              'criterion': hp.choice('criterion', ["gini", "entropy"])
                                                     }
-                                            },
+                                            }
+                                        ])
+        self.space1 = hp.choice('classifier', [
                                             {'model': LogisticRegression,
                                              'param': {'penalty': hp.choice('penalty', ['l2']),
                                                        'C': hp.lognormal('C', 0, 1),
                                                        'solver': hp.choice('solver', ['newton-cg', 'lbfgs', 'liblinear', 'sag', 'saga'])}
-                                             }
+          
+                                            }
                                         ])
 
         score_key = 'score'
 
-<<<<<<< HEAD
-
-        for i, df in enumerate(self.dfs):
-            df.drop(self.colTypes['Identity'], axis=1, inplace=True) #Dropping Identity cols
-            self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(df.drop(self.y, axis=1), df[self.y], test_size=self.test_size)
-            trials = Trials()
-=======
-        df=self.df.copy()
->>>>>>> 7db86ccf9079027446285fcbf67bdc0a735f8a71
-
-        df.drop(self.colTypes['Identity'], axis=1, inplace=True) #Dropping Identity cols
-
-        self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(df.drop(self.y, axis=1), df[self.y], test_size=self.test_size)
+        
+        self.dfs.drop(self.colTypes['Identity'], axis=1, inplace=True) #Dropping Identity cols
+        self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(self.dfs.drop(self.y, axis=1), self.dfs[self.y], test_size=self.test_size)
+        
         trials = Trials()
 
         hyperparam = space_eval(self.space,
-                                     fmin(self.objective_func, self.space, trials=trials, algo=tpe.suggest, max_evals=100))
+                                         fmin(self.objective_func, self.space, trials=trials, algo=tpe.suggest, max_evals=100))
         score = -min(trials.losses())
+        for d in trials.results:
+            if d['loss']==-score:
+                final_d=d
 
-        self.final_results['Hyperparameter']=hyperparam
-        self.final_results[score_key]=score
-        self.final_results['Data']=df
+
+        y_pred_test=final_d['other_stuff']
+        conf_matrix = confusion_matrix(y_pred_test,self.y_test)
+
+        self.final_results['Hyperparameter'] = hyperparam
+        self.final_results[score_key] = score
+        self.final_results['Data'] = self.dfs
+        self.final_results['conf_matrix']=conf_matrix
+        
+        trials = Trials()
+
+        hyperparam1 = space_eval(self.space1,
+                                         fmin(self.objective_func_1, self.space1, trials=trials, algo=tpe.suggest, max_evals=100))
+        score1 = -min(trials.losses())
+        for d in trials.results:
+            if d['loss']==-score1:
+                final_d=d
+
+
+        y_pred_test1=final_d['other_stuff']
+        conf_matrix1 = confusion_matrix(y_pred_test1,self.y_test)
+
+
+
+        self.final_results1['Hyperparameter'] = hyperparam1
+        self.final_results1[score_key] = score1
+        self.final_results1['Data'] = self.dfs
+        self.final_results1['conf_matrix']=conf_matrix1
 
     def return_results(self):
-        return self.final_results
+        return self.final_results,self.final_results1

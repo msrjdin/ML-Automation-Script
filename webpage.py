@@ -15,7 +15,7 @@ warnings.filterwarnings("ignore")
 import threading
 from Modelling.Classification import Classification
 from Modelling.Regression import Regression
-from sklearn.metrics import accuracy_score,f1_score
+from sklearn.metrics import accuracy_score,f1_score,mean_squared_error
 from itertools import product
 from pathlib import Path
 import json 
@@ -56,7 +56,7 @@ def upload():
         corrMatrix = df.corr()
         svm=sn.heatmap(corrMatrix, annot=True, cmap='coolwarm', linewidth=2)
         figure = svm.get_figure()    
-        figure.savefig('C:\\Users\\SindhuKarnati\\Desktop\\MLAccelarator\\static\\corr_pic.png', dpi=400)
+        figure.savefig('C:\\Users\\SindhuKarnati\\Desktop\\MLAccelarator\\static\\corr_pic1.png', dpi=400,bbox_inches='tight')
         return render_template('corr_page.html')
 
 
@@ -67,13 +67,7 @@ def upload1():
         df=pd.read_csv('dataframe.csv')
         df.to_csv('dataframe.csv',index= False)
         cols= list(df)
-        return redirect(url_for('push_data', columns=cols))
-
-
-@app.route('/push_data/<columns>')
-def push_data(columns):
-    columns = columns.replace('[','').replace(']','').replace("'",'').split(',')
-    return render_template('Home.html',data = columns)
+        return render_template('Home.html',data = cols)
 
 
 @app.route('/submit',methods=['POST', 'GET'])   
@@ -82,13 +76,14 @@ def submit():
         flag_list ={}
         final_list={}
         cols_list=[]
-        metric_dict={'accuracy_score':accuracy_score,'f1_score':f1_score}
+        metric_dict={'accuracy_score':accuracy_score,'f1_score':f1_score,'mean_squared_error':mean_squared_error}
         flag_list['outlier']=request.form.getlist('outlier')
         flag_list['nullhandle']=request.form.getlist('nullhandle')
         flag_list['feature']=request.form.getlist('feature')
         flag_list['encoding']=request.form.getlist('encoding')
         flag_list['metric']=request.form.getlist('metric')
         flag_list['model']=request.form.getlist('model')
+        flag_list['vector']=request.form.getlist('vector')
         cols_list = request.form.getlist('columns')
         for key in flag_list:
             if not flag_list[key]:
@@ -98,7 +93,7 @@ def submit():
         y = request.form['target']
         df=pd.read_csv('dataframe.csv')
         ml=MLAccelerator(df[cols_list],y,final_list,metric_dict)
-        result=ml.execute()	
+        result=ml.execute()
         return render_template('Output.html',data = result)
         
 
