@@ -50,7 +50,7 @@ class Classification:
         # print("Test Score:", self.metric(y_pred_test, self.y_test))
         # print("Train Score:", self.metric(y_pred_train, self.y_train))
         # print("\n===============")
-        return {'loss': -score,'status': STATUS_OK,'other_stuff':y_pred_test}
+        return {'loss': -score,'status': STATUS_OK,'other_stuff': {'y_pred_test': y_pred_test, 'clf': clf}}
 
 
 
@@ -76,7 +76,7 @@ class Classification:
         # print("Test Score:", self.metric(y_pred_test, self.y_test))
         # print("Train Score:", self.metric(y_pred_train, self.y_train))
         # print("\n===============")
-        return {'loss': -score,'status': STATUS_OK,'other_stuff':y_pred_test}
+        return {'loss': -score,'status': STATUS_OK,'other_stuff': {'y_pred_test': y_pred_test, 'clf': clf}}
 
     def execute(self):
         #using Hyperopt for parameter tuning
@@ -114,33 +114,53 @@ class Classification:
                 final_d=d
 
 
-        y_pred_test=final_d['other_stuff']
+        dict_= final_d['other_stuff']
+        y_pred_test=dict_['y_pred_test']
+
+        clf = dict_['clf']
+
         conf_matrix = confusion_matrix(y_pred_test,self.y_test)
+
+        merge_df = self.x_test.copy()
+        merge_df['y_test'] = list(self.y_test.copy())
 
         self.final_results['Hyperparameter'] = hyperparam
         self.final_results[score_key] = score
         self.final_results['Data'] = self.dfs
         self.final_results['conf_matrix']=conf_matrix
-        
+        self.final_results['pickle_file'] = clf
+        self.final_results['y_pred'] = y_pred_test
+
+
+
+
+
         trials = Trials()
 
         hyperparam1 = space_eval(self.space1,
                                          fmin(self.objective_func_1, self.space1, trials=trials, algo=tpe.suggest, max_evals=100))
         score1 = -min(trials.losses())
-        for d in trials.results:
-            if d['loss']==-score1:
-                final_d=d
+        for d1 in trials.results:
+            if d1['loss']==-score1:
+                final_d1=d1
 
+        dict_ = final_d1['other_stuff']
+        y_pred_test1=dict_['y_pred_test']
 
-        y_pred_test1=final_d['other_stuff']
-        conf_matrix1 = confusion_matrix(y_pred_test1,self.y_test)
+        clf1 = dict_['clf']
 
+        conf_matrix1 = confusion_matrix(y_pred_test1, self.y_test)
+
+        merge_df1 = self.x_test.copy()
+        merge_df1['y_test'] = list(self.y_test.copy())
 
 
         self.final_results1['Hyperparameter'] = hyperparam1
         self.final_results1[score_key] = score1
         self.final_results1['Data'] = self.dfs
         self.final_results1['conf_matrix']=conf_matrix1
+        self.final_results1['pickle_file'] = clf1
+        self.final_results1['y_pred'] = y_pred_test1
 
     def return_results(self):
         return self.final_results,self.final_results1
