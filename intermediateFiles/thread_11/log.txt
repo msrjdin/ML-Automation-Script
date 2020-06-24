@@ -1,0 +1,20 @@
+At Step: colIdentification 
+Sequence executed:
+
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Feature Reduction 
+Sequence executed:
+Null Handling with mean,  Feature Reduction with pearson,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with zscore,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with zscore,  Encoding with one-hot,
+

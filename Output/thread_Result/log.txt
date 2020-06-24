@@ -1,0 +1,9 @@
+At Step: Result 
+Sequence executed:
+colIdentification
+nullHandling with method knn
+outlierHandling with method capping
+encoding with method one-hot
+Building Classification Model
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 6.0318763614090365, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.8268156424581006}
+
