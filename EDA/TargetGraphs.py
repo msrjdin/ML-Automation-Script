@@ -69,6 +69,3 @@ class TargetGraphs:
                 plt.savefig('C:\\Users\\RavikanthReddyKandad\Documents\\git_latest\\ML-Automation-Script-june\\static\\target_distribution.png')
                 self.target = np.log10(self.target)
         #self.colTypes['Categorical'] = set(df.columns).intersection(set(colTypes['Categorical']))
-
-
-

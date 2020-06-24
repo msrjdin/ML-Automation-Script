@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0072)file:///C:/Users/SindhuKarnati/Desktop/MLAccelarator/templates/Home.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <link rel="stylesheet" href="./Home_files/font-awesome.min.css">
 <style>
 * {box-sizing: border-box;}
@@ -98,42 +99,41 @@ h2 {
   color: Black;
 }
 
-fieldset {
-  display: block;
-  border: 2px groove (internal value);
+
+table {
+   border-spacing: 20px;
+   border-collapse: collapse;
+   border: 3px solid #FFDAB9;
 }
 
 
 </style>
 </head>
+
+
 <body>
 
 <div class="topnav">
- <a class="active" href="file:///C:/Users/SindhuKarnati/Desktop/MLAccelarator/templates/Home.html#Home">Home</a>
+<a class = "active" href="http://127.0.0.1:5000/">Home</a>
      <img src="{{url_for('static', filename='logo.png')}}" align style="width:80px;height:80px;">
 	 <div style="padding-left:500px">
        <h2 style="margin-top: 16px;margin-bottom: 16px"> ML Automation </h2>
       </div>
+      </div>
+</div>
 
- <div style="padding-left:200px;padding-right:200px;padding-bottom:400px">
- <form action="/upload" method="POST" enctype="multipart/form-data">
- <fieldset>
-		<div style="padding-left:120px;padding-top:20px">
-			<label for="file-upload" style="margin-left:100px">
-			  Upload Dataset:
-			</label>
-			<input id="file-upload" type="file" name="file">
-		</div>
-	
-<div style="padding-top:20px;padding-left:300px">
-  <input type="submit" class="button">
- </div>
- 
- </fieldset>
+
+<div style="padding-top:50px;padding-left:400px">
+<<<<<<< HEAD
+ <form action="/coltypes1" method="POST" enctype="multipart/form-data">
+=======
+ <form action="/upload1" method="POST" enctype="multipart/form-data">
+>>>>>>> ad6f30ce68088f7298abf7350447aa4af06630df
+<img src="{{url_for('static', filename='corr_pic1.png')}}" align style="width:500px;height:400px">
+  <div style="padding-top:20px;padding-left:180px">
+  <input type="submit" class="button" value = "NextPage">
+  </div>
 </form>
-</div>
-<div>
-</div>
 </div>
 </body>
 </html>

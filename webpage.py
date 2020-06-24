@@ -56,6 +56,7 @@ def upload():
         corrMatrix = df.corr()
         svm=sn.heatmap(corrMatrix, annot=True, cmap='coolwarm', linewidth=2)
         figure = svm.get_figure()    
+<<<<<<< HEAD
         figure.savefig('C:\\Users\\RavikanthReddyKandad\\Documents\\git_latest\\ML-Automation-Script-june\\static\\corr_pic1.png', dpi=400,bbox_inches='tight')
         return render_template('corr_page.html')
 
@@ -101,6 +102,13 @@ def targetgraphs():
 # #    return outputpage
 #
 #
+=======
+        figure.savefig('C:\\Users\\SindhuKarnati\\Desktop\\MLAccelarator\\static\\corr_pic1.png', dpi=400,bbox_inches='tight')
+        return render_template('corr_page.html')
+
+
+
+>>>>>>> ad6f30ce68088f7298abf7350447aa4af06630df
 @app.route('/upload1', methods=['POST', 'GET'])
 def upload1():
     if request.method == 'POST':
@@ -139,4 +147,13 @@ def submit():
 
 
 # In[ ]:
+<<<<<<< HEAD
 app.run()
+=======
+
+app.run()
+
+
+
+
+>>>>>>> ad6f30ce68088f7298abf7350447aa4af06630df

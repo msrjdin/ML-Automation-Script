@@ -115,7 +115,15 @@ fieldset {
        <h2 style="margin-top: 16px;margin-bottom: 16px"> ML Automation </h2>
       </div>
 
+<<<<<<< HEAD
+ <div style="padding-left:200px;padding-right:200px;padding-bottom:400p y = request.form['target']
+        df=pd.read_csv('dataframe.csv')
+        ml=MLAccelerator(df[cols_list],y,final_list,metric_dict)
+        result=ml.execute()
+        return render_template('Output.html',data = result)x">
+=======
  <div style="padding-left:200px;padding-right:200px;padding-bottom:400px">
+>>>>>>> ad6f30ce68088f7298abf7350447aa4af06630df
  <form action="/upload" method="POST" enctype="multipart/form-data">
  <fieldset>
 		<div style="padding-left:120px;padding-top:20px">

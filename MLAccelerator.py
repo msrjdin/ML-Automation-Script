@@ -7,7 +7,10 @@ from EDA.Encoding import Encoding
 from EDA.NullHandling import NullHandling
 from EDA.ColumnTypeIdentification import ColumnTypeIdentification
 from EDA.FeatureReduction import FeatureReduction
+<<<<<<< HEAD
 from EDA.TargetGraphs import TargetGraphs
+=======
+>>>>>>> ad6f30ce68088f7298abf7350447aa4af06630df
 import warnings
 warnings.filterwarnings("ignore")
 import threading
@@ -364,6 +367,7 @@ class MLAccelerator:
         colIdentObj = ColumnTypeIdentification(df, y)
         self.colTypes = colIdentObj.colTypes
         self.targetType = colIdentObj.target_type
+<<<<<<< HEAD
         # self.dtypes = colIdentObj.dtypes
         # col = self.dtypes
         #return col
@@ -372,6 +376,9 @@ class MLAccelerator:
         obj_target = TargetGraphs(df, colTypes, y, target_type)
         col = obj_target.top_features
         return col
+=======
+
+>>>>>>> ad6f30ce68088f7298abf7350447aa4af06630df
 
     def nullHandlingStep(self, df, y, strategy):
         nullHndlngObj = NullHandling(df, self.colTypes, y)
