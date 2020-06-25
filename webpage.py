@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import pandas as pd
 from EDA.OutlierHandling import OutlierHandling
 from EDA.Encoding import Encoding
@@ -22,31 +19,16 @@ import json
 import matplotlib.pyplot as plt
 import seaborn as sn
 
-
-
-
-
-
-
-# In[2]:
-
-
 from MLAccelerator import MLAccelerator
-
-
-# In[3]:
-
 
 from flask import Flask, render_template, request, redirect, url_for
 import pandas as pd
 app = Flask(__name__)
 
-
 # render webpage
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 @app.route('/upload', methods=['POST', 'GET'])
 def upload():
@@ -59,8 +41,6 @@ def upload():
         figure.savefig('C:\\Users\\SindhuKarnati\\Desktop\\MLAccelarator\\static\\corr_pic1.png', dpi=400,bbox_inches='tight')
         return render_template('corr_page.html')
 
-
-
 @app.route('/upload1', methods=['POST', 'GET'])
 def upload1():
     if request.method == 'POST':
@@ -68,7 +48,6 @@ def upload1():
         df.to_csv('dataframe.csv',index= False)
         cols= list(df)
         return render_template('Home.html',data = cols)
-
 
 @app.route('/submit',methods=['POST', 'GET'])   
 def submit():
@@ -95,10 +74,6 @@ def submit():
         ml=MLAccelerator(df[cols_list],y,final_list,metric_dict)
         result=ml.execute()
         return render_template('Output.html',data = result)
-        
-
-
-# In[ ]:
 
 app.run()
 
