@@ -364,9 +364,9 @@ class MLAccelerator:
         colIdentObj = ColumnTypeIdentification(df, y)
         self.colTypes = colIdentObj.colTypes
         self.targetType = colIdentObj.target_type
-        self.dtypes = colIdentObj.dtypes
-        col = self.dtypes
-        return col
+        # self.dtypes = colIdentObj.dtypes
+        # col = self.dtypes
+        #return col
 
     def TargetGraphs(self, df, colTypes, y, target_type):
         obj_target = TargetGraphs(df, colTypes, y, target_type)

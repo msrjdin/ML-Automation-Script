@@ -2,6 +2,8 @@
 <!-- saved from url=(0072)file:///C:/Users/SindhuKarnati/Desktop/MLAccelarator/templates/Home.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <link rel="stylesheet" href="./Home_files/font-awesome.min.css">
+<script src='jquery-3.2.1.min.js'></script>
+<script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
 <style>
 * {box-sizing: border-box;}
 
@@ -112,27 +114,6 @@ font-weight: bold;
 </head>
 <body>
 
-<script>
-
-
-HTMLOptionElement.defaultSelected = true;     // JS
-$('selector').prop({defaultSelected: true});  // jQuery  
-
-const EL_country = document.querySelector('#type');
-EL_country.value = 'Text';   // Set SELECT value to 'ID' ("Indonesia")
-EL_country.options[EL_country.selectedIndex].defaultSelected = true; // Add Attribute selected to Option Element
-
-
-function myFunction(value) {
-var coltypes = document.getElementById("type");
-coltypes.options[coltypes.options.value].selected = true;	
-}
-
-function jsFunction(value){
- alert(value)
-} 
-</script>
-
 
 <div class="topnav">
  <a class="active" href="file:///C:/Users/SindhuKarnati/Desktop/MLAccelarator/templates/Home.html#Home">Home</a>
@@ -148,13 +129,26 @@ function jsFunction(value){
 			<input type="text" placeholder="Target" name="target">
 		</div>
 
-<div style ="padding-top:20px;padding-left:30px" >
+    <script>
+      $('div.sel  option[value="Text"]').prop("selected", true);
+      $('sel').val('val2');
+      $('.sel option').each(function() {
+        if($(this).val() == 'Text') {
+          $(this).prop("selected", true);
+          }
+          });
+      $('div.sel select').val("Text");
+      $('#coltypes').val("Text").change();
+      $('select[name="coltypes"]').val("Text");
+      $('select[name="coltypes"]').find('option[value="Numeric"]').attr("selected",true);
+    </script>
+
+<div class='sel' style ="padding-top:20px;padding-left:30px" >
 <b>Columns:</b>
 <form>
 {% for key,value in data.items()%}
 <label for="column">{{key}}</label>
-
-<select id="type" name="coltypes"  onmousedown="this.value='';" onchange="jsFunction(this.value);">
+<select  name="coltypes"  onmousedown="this.value='';" onchange="jsFunction(this.value);">
     <option value="Categorical">Categorical</option>
     <option value="Numeric">Numeric</option>
     <option value="Text">Text</option>

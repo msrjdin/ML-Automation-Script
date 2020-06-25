@@ -56,7 +56,6 @@ def upload():
         corrMatrix = df.corr()
         svm=sn.heatmap(corrMatrix, annot=True, cmap='coolwarm', linewidth=2)
         figure = svm.get_figure()    
-<<<<<<< HEAD
         figure.savefig('C:\\Users\\RavikanthReddyKandad\\Documents\\git_latest\\ML-Automation-Script-june\\static\\corr_pic1.png', dpi=400,bbox_inches='tight')
         return render_template('corr_page.html')
 
@@ -66,7 +65,6 @@ def coltypes1():
         df = pd.read_csv('dataframe.csv')
         ml = MLAccelerator(df,'',[],[])
         coltype = ml.colIdentification(df, 'Survived')
-        print(coltype)
         coltype = {'Survived':'Categorical', 'Pclass':'Categorical', 'Xyz':'Numeric','abc':'Text'}
         # types = [k for k in coltype.keys() for v in coltype[k]]
         # cols = [v for k in coltype.keys() for v in coltype[k]]
@@ -85,46 +83,18 @@ def targetgraphs():
         #colTypes = {'Survived':'Categorical' ,'Pclass':'Categorical' ,'Age':'Numeric' ,'SibSp':'Numeric' ,'Fare':'Numeric' ,'Parch':'Categorical'}
         colTypes = {'Categorical': ['Survived','Pclass','SibSp','Parch'], 'Numeric':['Age','Fare']}
         ml = MLAccelerator(df, 'Survived', [], [])
-        print(dir(ml))
         col = ml.TargetGraphs(df, colTypes, 'Survived', 'Categorical')
         return render_template('graphs.html', data=col)
     # ml.cleaning methods
      # ml.target graph
      # return target_3screen.html
 
-# def selecting_methods():
-#     # ml.function_top - column-parameters
-#     # ##return 4th screen
-#
-#
-# def model_execution():
-#     # model ex 5th screen
-# #    return outputpage
-#
-#
-=======
-        figure.savefig('C:\\Users\\SindhuKarnati\\Desktop\\MLAccelarator\\static\\corr_pic1.png', dpi=400,bbox_inches='tight')
-        return render_template('corr_page.html')
-
-
-
->>>>>>> ad6f30ce68088f7298abf7350447aa4af06630df
-@app.route('/upload1', methods=['POST', 'GET'])
-def upload1():
-    if request.method == 'POST':
-        df=pd.read_csv('dataframe.csv')
-        df.to_csv('dataframe.csv',index= False)
-        cols= list(df)
-        return render_template('Home.html',data = cols)
-
-
-@app.route('/submit',methods=['POST', 'GET'])   
+@app.route('/submit',methods=['POST','GET'])
 def submit():
     if request.method == 'POST':
         flag_list ={}
         final_list={}
         cols_list=[]
-        metric_dict={'accuracy_score':accuracy_score,'f1_score':f1_score,'mean_squared_error':mean_squared_error}
         flag_list['outlier']=request.form.getlist('outlier')
         flag_list['nullhandle']=request.form.getlist('nullhandle')
         flag_list['feature']=request.form.getlist('feature')
@@ -132,6 +102,7 @@ def submit():
         flag_list['metric']=request.form.getlist('metric')
         flag_list['model']=request.form.getlist('model')
         flag_list['vector']=request.form.getlist('vector')
+        flag_list['textp']= request.form.getlist('textp')
         cols_list = request.form.getlist('columns')
         for key in flag_list:
             if not flag_list[key]:
@@ -142,18 +113,42 @@ def submit():
         df=pd.read_csv('dataframe.csv')
         ml=MLAccelerator(df[cols_list],y,final_list,metric_dict)
         result=ml.execute()
-        return render_template('Output.html',data = result)
-        
+    return render_template('Output.html',data = result)
+    
+# @app.route('/upload1', methods=['POST', 'GET'])
+# def upload1():
+#     if request.method == 'POST':
+#         df=pd.read_csv('dataframe.csv')
+#         df.to_csv('dataframe.csv',index= False)
+#         cols= list(df)
+#         return render_template('Home.html',data = cols)
 
+
+# @app.route('/submit',methods=['POST', 'GET'])   
+# def submit():
+#     if request.method == 'POST':
+#         flag_list ={}
+#         final_list={}
+#         cols_list=[]
+#         metric_dict={'accuracy_score':accuracy_score,'f1_score':f1_score,'mean_squared_error':mean_squared_error}
+#         flag_list['outlier']=request.form.getlist('outlier')
+#         flag_list['nullhandle']=request.form.getlist('nullhandle')
+#         flag_list['feature']=request.form.getlist('feature')
+#         flag_list['encoding']=request.form.getlist('encoding')
+#         flag_list['metric']=request.form.getlist('metric')
+#         flag_list['model']=request.form.getlist('model')
+#         flag_list['vector']=request.form.getlist('vector')
+#         cols_list = request.form.getlist('columns')
+#         for key in flag_list:
+#             if not flag_list[key]:
+#                 final_list[key] = [None]
+#             else:
+#                 final_list[key] = flag_list[key]
+#         y = request.form['target']
+#         df=pd.read_csv('dataframe.csv')
+#         ml=MLAccelerator(df[cols_list],y,final_list,metric_dict)
+#         result=ml.execute()
+#         return render_template('Output.html',data = result)
 
 # In[ ]:
-<<<<<<< HEAD
-app.run()
-=======
-
-app.run()
-
-
-
-
->>>>>>> ad6f30ce68088f7298abf7350447aa4af06630df
+app.run(debug=True)
