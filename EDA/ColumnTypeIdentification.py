@@ -1,21 +1,20 @@
 import inquirer
 
 class ColumnTypeIdentification:
-    def __init__(self, df,y):
+    def __init__(self, df):#,y):
         self.dtypes={}
         self.df=df 
-        self.y=y
+        # self.y=y
         #Getting Columns pandas datatype
         for i in self.df.columns:
             self.dtypes[i]=(self.df[i].dtypes)
 #         print(self.dtypes)
-        self.colTypes={'Categorical': [], 'Text':[], 'Numeric': [], 'Identity': []}
+        self.colTypes = {'Categorical': [], 'Text':[], 'Numeric': [], 'Identity': []}
         
         #saving the final col type (Categorical, Text or Numeric)
         self.detecting_col_types()
-        self.target_type=None
-
-        self.col_types_confirmation()
+        # self.target_type= None
+#        self.col_types_confirmation()
 
 
     
@@ -50,8 +49,8 @@ class ColumnTypeIdentification:
         columnTypesConfirmation=[]
         print('Please Confirm/Map the columns with their type:\n')
         for col in self.dtypes.keys():
-            colView=self.df[[col]].copy()
-            colView=colView[colView.col.isnotnull()].head(3).values
+            colView=self.df[col].copy()
+            colView=colView[colView.notna()].head(3).values
             columnTypesConfirmation.append(
                 inquirer.List(col, message=str(col) + ':\nValues: {}'.format(colView),
                                                          choices=['Text', 'Categorical', 'Numeric', 'Identity'],
@@ -62,5 +61,5 @@ class ColumnTypeIdentification:
         for col in self.dtypes.keys():
             self.dtypes[col]=confirmedColTypes[col]
             self.colTypes[confirmedColTypes[col]].append(col)
-            if self.y==col:
-                self.target_type=confirmedColTypes[col]
+            # if self.y==col:
+            #     self.target_type=confirmedColTypes[col]

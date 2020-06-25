@@ -7,6 +7,7 @@ from EDA.Encoding import Encoding
 from EDA.NullHandling import NullHandling
 from EDA.ColumnTypeIdentification import ColumnTypeIdentification
 from EDA.FeatureReduction import FeatureReduction
+from EDA.TargetGraphs import TargetGraphs
 import warnings
 warnings.filterwarnings("ignore")
 import threading
@@ -15,29 +16,10 @@ from Modelling.Regression import Regression
 from sklearn.metrics import accuracy_score,f1_score,mean_squared_error
 from itertools import product
 from pathlib import Path
-from shutil import rmtree
 from TextProcessing.TextProcessing import TextProcessing
 import pickle
 import matplotlib
 matplotlib.use('Agg')
-
-#Reading command line arguments into data and target
-# if __name__ == "__main__":
-#     if len(sys.argv) >= 3 :
-#         data = sys.argv[1]
-#         y = sys.argv[2]
-#     else :
-#         print("input the file name and target column")
-#         exit()
-#data='train.csv'
-#y='Survived'
-
-#df = pd.read_csv(data)
-
-
-
-
-
 
 class flowThread(threading.Thread):
     def __init__(self, threadId, func, params, endFlag=True):
@@ -50,13 +32,13 @@ class flowThread(threading.Thread):
         print('Running Thread: {}'.format(self.threadId))
         self.func(**self.params)
 
-
 class MLAccelerator:
-    def __init__(self, df, y,final_list,metric_dict):
+    def __init__(self, df=None, y=None, final_list=None, metric_dict=None):
         self.df=df
         self.y=y
         self.final_list = final_list
         self.metric_dict = metric_dict
+        self.targetType=None
         self.results1 = {}
         self.results2 = {}
         self.results = {}
@@ -115,10 +97,7 @@ class MLAccelerator:
         for key in self.results:
             result_final.append(self.results[key])
 
-
         if self.final_list['model']==['classification']:
-
-
             l = []
             for dict_ in result_final:
                 sample_ = dict_
@@ -146,13 +125,10 @@ class MLAccelerator:
                 d['conf_matrix'] = cm_df
                 l_modified.append(d)
 
-
             metric_list_temp = []
             for d in l_modified:
                 metric_list_temp.append(d['metric'])
             metric_list_1 = list(set(metric_list_temp))
-
-
 
             l_final = []
             for metric in metric_list_1:
@@ -178,11 +154,11 @@ class MLAccelerator:
                 dict_ = l_final[i]
                 pkl = dict_['pickle_file']
                 y_pred_test = dict_['y_pred_test']
-                pkl_filename = 'C:/Users/SindhuKarnati/Desktop/MLAccelarator/output_files/' + str(i) + '.pkl'
+                pkl_filename = 'output_files/' + str(i) + '.pkl'
                 with open(pkl_filename, 'wb') as file:
                     pickle.dump(pkl, file)
                 y_pred_test = pd.DataFrame(y_pred_test)
-                file_name = 'C:/Users/SindhuKarnati/Desktop/MLAccelarator/output_files/' + str(i) + '.csv'
+                file_name = 'output_files/' + str(i) + '.csv'
                 y_pred_test.to_csv(file_name)
 
             l_final_1 = []
@@ -191,8 +167,6 @@ class MLAccelerator:
                 dict_.pop('pickle_file')
                 dict_.pop('y_pred_test')
                 l_final_1.append(dict_)
-
-
             return l_final_1
 
         elif self.final_list['model'] == ['regression']:
@@ -213,14 +187,10 @@ class MLAccelerator:
 
                 l.append(d1)
 
-
-
             metric_list_temp = []
             for d in l:
                 metric_list_temp.append(d['metric'])
             metric_list_1 = list(set(metric_list_temp))
-
-
 
             l_final = []
             for metric in metric_list_1:
@@ -247,13 +217,13 @@ class MLAccelerator:
                 pkl = dict_['pickle_file']
                 y_pred_test = dict_['y_pred_test']
                 residual=dict_['residual']
-                pkl_filename = 'C:/Users/SindhuKarnati/Desktop/MLAccelarator/output_files/' + str(i) + '.pkl'
+                pkl_filename = 'output_files/' + str(i) + '.pkl'
                 with open(pkl_filename, 'wb') as file:
                     pickle.dump(pkl, file)
                 y_pred_test = pd.DataFrame(y_pred_test)
-                file_name = 'C:/Users/SindhuKarnati/Desktop/MLAccelarator/output_files/' + str(i) + '.csv'
+                file_name = 'output_files/' + str(i) + '.csv'
                 y_pred_test.to_csv(file_name)
-                residual.savefig('C:/Users/SindhuKarnati/Desktop/MLAccelarator/residual_file/'+str(i)+'residual.png')
+                residual.savefig('residual_file/'+str(i)+'residual.png')
 
             l_final_1 = []
             for i in range(len(l_final)):
@@ -262,7 +232,6 @@ class MLAccelerator:
                 dict_.pop('y_pred_test')
                 dict_.pop('residual')
                 l_final_1.append(dict_)
-
             return l_final_1
 
     def acceleratorExecution(self, **kwargs):
@@ -271,9 +240,9 @@ class MLAccelerator:
 
         loggingSteps=''
         df=self.df.copy()
-        self.colIdentification(df, self.y)
-        loggingSteps = loggingSteps
-        self.logData(df, 'colIdentification', kwargs['threadId'], loggingSteps, flush=True)
+        # self.colIdentification(df, self.y)
+        # loggingSteps = loggingSteps
+        # self.logData(df, 'colIdentification', kwargs['threadId'], loggingSteps, flush=True)
 
         if kwargs['nullHandlingMethod']:
             df=self.nullHandlingStep(df, self.y, kwargs['nullHandlingMethod'])
@@ -295,13 +264,10 @@ class MLAccelerator:
             loggingSteps = loggingSteps+ '  Encoding with {},'.format(str(kwargs['encodingMethod']))
             self.logData(df, 'Encoding', kwargs['threadId'], loggingSteps)
 
-
         if kwargs['textProcessing']:
             df = self.textProcessingStep(df, kwargs['textProcessing'])
             loggingSteps = loggingSteps + '  Text Processing with {},'.format(str(kwargs['textProcessing']))
             self.logData(df, 'textProcessing', kwargs['threadId'], loggingSteps)
-
-
 
         if kwargs['modellingClass']=='classification':
             loggingSteps = loggingSteps+ 'Building Classification Model\n'
@@ -359,11 +325,18 @@ class MLAccelerator:
         log_file.close()
 
 
-    def colIdentification(self, df, y):
-        colIdentObj = ColumnTypeIdentification(df, y)
+    def colIdentification(self):
+        colIdentObj = ColumnTypeIdentification(self.df)
         self.colTypes = colIdentObj.colTypes
-        self.targetType = colIdentObj.target_type
+        # self.targetType = None
+        self.dtypes = colIdentObj.dtypes
+        # col = self.dtypes
+        # return col
 
+    def TargetGraphs(self):
+        obj_target = TargetGraphs(self.df, self.colTypes, self.y, self.targetType)
+        col = obj_target.top_features
+        return col
 
     def nullHandlingStep(self, df, y, strategy):
         nullHndlngObj = NullHandling(df, self.colTypes, y)
@@ -372,7 +345,6 @@ class MLAccelerator:
     def featureReductionStep(self, df, colTypes, y, targetType, method):
         fRdctionObj = FeatureReduction(df, colTypes, y, targetType, method)
         return fRdctionObj.return_result()
-
 
     def outlierHandlingStep(self, df, method):
         OH = OutlierHandling(df, self.colTypes, self.y, self.targetType, method)
@@ -393,10 +365,3 @@ class MLAccelerator:
     def regressionStep(self, df, y, colTypes, metric):
         regression=Regression(df, y, colTypes, metric)
         return regression.return_results()
-
-
-
-#ml=MLAccelerator(df,y)
-#a=ml.execute()
-
-# print(a)
