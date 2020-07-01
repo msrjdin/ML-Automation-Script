@@ -240,3 +240,1938 @@ Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with
        2229.85445748, 2043.92747119,  425.60553983, 1066.73307877,
        2176.95393403,  717.66363869, 1750.86917336])}
 
+At Step: Outlier Handling 
+Sequence executed:
+  Outlier Handling with removing,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with one-hot,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with one-hot,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 15, 'max_features': 4, 'n_estimators': 7}}, 'score': 0.8142857142857143, 'conf_matrix': array([[93, 22],
+       [ 4, 21]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=15, max_features=4,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=7,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,
+       0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with one-hot,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.667056343401222, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.8357142857142857, 'conf_matrix': array([[88, 14],
+       [ 9, 29]], dtype=int64), 'pickle_file': LogisticRegression(C=0.5845645325229636, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='liblinear', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1,
+       0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0,
+       0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 0, 0], dtype=int64)}
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: textProcessing 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: textProcessing 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: textProcessing 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,
+
+At Step: Modelling classification 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 18, 'max_features': 4, 'n_estimators': 6}}, 'score': 0.8228855721393035, 'conf_matrix': array([[ 78,  19,   5],
+       [ 50, 247,  11],
+       [ 45,  48, 502]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=18, max_features=4,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=6,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([2, 0, 2, ..., 0, 1, 2])}
+
+At Step: Modelling classification 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.12139771911352203, 'penalty': 'l2', 'solver': 'saga'}}, 'score': 0.9522388059701492, 'conf_matrix': array([[159,  13,   7],
+       [ 13, 294,   7],
+       [  1,   7, 504]], dtype=int64), 'pickle_file': LogisticRegression(C=0.12037178940976204, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='sag', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 2, ..., 0, 1, 2])}
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with imputezero,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 11, 'max_features': 4, 'n_estimators': 10}}, 'score': 0.8357142857142857, 'conf_matrix': array([[72, 14],
+       [ 9, 45]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=7, max_features=4,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=6,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
+       0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0,
+       0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1,
+       0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0,
+       1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1,
+       1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0,
+       1, 0, 0, 1, 1, 1, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.16371719274487778, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.7571428571428571, 'conf_matrix': array([[71, 24],
+       [10, 35]], dtype=int64), 'pickle_file': LogisticRegression(C=0.1427264135444902, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0,
+       1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1,
+       0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0,
+       1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1,
+       1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 1, 1, 0, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with imputezero,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 17, 'max_features': 1, 'n_estimators': 19}}, 'score': 0.8580645161290322, 'conf_matrix': array([[98, 17],
+       [ 5, 35]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=17, max_features=1,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=19,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0,
+       1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1,
+       0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0,
+       0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+       1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.7439780936876438, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.8387096774193549, 'conf_matrix': array([[96, 18],
+       [ 7, 34]], dtype=int64), 'pickle_file': LogisticRegression(C=0.7812831260282708, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='liblinear', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0,
+       1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1,
+       0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1,
+       0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0,
+       0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+       1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with imputezero,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 4, 'max_features': 1, 'n_estimators': 13}}, 'score': 0.8202247191011236, 'conf_matrix': array([[101,  24],
+       [  8,  45]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=5, max_features=1,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=18,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0,
+       0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0,
+       1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0,
+       1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0,
+       0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.05310701205369617, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.797752808988764, 'conf_matrix': array([[99, 26],
+       [10, 43]], dtype=int64), 'pickle_file': LogisticRegression(C=0.04568340229264816, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1,
+       0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0,
+       0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0,
+       1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0,
+       1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0,
+       0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0,
+       0, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 8, 'max_features': 2, 'n_estimators': 18}}, 'score': 0.8214285714285714, 'conf_matrix': array([[76, 18],
+       [ 7, 39]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=11, max_features=2,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=13,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0,
+       1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1,
+       1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 1, 1, 1, 1, 0, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 4.76251276844848, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.8285714285714286, 'conf_matrix': array([[74, 15],
+       [ 9, 42]], dtype=int64), 'pickle_file': LogisticRegression(C=862.0083615988101, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+       1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0,
+       1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1,
+       1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 1, 1, 0, 1, 1, 0, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 6, 'max_features': 2, 'n_estimators': 6}}, 'score': 0.8642857142857143, 'conf_matrix': array([[83, 14],
+       [ 5, 38]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=6, max_features=2,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=6,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0,
+       0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1,
+       0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0,
+       1, 0, 0, 0, 1, 0, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.6006745619646621, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.7857142857142857, 'conf_matrix': array([[77, 19],
+       [11, 33]], dtype=int64), 'pickle_file': LogisticRegression(C=0.9898739712140293, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+       0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0,
+       0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1,
+       1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0,
+       1, 0, 0, 0, 1, 0, 0, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 6, 'max_features': 3, 'n_estimators': 15}}, 'score': 0.8642857142857143, 'conf_matrix': array([[90, 10],
+       [ 9, 31]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=8, max_features=1,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=12,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1,
+       1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1,
+       0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0,
+       1, 0, 0, 0, 1, 0, 1, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.32402968937815524, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.8142857142857143, 'conf_matrix': array([[85, 12],
+       [14, 29]], dtype=int64), 'pickle_file': LogisticRegression(C=0.27681755290541615, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1,
+       1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1,
+       1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
+       0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0,
+       1, 0, 1, 0, 1, 0, 1, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 13, 'max_features': 2, 'n_estimators': 11}}, 'score': 0.8571428571428571, 'conf_matrix': array([[87, 17],
+       [ 3, 33]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=13, max_features=2,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=11,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+       1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0,
+       0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 0, 1, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.7388060400741512, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.8071428571428572, 'conf_matrix': array([[81, 18],
+       [ 9, 32]], dtype=int64), 'pickle_file': LogisticRegression(C=0.5663179306332855, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0,
+       1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1,
+       0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 0, 1, 0, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 3, 'max_features': 7, 'n_estimators': 18}}, 'score': 0.8472222222222222, 'conf_matrix': array([[90, 16],
+       [ 6, 32]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=3, max_features=7,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=18,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+       0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1,
+       1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0,
+       1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0,
+       0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 1.1060602887314528, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.8194444444444444, 'conf_matrix': array([[85, 15],
+       [11, 33]], dtype=int64), 'pickle_file': LogisticRegression(C=1.1060602887314528, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0,
+       0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1,
+       1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+       1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0,
+       1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1,
+       0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0,
+       0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 8, 'max_features': 5, 'n_estimators': 13}}, 'score': 0.875, 'conf_matrix': array([[95, 14],
+       [ 4, 31]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=8, max_features=5,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=13,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0,
+       1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0,
+       0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+       1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 68.93881076118305, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.8263888888888888, 'conf_matrix': array([[85, 11],
+       [14, 34]], dtype=int64), 'pickle_file': LogisticRegression(C=68.93881076118305, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0,
+       1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0,
+       0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0,
+       1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1,
+       1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with imputezero,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 6, 'max_features': 4, 'n_estimators': 8}}, 'score': 0.8709677419354839, 'conf_matrix': array([[94,  9],
+       [11, 41]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=6, max_features=4,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=8,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0,
+       1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1,
+       1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1,
+       0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0,
+       0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0,
+       1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0,
+       1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.572502815465443, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.8129032258064516, 'conf_matrix': array([[92, 16],
+       [13, 34]], dtype=int64), 'pickle_file': LogisticRegression(C=0.3024003814110007, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='sag', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0,
+       1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1,
+       0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1,
+       0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+       0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+       1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0,
+       1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with imputezero,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 5, 'max_features': 4, 'n_estimators': 14}}, 'score': 0.7935483870967742, 'conf_matrix': array([[94, 26],
+       [ 6, 29]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=5, max_features=4,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=14,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0,
+       1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0,
+       1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+       0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with imputezero,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 2.6851847764576413, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.7870967741935484, 'conf_matrix': array([[92, 25],
+       [ 8, 30]], dtype=int64), 'pickle_file': LogisticRegression(C=23.096137870719573, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+       1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0,
+       1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1,
+       1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0,
+       0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 10, 'max_features': 1, 'n_estimators': 16}}, 'score': 0.8516129032258064, 'conf_matrix': array([[95, 14],
+       [ 9, 37]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=8, max_features=1,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=15,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+       0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1,
+       0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0,
+       0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1,
+       1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1,
+       1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+       0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.08839942402396557, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.8129032258064516, 'conf_matrix': array([[94, 19],
+       [10, 32]], dtype=int64), 'pickle_file': LogisticRegression(C=0.08633268164649702, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0,
+       0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0,
+       1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0,
+       1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1,
+       0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1,
+       0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 4, 'max_features': 2, 'n_estimators': 7}}, 'score': 0.8071428571428572, 'conf_matrix': array([[82,  9],
+       [18, 31]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=4, max_features=2,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=7,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+       1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1,
+       1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1,
+       0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1,
+       0, 0, 1, 0, 1, 0, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.13059658047092124, 'penalty': 'l2', 'solver': 'sag'}}, 'score': 0.8071428571428572, 'conf_matrix': array([[88, 15],
+       [12, 25]], dtype=int64), 'pickle_file': LogisticRegression(C=0.12699370216498726, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='sag', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0,
+       0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0,
+       0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1,
+       0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1,
+       0, 0, 1, 0, 0, 0, 0, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 6, 'max_features': 4, 'n_estimators': 17}}, 'score': 0.8451612903225807, 'conf_matrix': array([[83, 13],
+       [11, 48]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=6, max_features=4,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=17,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0,
+       0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1,
+       1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0,
+       0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 1.6162366086415738, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.7806451612903226, 'conf_matrix': array([[79, 19],
+       [15, 42]], dtype=int64), 'pickle_file': LogisticRegression(C=43.2482553543789, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='liblinear', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0,
+       0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0,
+       0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1,
+       1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0,
+       0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0,
+       1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 5, 'max_features': 3, 'n_estimators': 3}}, 'score': 0.85, 'conf_matrix': array([[88, 16],
+       [ 5, 31]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=5, max_features=3,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=3,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0,
+       1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+       1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1,
+       0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1,
+       1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 0, 0, 0, 0, 1, 0, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.4625210830514644, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.7642857142857142, 'conf_matrix': array([[77, 17],
+       [16, 30]], dtype=int64), 'pickle_file': LogisticRegression(C=0.3639800534386642, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0,
+       1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+       1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+       0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 1, 0, 0, 0, 1, 0, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 11, 'max_features': 1, 'n_estimators': 19}}, 'score': 0.8357142857142857, 'conf_matrix': array([[89, 14],
+       [ 9, 28]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=11, max_features=1,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=19,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0,
+       0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+       0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0,
+       0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+       1, 0, 1, 1, 0, 0, 0, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.06431055002480249, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.7928571428571428, 'conf_matrix': array([[87, 18],
+       [11, 24]], dtype=int64), 'pickle_file': LogisticRegression(C=0.1390384882504391, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='sag', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0,
+       0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1,
+       0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0,
+       0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0,
+       1, 0, 1, 1, 0, 0, 0, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 13, 'max_features': 3, 'n_estimators': 18}}, 'score': 0.8571428571428571, 'conf_matrix': array([[86, 10],
+       [10, 34]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=13, max_features=3,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=18,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0,
+       1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1,
+       0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0,
+       1, 1, 0, 1, 1, 1, 0, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 4.829715123425421, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.7571428571428571, 'conf_matrix': array([[77, 15],
+       [19, 29]], dtype=int64), 'pickle_file': LogisticRegression(C=1668419.5792257932, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0,
+       1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1,
+       0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1,
+       1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+       1, 1, 0, 1, 1, 1, 1, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 15, 'max_features': 4, 'n_estimators': 19}}, 'score': 0.8541666666666666, 'conf_matrix': array([[81, 15],
+       [ 6, 42]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=15, max_features=4,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=19,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1,
+       0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1,
+       1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0,
+       0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1,
+       1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1,
+       1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0,
+       0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 1.4689214041806864, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.75, 'conf_matrix': array([[73, 22],
+       [14, 35]], dtype=int64), 'pickle_file': LogisticRegression(C=0.8755333326198143, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1,
+       0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1,
+       0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0,
+       0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1,
+       1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0,
+       0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 18, 'max_features': 3, 'n_estimators': 14}}, 'score': 0.8541666666666666, 'conf_matrix': array([[92, 13],
+       [ 8, 31]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=18, max_features=3,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=14,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1,
+       1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0,
+       0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.45854041413392393, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.75, 'conf_matrix': array([[82, 18],
+       [18, 26]], dtype=int64), 'pickle_file': LogisticRegression(C=89.19840350444775, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='liblinear', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1,
+       0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0,
+       0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0,
+       1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0,
+       1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 17, 'max_features': 3, 'n_estimators': 7}}, 'score': 0.8428571428571429, 'conf_matrix': array([[86, 16],
+       [ 6, 32]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=18, max_features=2,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=14,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1,
+       1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1,
+       0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0,
+       1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 1, 1, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.656156556615793, 'penalty': 'l2', 'solver': 'saga'}}, 'score': 0.7714285714285715, 'conf_matrix': array([[86, 26],
+       [ 6, 22]], dtype=int64), 'pickle_file': LogisticRegression(C=2125282.2330909884, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='saga', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1,
+       1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1,
+       0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0,
+       0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 1, 1, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 6, 'max_features': 3, 'n_estimators': 7}}, 'score': 0.7928571428571428, 'conf_matrix': array([[84, 16],
+       [13, 27]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=6, max_features=3,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=7,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 1, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 6.478270565284335, 'penalty': 'l2', 'solver': 'saga'}}, 'score': 0.7714285714285715, 'conf_matrix': array([[86, 21],
+       [11, 22]], dtype=int64), 'pickle_file': LogisticRegression(C=1.096164911625252, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='saga', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
+       0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 1, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 6, 'max_features': 2, 'n_estimators': 14}}, 'score': 0.8363636363636363, 'conf_matrix': array([[95, 20],
+       [ 7, 43]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=10, max_features=1,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=2,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0,
+       1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0,
+       1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0,
+       1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1,
+       0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1,
+       0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.6477440213661931, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.8242424242424242, 'conf_matrix': array([[93, 20],
+       [ 9, 43]], dtype=int64), 'pickle_file': LogisticRegression(C=211.31366863155682, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='liblinear', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0,
+       1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+       1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0,
+       1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1,
+       1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1,
+       0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 5, 'max_features': 1, 'n_estimators': 9}}, 'score': 0.8064516129032258, 'conf_matrix': array([[91, 20],
+       [10, 34]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=5, max_features=1,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=9,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0,
+       1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0,
+       1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0,
+       1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0,
+       1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.06089890624635348, 'penalty': 'l2', 'solver': 'sag'}}, 'score': 0.7806451612903226, 'conf_matrix': array([[97, 30],
+       [ 4, 24]], dtype=int64), 'pickle_file': LogisticRegression(C=0.022145160633250054, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='liblinear', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+       1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0,
+       1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0,
+       1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 6, 'max_features': 2, 'n_estimators': 3}}, 'score': 0.8194444444444444, 'conf_matrix': array([[85, 12],
+       [14, 33]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=6, max_features=2,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=3,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1,
+       1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1,
+       0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1,
+       0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 1.2508470958140614, 'penalty': 'l2', 'solver': 'sag'}}, 'score': 0.7777777777777778, 'conf_matrix': array([[79, 12],
+       [20, 33]], dtype=int64), 'pickle_file': LogisticRegression(C=1.313225865825919, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='sag', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1,
+       1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1,
+       0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1,
+       0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 8, 'max_features': 3, 'n_estimators': 12}}, 'score': 0.8333333333333334, 'conf_matrix': array([[82,  9],
+       [15, 38]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=8, max_features=3,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=12,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
+       1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1,
+       0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+       1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 1.1748697827226486, 'penalty': 'l2', 'solver': 'sag'}}, 'score': 0.7777777777777778, 'conf_matrix': array([[81, 16],
+       [16, 31]], dtype=int64), 'pickle_file': LogisticRegression(C=1.1748697827226486, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='sag', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0,
+       0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0,
+       0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0,
+       1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 8, 'max_features': 3, 'n_estimators': 19}}, 'score': 0.7785714285714286, 'conf_matrix': array([[82, 21],
+       [10, 27]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=5, max_features=1,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=8,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0,
+       0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0,
+       1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.8037938906082899, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.7642857142857142, 'conf_matrix': array([[75, 16],
+       [17, 32]], dtype=int64), 'pickle_file': LogisticRegression(C=0.21750243693129861, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='liblinear', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0,
+       0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0,
+       1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0,
+       1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0,
+       0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0,
+       0, 0, 1, 0, 1, 0, 0, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 5, 'max_features': 3, 'n_estimators': 11}}, 'score': 0.8071428571428572, 'conf_matrix': array([[81, 14],
+       [13, 32]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=4, max_features=3,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=15,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1,
+       0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0,
+       0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0,
+       0, 0, 0, 0, 0, 0, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.25589204393317194, 'penalty': 'l2', 'solver': 'saga'}}, 'score': 0.7928571428571428, 'conf_matrix': array([[88, 23],
+       [ 6, 23]], dtype=int64), 'pickle_file': LogisticRegression(C=0.8696834314807411, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='saga', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1,
+       0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0,
+       0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0,
+       0, 0, 0, 0, 0, 0, 0, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 7, 'max_features': 1, 'n_estimators': 18}}, 'score': 0.8451612903225807, 'conf_matrix': array([[96, 15],
+       [ 9, 35]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=7, max_features=1,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=18,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0,
+       0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0,
+       1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1,
+       1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0,
+       0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 2.1086558500091135, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.7870967741935484, 'conf_matrix': array([[89, 17],
+       [16, 33]], dtype=int64), 'pickle_file': LogisticRegression(C=14839.33237045672, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0,
+       0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0,
+       1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+       0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1,
+       1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1,
+       0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0,
+       0], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 15, 'max_features': 3, 'n_estimators': 8}}, 'score': 0.7777777777777778, 'conf_matrix': array([[78, 11],
+       [21, 34]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=15, max_features=3,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=8,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1,
+       1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1,
+       0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1,
+       0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0,
+       0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0,
+       1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 2.001919523190494, 'penalty': 'l2', 'solver': 'sag'}}, 'score': 0.7083333333333334, 'conf_matrix': array([[70, 13],
+       [29, 32]], dtype=int64), 'pickle_file': LogisticRegression(C=6.894578333453981, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='sag', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0,
+       0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1,
+       1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1,
+       0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1,
+       0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0,
+       0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0,
+       1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 13, 'max_features': 4, 'n_estimators': 12}}, 'score': 0.7857142857142857, 'conf_matrix': array([[80, 21],
+       [ 9, 30]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=19, max_features=1,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=14,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0,
+       0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1,
+       0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0,
+       1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1,
+       1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.11833312921383206, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.7428571428571429, 'conf_matrix': array([[78, 25],
+       [11, 26]], dtype=int64), 'pickle_file': LogisticRegression(C=0.11526424970091752, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0,
+       0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1,
+       0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0,
+       1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1,
+       1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 1], dtype=int64)}
+
+At Step: textProcessing 
+Sequence executed:
+  Text Processing with BOW,
+
+At Step: Modelling classification 
+Sequence executed:
+  Text Processing with BOW,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 18, 'max_features': 335, 'n_estimators': 13}}, 'score': 0.9333333333333333, 'conf_matrix': array([[136,  20,  16],
+       [ 12, 295,  12],
+       [  5,   2, 507]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=18, max_features=335,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=13,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array(['british', 'cajun_creole', 'cajun_creole', ..., 'cajun_creole',
+       'chinese', 'chinese'], dtype=object)}
+
+At Step: Modelling classification 
+Sequence executed:
+  Text Processing with BOW,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 3.207927032798479, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.9522388059701492, 'conf_matrix': array([[142,  13,  12],
+       [ 11, 301,   9],
+       [  0,   3, 514]], dtype=int64), 'pickle_file': LogisticRegression(C=3.568804154625533, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='liblinear', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array(['british', 'cajun_creole', 'cajun_creole', ..., 'cajun_creole',
+       'chinese', 'chinese'], dtype=object)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble._forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 14, 'max_features': 1, 'n_estimators': 17}}, 'score': 0.8181818181818182, 'conf_matrix': array([[78, 13],
+       [17, 57]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=2, max_features=3,
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=14,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False), 'y_pred': array([0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1,
+       1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0,
+       0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+       1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1,
+       0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1,
+       1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0,
+       1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0,
+       0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 0.07418116181919353, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.8242424242424242, 'conf_matrix': array([[79, 13],
+       [16, 57]], dtype=int64), 'pickle_file': LogisticRegression(C=0.057128729150974306, class_weight=None, dual=False,
+                   fit_intercept=True, intercept_scaling=1, l1_ratio=None,
+                   max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='newton-cg', tol=0.0001, verbose=0,
+                   warm_start=False), 'y_pred': array([0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1,
+       1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0,
+       0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+       1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1,
+       0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1,
+       1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0,
+       1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0,
+       0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1], dtype=int64)}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 19, 'max_features': 3, 'n_estimators': 14}}, 'score': 0.8181818181818182, 'conf_matrix': array([[85, 23],
+       [ 7, 50]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=19, max_features=3, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=14, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0,
+       0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0,
+       0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+       1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1,
+       0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+       1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1,
+       1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+       1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0], dtype=int64)}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 0.45736414663848546, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.8, 'conf_matrix': array([[80, 21],
+       [12, 52]], dtype=int64), 'pickle_file': LogisticRegression(C=1.8870234127010779, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0,
+       0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1,
+       1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1,
+       0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1,
+       1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1,
+       1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+       1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0], dtype=int64)}
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: textProcessing 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: textProcessing 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,
+

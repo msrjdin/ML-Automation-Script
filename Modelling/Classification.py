@@ -24,7 +24,7 @@ class Classification:
         # self.test_score = {}
         self.final_results={}
         self.final_results1={}
-
+        self.max_feat = len(self.dfs.columns)
         self.execute()
 
     #Required to be passed in fmin of hyperopt
@@ -45,7 +45,7 @@ class Classification:
         clf.fit(self.x_train, self.y_train)
         y_pred_train = clf.predict(self.x_train)
         y_pred_test = clf.predict(self.x_test)
-        loss = log_loss(self.y_train, y_pred_train)
+        #loss = log_loss(self.y_train, y_pred_train)
         score = self.metric(y_pred_test, self.y_test)
         # print("Test Score:", self.metric(y_pred_test, self.y_test))
         # print("Train Score:", self.metric(y_pred_train, self.y_train))
@@ -71,7 +71,7 @@ class Classification:
         clf.fit(self.x_train, self.y_train)
         y_pred_train = clf.predict(self.x_train)
         y_pred_test = clf.predict(self.x_test)
-        loss = log_loss(self.y_train, y_pred_train)
+        #loss = log_loss(self.y_train, y_pred_train)
         score = self.metric(y_pred_test, self.y_test)
         # print("Test Score:", self.metric(y_pred_test, self.y_test))
         # print("Train Score:", self.metric(y_pred_train, self.y_train))
@@ -83,7 +83,7 @@ class Classification:
         self.space = hp.choice('classifier', [
                                             {'model': RandomForestClassifier,
                                             'param': {'max_depth': hp.choice('max_depth', range(1, 20)),
-                                            'max_features': hp.choice('max_features', range(1, 5)),
+                                            'max_features': hp.choice('max_features', range(1, self.max_feat)),
                                             'n_estimators': hp.choice('n_estimators', range(1, 20)),
                                              'criterion': hp.choice('criterion', ["gini", "entropy"])
                                                     }

@@ -126,9 +126,7 @@ function goBack() {
       </div>
 </div>
 
-
-
-{% for i in data %}
+{% for i in data['result'] %}
 <br><br>
 <div style="padding-left:50px;">
 <table style="width:1000px",cellspacing="1" cellpadding="1">
@@ -142,9 +140,36 @@ function goBack() {
 </div>
 {% endfor %}
 
-<a href="../output/0.pkl" download>
-  <img src="/images/myw3schoolsimage.jpg" alt="download" width="104" height="142">
+
+
+{%if data['columns']|length > 0 %}
+{% for result in data['columns']%}
+<img src="/static/{{result}}.png" alt="{{result}}" align style="width:500px;height:400px">
+{% endfor %}
+{% endif %}
+
+
+<h3>Download pickle files</h3>
+{%if data['result']|length > 0 %}
+{% set num_files = data['result']|length %}
+{% for i in range(0,num_files) %}
+<a href="/static/{{i}}.pkl" download>
+  <img src="/static/download.png" alt="download" width="20" height="25">
 </a>
+{% endfor %}
+{% endif %}
+
+
+<h3>Download test files</h3>
+{%if data['result']|length > 0 %}
+{% set num_files = data['result']|length %}
+{% for i in range(0,num_files) %}
+<a href="/static/{{i}}.csv" download>
+  <img src="/static/download.png" alt="download" width="20" height="25">
+</a>
+{% endfor %}
+{% endif %}
+
 
 
 </body>

@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('Agg')
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
@@ -8,7 +11,7 @@ from nltk.stem.snowball import SnowballStemmer
 import collections
 from wordcloud import WordCloud
 import seaborn as sns
-import matplotlib.pyplot as plt
+
 
 # nlp_data ='train_nlp.json'
 
@@ -29,9 +32,9 @@ class TextProcessing:
         self.top_tokens = pd.DataFrame(columns=['word', 'freq', 'column'])
         for self.col in self.txtCols:
             if method == 'BOW':
-                self.cv = CountVectorizer(stop_words=stopwords.words('english'))
+                self.cv = CountVectorizer()
             elif method == 'Tfidf':
-                self.cv = TfidfVectorizer(stop_words=stopwords.words('english'))
+                self.cv = TfidfVectorizer()
 
             self.corpus_build(self.col, self.cv, self.preprossessing_steps, self.top_tokens)
 
@@ -61,8 +64,16 @@ class TextProcessing:
             cleaned_text = self.lemmetizer(cleaned_text)
 
         # stemming
-        if "stemming" in self.preprossessing_steps:
+        if "stem" in self.preprossessing_steps:
             cleaned_text = self.stemmer(cleaned_text)
+
+        # remove digits
+        if "remove_numericals" in self.preprossessing_steps:
+            cleaned_text = self.remove_digits(cleaned_text)
+
+        # remove stop qords
+        if "remove_stop_words" in self.preprossessing_steps:
+            cleaned_text = self.remove_stop_words(cleaned_text)
 
         X = self.matrix_build(self.cv, cleaned_text)
 
@@ -94,6 +105,13 @@ class TextProcessing:
             removed_digits.append(re.sub('\d+', '', row))
         return removed_digits
 
+    def remove_stop_words(self, cleaned_text):
+        remove_stop_words = []
+        for row in cleaned_text:
+            tokens = [word for word in row.split(" ") if not word in stopwords.words('english')]
+            remove_stop_words.append((" ").join(tokens))
+        return remove_stop_words
+
     def matrix_build(self, cv, cleaned_text):
         #         cv.fit(cleaned_text)
         X = cv.fit_transform(cleaned_text)
@@ -113,17 +131,14 @@ class TextProcessing:
     def word_cloud(self, cleaned_text, bgcolor, title,text_col):
         data = [word for word in cleaned_text if not word.isnumeric()]
         # plt.clf()
-        plt.figure(figsize=(100, 100))
+        #plt.figure(figsize=(100, 100))
         wc = WordCloud(background_color=bgcolor, max_words=100, max_font_size=50)
         wc.generate(' '.join(data))
-        plt.show()
-        plt.savefig('C:\\Users\\SatyaSindhuMolleti\\Desktop\\'+text_col+'.png', dpi=400,
-                       bbox_inches='tight')
+        wc.to_file('static\\'+text_col+'.png')
 
     def return_result(self):
         self.df.drop('text_manipulated', axis=1, inplace=True)
         self.df.drop(self.txtCols, axis=1, inplace=True)
         return self.df
 
-# tp = TextProcessing(data, y, colTypes, "BOW")
-# print(tp.return_dfs().head())
+#tp = TextProcessing(data, colTypes, "BOW",['lemmetize','stem','remove_numericals','remove_stop_words'])

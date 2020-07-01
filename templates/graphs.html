@@ -119,22 +119,30 @@ font-weight: bold;
       </div>
 </div>
 
-<div>
-  <img src="{{url_for('static', filename='corr_pic1.png')}}" align style="width:500px;height:400px">
+<div style ="padding-top:20px;padding-left:30px" >
+    <img src="{{url_for('static', filename='corr_pic1.png')}}" align style="width:500px;height:400px">
 </div>
 
-<div>
+<div style ="padding-top:20px;padding-left:30px" >
   <img src="{{url_for('static', filename='target_distribution.png')}}" align style="width:500px;height:400px">
 </div>
 
 
-<div>
-{% for result in data%}
-<script>var tgraph =  {{ result }} + ".png" </script>
-<img src="../static/"+ tgraph align style="width:500px;height:400px">
+<div style ="padding-top:20px;padding-left:30px" >
+{% for result in data['features'] %}
+<img src="/static/{{result}}.png" alt="{{result}}" align style="width:500px;height:400px">
 {% endfor %}
 </div>
 
+
+<div style ="padding-top:20px;padding-left:30px" >
+  <b>Columns:</b>
+  {% for result in data['columns'] %}
+              <input type="checkbox" id={{ result }} name='columns' value={{result}}><label for="columns">{{ result }}</label>
+  {% endfor %}
+  </div>
+
+  
 <div style="padding-top:20px;padding-left:30px;width:400px;float: right;">
 <p>Feature Reduction:</p>
 <div>
@@ -143,7 +151,7 @@ font-weight: bold;
 </div>	
 </div>
 
-<div style="padding-top:20px;padding-left:50px;float: left";>
+<div style="padding-top:20px;padding-left:50px;width:400px;float: left";>
 <p>Null Handling:</p>
 <div>
   <input type="checkbox" id="imputezero" name="nullhandle" value="imputezero">
@@ -187,8 +195,7 @@ font-weight: bold;
 </div>
 </div>
 
-
-<div style="padding-top:30px;padding-left:50px">
+<div style="padding-top:20px;padding-left:50px;width:400px;float: left";>
 <p>Outlier Handling:</p>
 <div>
   <input type="checkbox" id="remove" name="outlier" value="removing">
@@ -206,21 +213,20 @@ font-weight: bold;
 </div>
 </div>
 
-
-<div style="padding-top:10px;padding-left:30px;width:400px;float: right;">
-<p>Vectorizer:</p>
+<div style="padding-top:20px;padding-left:50px;;width:400px;float:center;">
+<p>Modelling Metric:</p>
 <div>
-  <input type="checkbox" id="BOW" name="vector" value="BOW">
-  <label for="BOW">BOW</label>
+  <input type="checkbox" id="accuracy" name="metric" value="accuracy_score">
+  <label for="accuracy">accuracy score</label>
+  </div>
+  
+  <div>
+    <input type="checkbox" id="f1_score" name="metric" value="f1_score">
+    <label for="f1_score">f1_score</label>
+</div>
 </div>
 
-<div>
-  <input type="checkbox" id="Tfidf" name="vector" value="Tfidf">
-  <label for="Tfidf">Tfidf</label>
-</div>
-</div>
-
-<div style="padding-top:10px;padding-left:30px;width:400px;float: right;">
+<div style="padding-top:20px;padding-left:50px;width:400px;float: left";>
   <p>Text processing:</p>
   <div>
     <input type="checkbox" id="lemmetize" name="textp" value="lemmetize">
@@ -236,10 +242,26 @@ font-weight: bold;
     <input type="checkbox" id="remove_numericals" name="textp" value="remove_numericals">
     <label for="remove_numericals">Remove Numericals</label>
   </div>
-
+  <div>
+    <input type="checkbox" id="remove_stop_words" name="textp" value="remove_stop_words">
+    <label for="remove_stop_words">Remove Stop Words</label>
+  </div>
   </div>
 
-    <div style="padding-top:20px;padding-left:180px">
+<div style="padding-top:20px;padding-left:30px;width:400px;float: right;">  
+ <p>Vectorizer:</p>
+<div>
+  <input type="checkbox" id="BOW" name="vector" value="BOW">
+  <label for="BOW">BOW</label>
+</div>
+
+<div>
+  <input type="checkbox" id="Tfidf" name="vector" value="Tfidf">
+  <label for="Tfidf">Tfidf</label>
+</div>
+</div>
+
+<div style="padding-top:20px;padding-left:180px">
       <input type="submit" class="button" value = "NextPage">
     </div>
   </form>

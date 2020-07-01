@@ -54,7 +54,8 @@ class NullHandling:
         if strategy =='imputezero':
             df_temp[self.colTypes['Numeric']]=df_temp[self.colTypes['Numeric']].fillna(fill_value)
         elif strategy == 'mean':
-            df_temp=self.continuous_impute_mean()
+            if len(self.colTypes['Numeric']) !=0:
+                df_temp=self.continuous_impute_mean()
         elif strategy == 'knn':
             df_temp=self.continuous_impute_knn()
             

@@ -13,14 +13,9 @@ class ColumnTypeIdentification:
         
         #saving the final col type (Categorical, Text or Numeric)
         self.detecting_col_types()
-<<<<<<< HEAD
         self.target_type= None
 #        self.col_types_confirmation()
-=======
-        self.target_type=None
 
-        self.col_types_confirmation()
->>>>>>> ad6f30ce68088f7298abf7350447aa4af06630df
 
 
     
@@ -55,13 +50,8 @@ class ColumnTypeIdentification:
         columnTypesConfirmation=[]
         print('Please Confirm/Map the columns with their type:\n')
         for col in self.dtypes.keys():
-<<<<<<< HEAD
             colView=self.df[col].copy()
             colView=colView[colView.notna()].head(3).values
-=======
-            colView=self.df[[col]].copy()
-            colView=colView[colView.col.isnotnull()].head(3).values
->>>>>>> ad6f30ce68088f7298abf7350447aa4af06630df
             columnTypesConfirmation.append(
                 inquirer.List(col, message=str(col) + ':\nValues: {}'.format(colView),
                                                          choices=['Text', 'Categorical', 'Numeric', 'Identity'],
