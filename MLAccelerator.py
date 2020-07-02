@@ -1,7 +1,8 @@
 #python flow.py "data.csv" "target_col"
-
+from time import ctime
 import sys
 import pandas as pd
+import numpy as np
 from EDA.OutlierHandling import OutlierHandling
 from EDA.Encoding import Encoding
 from EDA.NullHandling import NullHandling
@@ -21,6 +22,8 @@ from TextProcessing.TextProcessing import TextProcessing
 import pickle
 import matplotlib
 matplotlib.use('Agg')
+
+
 
 class flowThread(threading.Thread):
     def __init__(self, threadId, func, params, endFlag=True):
@@ -219,13 +222,13 @@ class MLAccelerator:
                 pkl = dict_['pickle_file']
                 y_pred_test = dict_['y_pred_test']
                 residual=dict_['residual']
-                pkl_filename = '/static/' + str(i) + '.pkl'
+                pkl_filename = 'static/' + str(i) + '.pkl'
                 with open(pkl_filename, 'wb') as file:
                     pickle.dump(pkl, file)
                 y_pred_test = pd.DataFrame(y_pred_test)
-                file_name = '/static/' + str(i) + '.csv'
+                file_name = 'static/' + str(i) + '.csv'
                 y_pred_test.to_csv(file_name)
-                residual.savefig('/static/'+str(i)+'residual.png')
+                residual.savefig('static/'+str(i)+'residual.png')
 
             l_final_1 = []
             for i in range(len(l_final)):
@@ -362,7 +365,10 @@ class MLAccelerator:
         return en.return_result()
 
     def textProcessingStep(self, df, method, processing_steps):
+        print("text processing begins")
+        print(ctime())
         txtHandling=TextProcessing(df, self.colTypes, method, processing_steps)
+        print(ctime())
         return txtHandling.return_result()
 
     def classificationStep(self, df, y, colTypes, metric):
@@ -372,3 +378,8 @@ class MLAccelerator:
     def regressionStep(self, df, y, colTypes, metric):
         regression=Regression(df, y, colTypes, metric)
         return regression.return_results()
+
+    def mean_absolute_percentage_error(y_true, y_pred):
+        y_true, y_pred = np.array(y_true), np.array(y_pred)
+        return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+

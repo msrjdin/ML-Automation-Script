@@ -1,3 +1,4 @@
+from time import ctime
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
@@ -32,13 +33,20 @@ class TextProcessing:
         self.top_tokens = pd.DataFrame(columns=['word', 'freq', 'column'])
         for self.col in self.txtCols:
             if method == 'BOW':
+                print("bow begins")
+                print(ctime())
                 self.cv = CountVectorizer()
+                print("bow ends")
+                print(ctime())
             elif method == 'Tfidf':
                 self.cv = TfidfVectorizer()
 
+            print("corpus build begins begins")
+            print(ctime())
             self.corpus_build(self.col, self.cv, self.preprossessing_steps, self.top_tokens)
+            print(ctime())
+            print("corpus ends")
 
-        print(self.top_tokens)
 
     def corpus_build(self, col, cv, preprossessing_steps, top_tokens):
         self.cv = cv
@@ -49,7 +57,7 @@ class TextProcessing:
         self.df['text_manipulated'] = self.df[text_col]
         for row in self.df['text_manipulated']:
             # Remove special chars
-            text_manipulated = re.sub(r'\W', ' ', row)
+            text_manipulated = re.sub(r'\W', ' ', str(row))
 
             # Replace multiple spaces with single space
             text_manipulated = re.sub(r'\s+', ' ', text_manipulated, flags=re.I)
@@ -114,11 +122,15 @@ class TextProcessing:
 
     def matrix_build(self, cv, cleaned_text):
         #         cv.fit(cleaned_text)
+        print("matrix build starts")
+        print(ctime())
         X = cv.fit_transform(cleaned_text)
         X_df = pd.DataFrame(X.todense())
         df1 = self.df
         df1 = df1.merge(X_df, left_index=True, right_index=True)
         self.df = df1
+        print(ctime())
+        print("matric builds ends")
         return X
 
     def top_features(self, cv, text_col, X):
@@ -129,12 +141,16 @@ class TextProcessing:
         return word_counter_df
 
     def word_cloud(self, cleaned_text, bgcolor, title,text_col):
+        print("building wc graphs")
+        print(ctime())
         data = [word for word in cleaned_text if not word.isnumeric()]
         # plt.clf()
         #plt.figure(figsize=(100, 100))
         wc = WordCloud(background_color=bgcolor, max_words=100, max_font_size=50)
         wc.generate(' '.join(data))
         wc.to_file('static\\'+text_col+'.png')
+        print(ctime())
+        print("end wc graphs")
 
     def return_result(self):
         self.df.drop('text_manipulated', axis=1, inplace=True)

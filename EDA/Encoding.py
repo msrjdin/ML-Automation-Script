@@ -42,6 +42,7 @@ class Encoding:
     # encoding the categorical target column
     def target_encode(self, t_df):
         if self.y not in self.colTypes['Numeric']:
+            t_df[self.y] = t_df[self.y].astype(str)
             t_df[self.y] = LabelEncoder.fit_transform(t_df, y=t_df[self.y])
         return t_df
 

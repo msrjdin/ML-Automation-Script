@@ -1,4 +1,7 @@
-
+import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib
+matplotlib.use('Agg')
 from functools import partial
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
@@ -11,13 +14,10 @@ import copy
 import pandas as pd
 import numpy as np
 from sklearn.metrics import accuracy_score, f1_score,mean_squared_error
-import matplotlib.pyplot as plt
-import matplotlib
-matplotlib.use('Agg')
 from sklearn.metrics import (confusion_matrix, precision_recall_curve, auc,
                              roc_curve, recall_score, classification_report, f1_score,
                              precision_recall_fscore_support)
-import seaborn as sns
+
 
 # Parameters
 # List of dfs, targetCol and the metric under consideration
@@ -35,6 +35,17 @@ class Regression:
         self.max_feat = len(self.dfs.columns)
         self.execute()
 
+    def percentage_error(self,actual, predicted):
+        res = np.empty(actual.shape)
+        for j in range(actual.shape[0]):
+            if actual[j] != 0:
+                res[j] = (actual[j] - predicted[j]) / actual[j]
+            else:
+                res[j] = predicted[j] / np.mean(actual)
+        return res
+
+    def mean_absolute_percentage_error(self,y_true, y_pred):
+        return np.mean(np.abs(percentage_error(np.asarray(y_true), np.asarray(y_pred)))) * 100
     # Required to be passed in fmin of hyperopt
     def objective_func(self, args):
         clf = None
@@ -48,10 +59,11 @@ class Regression:
         clf.fit(self.x_train, self.y_train)
         y_pred_train = clf.predict(self.x_train)
         y_pred_test = clf.predict(self.x_test)
-        mae = metrics.mean_absolute_error(self.y_train, y_pred_train)
-        mse = metrics.mean_squared_error(self.y_train, y_pred_train)
-        rmse = np.sqrt(mse)
-        score = metrics.mean_squared_error(y_pred_test, self.y_test)
+        # mae = metrics.mean_absolute_error(self.y_train, y_pred_train)
+        # mse = metrics.mean_squared_error(self.y_train, y_pred_train)
+        # rmse = np.sqrt(mse)
+        # score = metrics.mean_squared_error(y_pred_test, self.y_test)
+        score = self.metric(y_pred_test, self.y_test)
         return {'loss': score,'status': STATUS_OK,'other_stuff':{'y_pred_test': y_pred_test, 'clf': clf}}
 
     def objective_func_1(self, args):
@@ -64,10 +76,11 @@ class Regression:
         clf.fit(self.x_train, self.y_train)
         y_pred_train = clf.predict(self.x_train)
         y_pred_test = clf.predict(self.x_test)
-        mae = metrics.mean_absolute_error(self.y_train, y_pred_train)
-        mse = metrics.mean_squared_error(self.y_train, y_pred_train)
-        rmse = np.sqrt(mse)
-        score = metrics.mean_squared_error(y_pred_test, self.y_test)
+        # mae = metrics.mean_absolute_error(self.y_train, y_pred_train)
+        # mse = metrics.mean_squared_error(self.y_train, y_pred_train)
+        # rmse = np.sqrt(mse)
+        # score = metrics.mean_squared_error(y_pred_test, self.y_test)
+        score = self.metric(y_pred_test, self.y_test)
         return {'loss': score,'status': STATUS_OK,'other_stuff':{'y_pred_test': y_pred_test, 'clf': clf}}
 
     def execute(self):
@@ -114,11 +127,12 @@ class Regression:
         merge_df['y_test'] = list(self.y_test.copy())
 
 
-        plt.clf()
-        sns.residplot(y_pred_test, self.y_test)
+        #plt.clf()
+        fig = sns.residplot(y_pred_test, self.y_test)
+        figure = fig.get_figure()
         #fig = sm.get_figure()
-        plt.show()
-        fig = plt
+        #plt.show()
+        #fig = plt
         #fig=plt.savefig('C:/Users/SindhuKarnati/Desktop/MLAccelarator/residual_file/out3.png')
 
 
@@ -126,7 +140,7 @@ class Regression:
         self.final_results['Hyperparameter'] = hyperparam
         self.final_results[score_key] = score
         self.final_results['Data'] = self.dfs
-        self.final_results['residual'] = fig
+        self.final_results['residual'] = figure
         self.final_results['pickle_file'] = clf
         self.final_results['y_pred'] = y_pred_test
 
@@ -148,17 +162,18 @@ class Regression:
         merge_df1=self.x_test.copy()
         merge_df1['y_test'] = list(self.y_test.copy())
 
-        plt.clf()
-        sns.residplot(y_pred_test, self.y_test)
+        #plt.clf()
+        fig1 = sns.residplot(y_pred_test, self.y_test)
+        figure1 = fig1.get_figure()
         #fig = sm.get_figure()
-        plt.show()
-        fig1 = plt
+        #plt.show()
+        #fig1 = plt
         #fig1=plt.savefig('C:/Users/SindhuKarnati/Desktop/MLAccelarator/residual_file/out3.png')
 
         self.final_results1['Hyperparameter'] = hyperparam1
         self.final_results1[score_key] = score1
         self.final_results1['Data'] = self.dfs
-        self.final_results1['residual'] = fig1
+        self.final_results1['residual'] = figure1
         self.final_results1['pickle_file'] = clf1
         self.final_results1['y_pred'] = y_pred_test1
 

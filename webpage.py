@@ -8,10 +8,22 @@ import seaborn as sn
 from MLAccelerator import MLAccelerator
 from flask import Flask, render_template, request, redirect, url_for
 import pandas as pd
+import numpy as np
 
 app = Flask(__name__)
 MLAcc = MLAccelerator()
 
+def percentage_error(actual, predicted):
+    res = np.empty(actual.shape)
+    for j in range(actual.shape[0]):
+        if actual[j] != 0:
+            res[j] = (actual[j] - predicted[j]) / actual[j]
+        else:
+            res[j] = predicted[j] / np.mean(actual)
+    return res
+
+def mean_absolute_percentage_error(y_true, y_pred):
+    return np.mean(np.abs(percentage_error(np.asarray(y_true), np.asarray(y_pred)))) * 100
 # render webpage
 @app.route('/')
 def index():
@@ -49,7 +61,7 @@ def submit():
         flag_list ={}
         final_list={}
         cols_list = []
-        metric_dict={'accuracy_score':accuracy_score,'f1_score':f1_score,'mean_squared_error':mean_squared_error}
+        metric_dict={'accuracy_score':accuracy_score,'f1_score':f1_score,'mse':mean_squared_error,'mape':mean_absolute_percentage_error}
         flag_list['outlier']=request.form.getlist('outlier')
         flag_list['nullhandle']=request.form.getlist('nullhandle')
         flag_list['feature']=request.form.getlist('feature')
