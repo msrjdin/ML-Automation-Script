@@ -1,7 +1,7 @@
-import matplotlib.pyplot as plt
-import seaborn as sns
-import matplotlib
-matplotlib.use('Agg')
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import matplotlib
+# matplotlib.use('Agg')
 import pandas as pd 
 import numpy as np
 from scipy import stats
@@ -21,6 +21,10 @@ class TargetGraphs:
         self.plot_target_graphs()
 
     def plot_target_graphs(self):
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        import matplotlib
+        matplotlib.use('Agg')
         if self.y:
             numeric_columns = self.colTypes['Numeric'].copy()
             print(numeric_columns)
@@ -29,6 +33,7 @@ class TargetGraphs:
             if len(numeric_columns) >= 2:
                 numeric_columns.extend(self.colTypes['Categorical'])
                 corrMatrix = self.df[numeric_columns].corr()
+                # os.remove('static\\corr_pic.png')
                 fig = sns.heatmap(corrMatrix, annot=True, cmap='coolwarm', linewidth=2)
                 figure = fig.get_figure()
                 figure.savefig('static\\corr_pic.png',dpi=500)
@@ -41,11 +46,11 @@ class TargetGraphs:
                     if feature in self.colTypes['Categorical'] and self.target_type == 'Categorical':
                         fig = sns.catplot(x=self.y, y=feature,kind="swarm", data=self.df)
                         fig.savefig(
-                            'static\\{}.png'.format(
+                            'static\\1{}.png'.format(
                                 feature))
                         fig = sns.catplot(x=self.y, y=feature,kind="violin", split=True,data=self.df)
                         fig.savefig(
-                            'static\\1{}.png'.format(
+                            'static\\{}.png'.format(
                                 feature))
                     elif feature in (self.colTypes['Numeric'] or self.colTypes['Identity']) and self.target_type == 'Categorical':
                         fig = sns.swarmplot(x=self.y, y=feature, data=self.df)
@@ -60,7 +65,7 @@ class TargetGraphs:
                         fig.savefig(
                             'static\\{}.png'.format(
                                 feature))
-
+        # os.remove('static\\target_distribution.png')
         if self.target_type in ['Categorical']:
             fig = sns.catplot(x=self.y, kind="count", palette="RdBu", data= self.df)
             fig.savefig('static\\target_distribution.png')

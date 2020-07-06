@@ -32,3 +32,39 @@ Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with
 {'Hyperparameter': {'model': <class 'sklearn.linear_model._logistic.LogisticRegression'>, 'param': {'C': 43.1042362616893, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.7659574468085105, 'conf_matrix': array([[92, 19],
        [14, 54]], dtype=int64)}
 
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+

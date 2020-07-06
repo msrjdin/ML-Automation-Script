@@ -240,3 +240,39 @@ Null Handling with mean,  Feature Reduction with pearson,  Outlier Handling with
         527.62154206, 1301.17397159,  754.7837691 ,  304.46217364,
         786.80663811, 2227.83574359, 1376.22757084])}
 
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+

@@ -3537,3 +3537,1447 @@ Null Handling with mean,  Outlier Handling with removing,Building Regression Mod
         473.31180611, 1612.7422101 ,  288.24189852, 1550.71878161,
        1109.55213704, 1526.70971252,  715.40325278])}
 
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 16, 'max_features': 6, 'n_estimators': 11}}, 'score': 0.8055555555555556, 'conf_matrix': array([[85, 17],
+       [11, 31]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=16, max_features=6, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=15, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+       1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1,
+       1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1,
+       0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+       1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0])}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 3.9072079188596525, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.7361111111111112, 'conf_matrix': array([[77, 19],
+       [19, 29]], dtype=int64), 'pickle_file': LogisticRegression(C=3.9072079188596525, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='lbfgs', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0,
+       1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1,
+       1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1,
+       1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0,
+       0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0,
+       1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0])}
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: textProcessing 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,
+
+At Step: Modelling classification 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 19, 'max_features': 102, 'n_estimators': 18}}, 'score': 0.9323383084577115, 'conf_matrix': array([[137,  16,  16],
+       [ 10, 282,   8],
+       [  9,   9, 518]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=19, max_features=102, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=18, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([1, 2, 0, ..., 2, 0, 2])}
+
+At Step: Modelling classification 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 0.43118727730463, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.9522388059701492, 'conf_matrix': array([[142,  16,   6],
+       [ 10, 286,   7],
+       [  4,   5, 529]], dtype=int64), 'pickle_file': LogisticRegression(C=0.3697815358218506, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='newton-cg', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([1, 2, 0, ..., 2, 0, 2])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestRegressor'>, 'param': {'criterion': 'mae', 'max_depth': 6, 'max_features': 4, 'n_estimators': 10}}, 'score': 13.780285960976313, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=6,
+           max_features=4, max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=10, n_jobs=None, oob_score=False,
+           random_state=None, verbose=0, warm_start=False), 'y_pred': array([3.57276852, 0.97186987, 1.10358855, 2.40727352, 1.8105798 ,
+       1.57465359, 0.95853371, 4.38802132, 4.00708238, 1.02637887,
+       2.24575977, 4.37911085, 0.90990806, 1.81699959, 2.96217316,
+       1.33785991, 3.42846649, 3.84085738, 0.48439172, 2.21917478,
+       1.77404467, 1.56385475, 1.24202995, 2.664784  , 2.54490173,
+       4.09062094, 3.39504304, 1.11050758, 2.79127652, 3.78673064,
+       3.39504304, 0.85182482, 4.04731956, 3.01252453, 1.75960734,
+       2.20725913, 1.11589227, 2.3690394 , 2.06720461, 7.78197917,
+       3.78496428, 1.948378  , 2.22030417, 2.80623477, 4.82837502,
+       1.19939793, 2.30724753, 3.27703105, 1.90508621, 3.70888768,
+       3.85399659, 1.96070248, 2.12134273, 2.16568671, 2.5179639 ,
+       3.37484188, 2.8701508 , 1.83628331, 1.55576455, 1.10531217,
+       1.51115247, 2.06438994, 1.26278822, 0.74521526, 2.23340998,
+       2.10763057, 4.39741369, 3.37430092, 3.55603532, 2.1115955 ,
+       6.80820733, 1.79934087, 0.99875109, 4.1842796 , 3.21302406,
+       6.46811474, 4.26555096, 1.87006465, 1.95504602])}
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.base.LinearRegression'>, 'param': {'normalize': 'False'}}, 'score': 16.844885259934898, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None,
+         normalize='False'), 'y_pred': array([ 1.68362003,  2.66584861,  2.62586962,  1.58735442,  3.00229652,
+        1.65352404,  0.65155062,  2.66389099,  2.05815951,  1.90252305,
+        2.62989658,  2.35454074,  2.60200743,  1.87788929,  1.84534808,
+        0.44743561,  2.52622775,  1.7317954 ,  1.25431651,  3.13905046,
+        2.53366097,  1.44924426,  1.69341392,  3.15348912,  1.57949693,
+       -0.01007998,  1.70578249,  1.70940413,  2.88194886,  2.80079695,
+        1.70578249,  2.37314768,  1.83846671,  2.07532304,  1.79277685,
+        2.44881021,  2.90179054,  3.12457981,  2.35265037,  3.50661931,
+        2.87633888,  3.48380457,  2.59784557,  2.23018293,  2.40870555,
+        1.11036379,  2.39392731,  2.95219557,  1.77431335,  2.60562165,
+        1.67254077,  3.426766  ,  2.43620571,  2.55414275,  2.82356216,
+        1.22463986,  3.2996872 ,  1.91031381,  2.49032622,  1.71972075,
+        1.49280858,  2.31893818,  1.92890635,  1.52272871,  3.11949408,
+        1.51795395,  2.02699126,  3.20413353,  2.9343063 ,  1.3008862 ,
+        3.75993906,  2.31858753,  1.86583074,  1.84146141,  2.89772526,
+        1.36280953,  3.97167108,  2.7937757 ,  3.05501777])}
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: textProcessing 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,
+
+At Step: Modelling classification 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 18, 'max_features': 115, 'n_estimators': 15}}, 'score': 0.9395348837209302, 'conf_matrix': array([[76,  7,  5,  0],
+       [ 0, 44,  1,  0],
+       [ 0,  0, 74,  0],
+       [ 0,  0,  0,  8]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=18, max_features=115, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=15, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([0, 1, 0, 3, 0, 0, 0, 0, 3, 2, 0, 0, 2, 0, 2, 1, 3, 3, 2, 2, 0, 0,
+       0, 2, 2, 1, 2, 2, 2, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 3, 1, 0, 0, 1,
+       0, 0, 2, 0, 2, 1, 0, 1, 2, 2, 1, 2, 0, 0, 1, 0, 2, 0, 2, 1, 0, 2,
+       0, 0, 2, 2, 2, 0, 2, 1, 1, 2, 2, 3, 0, 0, 0, 0, 2, 2, 1, 2, 2, 0,
+       0, 1, 2, 1, 0, 0, 2, 0, 2, 2, 2, 2, 2, 0, 2, 1, 2, 2, 0, 0, 0, 0,
+       0, 0, 0, 2, 2, 1, 2, 1, 2, 0, 0, 1, 2, 0, 2, 2, 0, 1, 0, 0, 0, 1,
+       2, 1, 1, 1, 0, 0, 0, 2, 2, 0, 0, 1, 2, 0, 1, 1, 2, 0, 1, 1, 1, 2,
+       0, 2, 0, 0, 0, 1, 0, 3, 0, 1, 0, 0, 1, 0, 3, 0, 1, 2, 0, 2, 1, 2,
+       0, 2, 0, 0, 2, 0, 1, 0, 2, 1, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2,
+       2, 2, 2, 2, 0, 1, 0, 1, 2, 0, 2, 0, 0, 0, 1, 2, 1])}
+
+At Step: Modelling classification 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 4.129873887998049, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.9534883720930233, 'conf_matrix': array([[74,  5,  2,  0],
+       [ 2, 45,  0,  0],
+       [ 0,  1, 78,  0],
+       [ 0,  0,  0,  8]], dtype=int64), 'pickle_file': LogisticRegression(C=6.099432351418684, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([0, 1, 0, 3, 0, 2, 0, 0, 3, 2, 0, 0, 2, 0, 2, 1, 3, 3, 2, 2, 0, 0,
+       1, 2, 2, 1, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 3, 1, 0, 0, 1,
+       0, 0, 2, 0, 2, 1, 0, 1, 2, 2, 1, 2, 0, 0, 1, 0, 2, 0, 2, 1, 0, 2,
+       0, 0, 2, 2, 2, 1, 2, 1, 1, 2, 2, 3, 0, 0, 0, 0, 2, 2, 1, 2, 2, 0,
+       0, 1, 2, 1, 2, 0, 2, 0, 2, 2, 2, 2, 2, 0, 2, 1, 2, 2, 0, 0, 0, 0,
+       0, 0, 0, 2, 2, 1, 2, 1, 2, 0, 1, 0, 2, 0, 2, 2, 0, 0, 0, 0, 0, 1,
+       2, 1, 1, 1, 0, 0, 0, 2, 2, 0, 0, 1, 2, 0, 1, 1, 2, 0, 1, 1, 1, 2,
+       0, 2, 0, 0, 2, 1, 0, 3, 0, 1, 1, 0, 1, 0, 3, 0, 1, 2, 2, 2, 2, 2,
+       0, 2, 0, 0, 2, 0, 1, 0, 2, 1, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2,
+       2, 2, 2, 2, 0, 1, 0, 1, 2, 0, 2, 1, 0, 0, 1, 2, 1])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 10, 'max_features': 2, 'n_estimators': 12}}, 'score': 0.8928571428571429, 'conf_matrix': array([[93, 10],
+       [ 5, 32]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=10, max_features=2, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=12, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1,
+       0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1,
+       0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 0])}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 0.26344245504149816, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.8285714285714286, 'conf_matrix': array([[87, 13],
+       [11, 29]], dtype=int64), 'pickle_file': LogisticRegression(C=0.24487538323136024, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='newton-cg', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1,
+       0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+       0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1,
+       0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 0, 1, 0, 1, 0, 0])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 9, 'max_features': 5, 'n_estimators': 2}}, 'score': 0.8242424242424242, 'conf_matrix': array([[99, 22],
+       [ 7, 37]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=9, max_features=5, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=2, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0,
+       0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+       1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1,
+       0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1,
+       1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0])}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 0.6543472798531172, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.8, 'conf_matrix': array([[94, 21],
+       [12, 38]], dtype=int64), 'pickle_file': LogisticRegression(C=10.98529355409727, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0,
+       1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1,
+       0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0,
+       0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestRegressor'>, 'param': {'criterion': 'mse', 'max_depth': 11, 'max_features': 4, 'n_estimators': 1}}, 'score': 79.37200436305515, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=11,
+           max_features=4, max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=1, n_jobs=None, oob_score=False, random_state=None,
+           verbose=0, warm_start=False), 'y_pred': array([ 1.64      ,  0.        ,  0.        ,  5.51090909, 12.1       ,
+        0.        ,  1.01      ,  0.        ,  0.        ,  5.51090909,
+        0.        ,  8.12      ,  2.29222222,  0.676     , 16.        ,
+        0.205     ,  1.19714286, 11.53      , 12.1       ,  2.29222222,
+        1.01      ,  2.29222222,  2.93      , 10.08      ,  0.        ,
+        7.69666667,  0.        ,  0.        ,  5.51090909,  0.        ,
+       13.06      ,  5.51090909,  0.        ,  0.        ,  0.        ,
+        0.        ,  1.88      ,  0.        ,  0.        ,  1.19714286,
+        7.69666667,  0.        ,  0.        ,  6.96      ,  0.        ,
+        1.76      ,  1.19714286,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  2.29222222,  2.29222222, 10.08      ,
+        1.64      , 13.06      ,  0.71      ,  1.64      ,  0.184     ,
+        0.        ,  1.19714286,  0.        ,  0.        ,  5.51090909,
+        2.29222222,  0.        ,  7.48      ,  1.19714286])}
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.base.LinearRegression'>, 'param': {'normalize': 'False'}}, 'score': 117.18691012581452, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None,
+         normalize='False'), 'y_pred': array([1.73850674, 1.30381465, 0.94325886, 3.5066819 , 2.853557  ,
+       2.78201135, 2.00449466, 2.99875282, 1.10274943, 2.53964844,
+       0.89847625, 2.59076145, 2.27341553, 2.39984548, 2.027918  ,
+       3.48400047, 2.2704601 , 2.01302932, 2.0606008 , 1.92599331,
+       1.65883152, 1.82567024, 2.96192654, 2.0953438 , 1.75374616,
+       1.9999324 , 0.8529166 , 1.16220128, 2.40431696, 1.02157678,
+       2.06803868, 2.64074858, 3.25516108, 0.96746985, 2.4947504 ,
+       2.17052345, 3.19243083, 2.43672174, 2.69439771, 1.86164846,
+       1.79860838, 1.77475471, 2.3015886 , 2.65362971, 2.88856396,
+       2.84613724, 2.3428738 , 2.58396682, 1.86720987, 2.5257413 ,
+       3.89897471, 1.90230433, 2.57273267, 1.49167918, 2.32414604,
+       2.28337657, 1.69187113, 1.37891616, 2.46175381, 2.85929386,
+       1.56472503, 3.10540837, 1.05794768, 0.99090028, 2.47131599,
+       2.0202277 , 1.77820626, 2.033094  , 2.45229984])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 11, 'max_features': 3, 'n_estimators': 15}}, 'score': 0.8363636363636363, 'conf_matrix': array([[93, 22],
+       [ 5, 45]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=11, max_features=3, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=15, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0,
+       0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0,
+       0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0,
+       0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0,
+       1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1,
+       0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0,
+       0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1])}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 9.025400228689978, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.7878787878787878, 'conf_matrix': array([[87, 24],
+       [11, 43]], dtype=int64), 'pickle_file': LogisticRegression(C=8996934129.63731, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0,
+       0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0,
+       1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1,
+       0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1,
+       0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestRegressor'>, 'param': {'criterion': 'mae', 'max_depth': 10, 'max_features': 2, 'n_estimators': 9}}, 'score': 10.786289737444628, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=10,
+           max_features=2, max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=9, n_jobs=None, oob_score=False, random_state=None,
+           verbose=0, warm_start=False), 'y_pred': array([2.66821208, 0.37582786, 2.70479611, 1.84373708, 1.81558695,
+       1.95869138, 3.10825397, 1.69920973, 0.025     , 1.76905537,
+       4.59027778, 0.4625    , 1.82111111, 1.13310564, 1.59748972,
+       1.61556175, 1.00392236, 0.2880977 , 1.1877723 , 1.25978398,
+       4.37873016, 3.73560185, 3.52037037, 0.80340354, 3.49714286,
+       0.19744367, 0.59416119, 2.71409914, 1.17429293, 0.20571212,
+       2.02438059, 0.65977694, 2.37067851, 3.673685  , 2.85299236,
+       3.40666667, 4.75379082, 2.07637723, 3.41592593, 1.22889666,
+       1.27356654, 5.1365062 , 2.94825066, 1.17300872, 0.30011461,
+       3.8       , 0.45269841, 1.28499379, 1.11812945, 1.44218412,
+       4.31676546, 4.5       , 0.55273868, 1.06578006, 2.45888889,
+       3.69414316, 1.17835167, 0.66082786, 0.32527778, 1.07671336,
+       4.46982834, 0.3605    , 2.50273155, 3.31635594, 3.92479611,
+       0.98016119, 1.53665242, 0.26388889])}
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.base.LinearRegression'>, 'param': {'normalize': 'False'}}, 'score': 11.621816878041837, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None,
+         normalize='False'), 'y_pred': array([2.03382122, 1.50146382, 3.15356925, 1.88595211, 2.33029934,
+       2.97454263, 0.59170936, 3.03655713, 1.71062233, 2.41495231,
+       2.06791673, 1.32194877, 0.86909824, 1.34874167, 2.40691046,
+       2.80997639, 2.11711788, 1.29938747, 2.16791506, 2.51074277,
+       1.89096989, 1.9414048 , 3.35299529, 1.96002143, 0.89111034,
+       0.81330778, 1.31549043, 2.44536856, 1.69164214, 1.8489818 ,
+       1.71472538, 3.15409005, 2.84706174, 1.64953901, 2.12097639,
+       1.37646353, 2.15552691, 1.47697545, 2.36220197, 1.47879547,
+       1.40168918, 2.51419606, 2.87890628, 1.98666158, 1.69304917,
+       1.6124709 , 1.4756424 , 2.60736668, 2.74612148, 2.10287475,
+       3.16433197, 2.82078697, 1.46541012, 2.16108329, 2.56690691,
+       2.75400619, 1.95120255, 1.34980658, 2.54373296, 2.83006447,
+       2.92294222, 1.64214834, 2.9084266 , 2.34555755, 2.16155466,
+       1.96471723, 1.57338518, 1.8441529 ])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestRegressor'>, 'param': {'criterion': 'mae', 'max_depth': 6, 'max_features': 1, 'n_estimators': 16}}, 'score': 993.8244311418705, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=6,
+           max_features=1, max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=16, n_jobs=None, oob_score=False,
+           random_state=None, verbose=0, warm_start=False), 'y_pred': array([ 487.39822389,  148.64435134, 2019.59864903, 1454.7169843 ,
+       1469.8575937 , 2177.15156309, 1914.30865826, 1014.144354  ,
+       1281.85085986, 1257.24176455,  305.98013001,  629.39055345,
+        843.50059831, 1879.64568495,  322.91995752, 2150.08554882,
+       1595.67758458, 1942.90498473,  200.19177134,  988.94184775,
+       1801.90516868, 1123.81189339,  622.85004478,  577.28189344,
+       1155.95632788,  319.17677158, 1119.9476602 ,  500.25552256,
+       2198.40551211,  416.26157571, 1602.87256291, 2110.89991674,
+        909.65648129,  440.68267581, 1199.24300405,  737.84872761,
+       1116.74637242, 1224.0995866 , 1565.43127258, 2039.47817183,
+       1812.46490028, 1602.87256291, 2039.47817183, 1942.90498473,
+       1942.90498473,  144.87913218,  218.5762199 ,  144.87913218,
+       1475.27326334, 2144.71779574, 1759.16412216,  500.25552256,
+       1807.34054978, 1029.92222408, 1262.9381918 , 1055.64503225,
+        893.5287787 , 1879.64568495,  500.25552256, 1016.59363037,
+       2177.15156309, 1874.32538668,  451.94615086, 1883.41724745,
+        943.49684287,  277.15264035,  248.82974632,  305.98013001,
+        671.26498944,  664.74100792, 2039.47817183, 1807.34054978,
+       1916.53024917, 2129.50358358,  500.25552256, 2177.15156309,
+        909.65648129, 1318.5783215 , 1926.20167642, 2203.57319891,
+       2198.40551211, 1435.96379118, 1431.22064639, 1088.87281729,
+       1778.15742303, 1262.9381918 ,  758.82574833,  195.02883786,
+       1078.6064818 , 1635.70148747, 1965.6961952 , 2096.86643156,
+       1879.64568495, 1805.26133855,  970.77286877,  954.39001859,
+       1692.85840253,  162.68830628, 1389.80230513,  557.29483268,
+        943.49684287, 2110.89991674, 1281.85085986,  935.18091908,
+       1155.95632788, 1088.87281729, 1565.43127258, 1445.114679  ,
+       1427.85988707,  305.98013001, 1078.6064818 , 1692.85840253,
+        690.39842767, 1942.90498473, 1807.34054978, 1746.97548953,
+       1926.20167642, 1454.7169843 , 1224.0995866 ,  934.25800241,
+        939.09062117,  355.08516518, 1429.01390493, 1281.85085986,
+       1119.9476602 ,  590.58065591, 1265.8788168 , 1520.69333169,
+        438.38044729, 1484.31083066,  221.05799074, 1883.41724745,
+       1916.53024917, 2047.55205458, 2129.50358358, 1732.96964998,
+        901.20234062, 1523.4276004 , 1224.0995866 , 1638.72803276,
+        771.49047448, 1942.90498473, 1200.63040283, 1521.9588504 ,
+       1321.02511637,  657.94572787, 2142.54720038, 1199.24300405,
+       1281.85085986,  311.58073812,  119.9434292 ,  240.53921811,
+        450.36594576,  964.51200986, 1805.26133855, 1155.95632788,
+        889.01994103, 1591.21349415,  500.25552256, 2218.69387855,
+        934.25800241, 1746.97548953,  707.92330867,  833.77616963,
+       1140.04843976, 1523.4276004 , 1284.95781238, 1055.64503225,
+       1017.84918593,  579.67633789, 1843.00166523, 1642.99258181,
+       1876.24129577,  289.00108217, 1055.64503225, 1707.4787486 ,
+        329.42971408,  558.73680406, 1778.15742303,  962.59548888,
+       2144.71779574, 2198.40551211,  487.39822389, 2203.57319891,
+       1224.0995866 , 1078.06059364,  633.62139477, 1078.6064818 ,
+        544.83463357, 1656.70551262, 1345.02083711, 1454.7169843 ,
+       1484.31083066, 2240.21783114,  384.8770393 , 2144.71779574,
+        451.94615086, 1142.74933261, 1427.85988707, 1116.74637242,
+        404.69719962, 1942.90498473, 1983.32117951, 1909.7790154 ,
+       2110.89991674, 1692.85840253, 1429.01390493, 1029.92222408,
+        144.87913218, 1281.85085986, 1328.05472491,  579.67633789,
+       2134.08575224, 1645.51536111, 1523.4276004 , 1551.54439505,
+       1257.24176455, 1914.30865826, 1694.84017336, 1376.86013678,
+        500.25552256,  970.77286877,  660.5030125 , 2110.89991674,
+       1116.74637242,  549.94403121, 1265.8788168 , 1786.22891875,
+       1454.7169843 , 1942.90498473, 1033.16024492, 1565.43127258,
+       1525.41964677,  889.01994103,  805.40564402, 1078.6064818 ,
+       2123.237532  ,  557.29483268, 1843.00166523,  500.25552256,
+       1006.74356035, 2047.55205458, 1375.53461595,  557.29483268,
+       2039.47817183,  579.67633789, 1281.85085986, 1281.85085986,
+        353.47344133,  810.53209407, 1369.80670171,  768.45086789,
+        200.19177134, 1523.4276004 ,  362.95701969,  273.82746619,
+        322.91995752,  557.29483268,  500.25552256,  362.95701969,
+       2198.40551211,  311.58073812,  768.45086789, 1220.56802452,
+        843.50059831,  438.38044729,  311.58073812,  660.5030125 ,
+       1427.85988707, 1027.72373271, 1694.84017336,  239.772674  ,
+        373.65736063,  451.94615086, 1224.0995866 , 1547.88665696,
+       1473.63487048,  606.30737781, 1532.32621543,  843.50059831,
+       1431.22064639,  606.30737781, 1591.21349415, 1999.35595241,
+        843.50059831, 1694.84017336, 1389.80230513,  889.01994103,
+       1759.16412216, 1723.01350603,  353.47344133,  988.94184775,
+        660.5030125 , 1281.85085986,  451.94615086, 2192.97375451,
+       1199.24300405, 2047.55205458,  937.75638204,  162.68830628,
+        579.67633789,  843.50059831, 1101.46576026,  305.98013001,
+        778.18663849, 1078.6064818 , 1199.24300405, 1707.4787486 ,
+        200.19177134,  438.38044729,  577.28189344,  768.45086789,
+        858.69988247, 1429.01390493,  627.61620145,  824.69318234,
+        144.87913218, 1565.43127258,  970.77286877, 1088.87281729,
+       1649.12511908,  311.58073812, 1367.37788678,  934.25800241,
+       2240.21783114, 1751.5816214 ,  871.88536017,  872.69438794,
+       1723.01350603,  758.82574833,  935.18091908,  897.65648808,
+        671.26498944, 1318.22511637,  970.77286877,  162.68830628,
+       1389.80230513,  660.5030125 , 1484.31083066,  218.5762199 ,
+       1484.31083066, 2049.42600918,  655.5478112 ,  935.18091908,
+       1037.45762132,  438.38044729, 1262.9381918 ,  871.88536017,
+        771.49047448, 1133.11470557,  325.26210495,  418.28749544,
+       1387.69201101, 1321.02511637, 1284.95781238, 1459.40080718,
+        450.36594576,  362.95701969, 1592.72477234,  557.29483268,
+       1883.41724745,  974.85038102,  889.01994103, 1121.96814339,
+       1187.1040982 , 2177.15156309, 1375.53461595, 1445.114679  ,
+       2056.7097213 , 1645.51536111,  998.58815776,  708.91986039,
+        322.91995752,  305.98013001, 2043.51745862, 2224.49398359,
+        577.28189344,  943.49684287,  195.02883786, 1044.88338221,
+       1980.18364032,  805.40564402, 2177.15156309, 1876.24129577,
+       1197.27609799, 2092.49707459, 1843.00166523,  273.82746619,
+       1182.60183662, 1521.9588504 , 1518.15037985, 1756.42275702,
+       1321.89142384,  289.00108217, 2183.83393265,  239.772674  ,
+        805.40564402,  500.25552256, 1881.54568152,  805.40564402,
+        871.88536017,  579.67633789, 1389.80230513,  353.47344133,
+        195.02883786, 1427.85988707, 1345.02083711, 1650.44200504,
+        362.95701969,  239.772674  , 1650.44200504, 2183.83393265,
+        674.13418587,  266.20480956, 1004.65606035, 1834.37891237,
+       2096.86643156, 2137.82408578,  822.25333859, 1867.70219189,
+       1197.27609799, 1807.34054978, 1690.78949227])}
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.base.LinearRegression'>, 'param': {'normalize': 'False'}}, 'score': 926.0226542201231, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None,
+         normalize='True'), 'y_pred': array([ 485.13570711,  154.67181817, 2016.28505924, 1461.50628809,
+       1468.51612816, 2177.51138081, 1904.12761814, 1010.87371226,
+       1274.24341769, 1249.20827459,  299.87564816,  633.34375428,
+        835.62771054, 1890.107938  ,  336.92765995, 2162.49029495,
+       1603.70590091, 1944.1838471 ,  206.74491582,  995.8526264 ,
+       1798.98001711, 1131.04239915,  640.35359435,  573.25941083,
+       1153.07332508,  326.91360271, 1125.0339648 ,  502.15960442,
+       2202.54652392,  412.03308925, 1614.72136388, 2107.41298013,
+        907.72892268,  434.06401518, 1186.11971397,  734.48573241,
+       1121.02834191, 1230.18156583, 1560.64545478, 2031.3061451 ,
+       1821.01094304, 1615.7227696 , 2025.29771075, 1957.20212152,
+       1955.19931007,  147.6619781 ,  216.75897306,  149.66478954,
+       1476.52737396, 2159.48607778, 1758.92378815,  500.15679297,
+       1812.99969725, 1026.89620384, 1258.22092611, 1053.93415839,
+        892.70783682, 1889.10653228,  508.16803877, 1019.88636377,
+       2175.50856937, 1858.06295483,  454.09212967, 1879.09247504,
+        940.77531157,  278.84612795,  255.8137963 ,  297.87283671,
+        683.41404048,  672.39857752, 2032.30755082, 1808.99407435,
+       1909.13464676, 2132.44812323,  517.18069028, 2178.51278654,
+        908.7303284 , 1317.30386383, 1928.16135552, 2223.57604412,
+       2207.55355254, 1437.47255072, 1436.47114499, 1091.98757591,
+       1776.94909118, 1256.21811466,  748.50541255,  198.73367002,
+       1078.96930149, 1625.73682684, 1965.21336731, 2094.39470572,
+       1891.10934373, 1803.98704573,  979.83013481,  953.79358598,
+       1680.81414167,  171.69571547, 1394.41210458,  551.2284849 ,
+        945.78234019, 2110.4171973 , 1283.25606921,  921.74860281,
+       1162.08597659, 1088.98335874, 1565.6524834 , 1451.49223085,
+       1429.46130492,  298.87424243, 1076.96649005, 1679.81273595,
+        690.42388055, 1947.18806428, 1807.99266863, 1738.89567367,
+       1923.1543269 , 1460.50488237, 1221.16891431,  917.74297992,
+        933.7654715 ,  361.96280305, 1413.43881334, 1287.2616921 ,
+       1127.03677625,  598.29455393, 1263.22795473, 1499.55970561,
+        421.04574077, 1485.54002547,  234.78427609, 1875.08685214,
+       1907.13183531, 2049.33144813, 2131.44671751, 1728.88161643,
+        904.7247055 , 1506.56954568, 1219.16610287, 1626.73823257,
+        774.54196137, 1946.18665855, 1200.13939411, 1534.60890595,
+       1310.29402376,  649.36624586, 2151.47483199, 1192.12814832,
+       1270.23779479,  310.89111112,  140.65213803,  243.79692761,
+        436.06682663,  961.80483178, 1802.98564001, 1158.0803537 ,
+        889.70361964, 1575.66654064,  492.14554718, 2228.58307274,
+        913.73735702, 1733.88864505,  711.45340076,  827.61646475,
+       1145.06207928, 1514.58079147, 1293.27012645, 1052.93275267,
+       1014.87933515,  589.28190242, 1838.03484035, 1629.74244974,
+       1863.06998345,  289.86159092, 1056.93837556, 1702.8450676 ,
+        340.93328284,  567.25097649, 1767.93643966,  957.79920888,
+       2154.47904916, 2199.54230674,  484.13430139, 2218.5690155 ,
+       1225.17453721, 1065.95102708,  645.36062297, 1075.96508432,
+        530.1989647 , 1670.80008443, 1359.36290424, 1457.5006652 ,
+       1491.54845982, 2244.60556433,  386.99794615, 2157.48326633,
+        459.09915829, 1146.06348501, 1427.45849348, 1108.01006749,
+        407.02606063, 1954.19790434, 1988.24569896, 1900.12199524,
+       2108.41438585, 1683.81835884, 1409.43319044, 1031.90323246,
+        151.66760099, 1278.24904059, 1339.33478976,  591.28471387,
+       2134.45093468, 1641.75931843, 1521.59063154, 1553.63561471,
+       1247.20546314, 1901.12340097, 1693.83241608, 1379.39101872,
+        522.1877189 ,  974.82310619,  662.38452028, 2109.41579158,
+       1120.02693618,  534.20458759, 1261.22514328, 1783.95893125,
+       1455.49785375, 1951.19368717, 1033.90604391, 1559.64404906,
+       1542.62015175,  886.69940247,  800.5785102 , 1077.96789577,
+       2122.43406599,  554.23270207, 1835.03062318,  512.17366166,
+       1007.86949508, 2050.33285386, 1376.38680155,  545.22005056,
+       2022.29349358,  585.27627952, 1290.26590928, 1280.25185204,
+        358.95858588,  813.59678461, 1364.36993286,  766.53071558,
+        209.74913299, 1510.57516857,  365.96842595,  274.84050506,
+        335.92625422,  564.24675932,  519.18350173,  366.96983167,
+       2209.55636399,  306.88548823,  756.51665834, 1210.15345135,
+        837.63052199,  430.05839229,  313.89532829,  654.37327448,
+       1426.45708775, 1024.89339239, 1692.83101036,  251.8081734 ,
+        382.99232326,  452.08931822, 1218.16469714, 1551.63280326,
+       1474.52456251,  605.304394  , 1547.62718037,  832.62349337,
+       1435.46973927,  601.29877111, 1585.68059788, 2001.26397338,
+        834.62630482, 1691.82960463, 1399.4191332 ,  883.6951853 ,
+       1757.92238242, 1723.8745878 ,  355.95436871, 1000.85965502,
+        652.37046304, 1268.23498335,  466.10899836, 2195.53668385,
+       1185.11830825, 2045.32582524,  932.76406578,  174.69993265,
+        588.28049669,  847.64457923, 1099.9988217 ,  302.87986533,
+        786.55883006, 1071.95946143, 1199.13798838, 1706.8506905 ,
+        207.74632154,  432.06120374,  571.25659938,  761.52368696,
+        863.66707082, 1411.43600189,  624.33110276,  823.61084185,
+        152.66900672, 1567.65529485,  964.80904895, 1085.97914156,
+       1652.77478139,  312.89392257, 1360.36430996,  916.74157419,
+       2247.6097815 , 1753.91675953,  869.67550516,  874.68253378,
+       1722.87318208,  746.5026011 ,  926.75563143,  899.71767688,
+        681.41122903, 1301.28137224,  981.83294626,  166.68868685,
+       1389.40507596,  660.38170883, 1484.53861975,  232.78146464,
+       1482.5358083 , 2061.34831682,  651.36905731,  925.75422571,
+       1041.9172897 ,  431.05979801, 1254.21530321,  871.67831661,
+        778.54758427, 1134.04661632,  338.9304714 ,  414.0359007 ,
+       1386.40085879, 1312.29683521, 1296.27434362, 1464.51050527,
+        439.07104381,  369.97404884, 1597.69746657,  548.22426773,
+       1876.08825787,  987.8413806 ,  888.70221392, 1129.0395877 ,
+       1180.11127963, 2180.51559799, 1372.38117865, 1454.49644803,
+       2065.35393972, 1650.77196995, 1001.86106074,  713.4562122 ,
+        333.92344278,  301.87845961, 2043.32301379, 2235.59291281,
+        568.25238221,  947.78515164,  192.72523568, 1045.9229126 ,
+       1983.23867034,  811.59397316, 2183.51981516, 1860.06576628,
+       1183.1154968 , 2085.3820542 , 1831.02500028,  269.83347643,
+       1176.10565673, 1532.6060945 , 1497.55689416, 1755.91957098,
+       1327.31792107,  287.85877947, 2188.52684378,  254.81239057,
+        806.58694454,  518.18209601, 1872.08263497,  795.57148158,
+        868.67409944,  594.28893104, 1401.42194465,  359.9599916 ,
+        190.72242423, 1425.45568203, 1351.35165845, 1658.78321574,
+        364.96702022,  253.81098485, 1663.79024436, 2192.53246668,
+        688.4210691 ,  258.81801347, 1003.86387219, 1827.01937739,
+       2095.39611144, 2139.4579633 ,  821.60803041, 1853.05592621,
+       1182.11409108, 1818.00672587, 1677.8099245 ])}
+
+At Step: Modelling regression 
+Sequence executed:
+Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestRegressor'>, 'param': {'criterion': 'mse', 'max_depth': 7, 'max_features': 1, 'n_estimators': 11}}, 'score': 3.867991294096821, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=7,
+           max_features=1, max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=11, n_jobs=None, oob_score=False,
+           random_state=None, verbose=0, warm_start=False), 'y_pred': array([1392.73740359, 1257.49322495, 2146.96546509, 1383.06036663,
+       1420.09886719,  887.29614679, 1197.18169549, 2232.5016135 ,
+        448.90006786, 1247.00601326,  847.3689054 , 1045.89921608,
+        884.8455349 ,  884.8455349 ,  617.03161278, 1389.6462719 ,
+       1519.69059895, 1346.94893332, 1911.03228012,  846.52657908,
+       1333.25059394,  664.67014983,  617.84728022, 2086.57093587,
+       1523.19934021, 1630.96499111,  283.47253928, 1772.43714025,
+        763.75320916, 1054.4798558 ,  546.46572118,  202.98496294,
+       1693.57173772, 1461.01219875, 2193.27409708,  395.68142136,
+        468.89549954, 1062.35897531, 1426.45777984, 1324.58586432,
+        685.27007084, 1933.72023867,  763.49255091,  209.50756867,
+        350.50796287, 1047.46782477, 1133.5456046 , 1899.03929836,
+       1627.16280867,  764.73636425,  395.68142136,  958.9850947 ,
+       1495.06166058, 1344.53775937, 2041.65325968,  239.16778089,
+       1660.0841994 ,  626.43263375,  972.06431554, 1656.34177516,
+       1114.79734139, 1058.0847509 , 2235.07004785, 1466.65566336,
+        159.66386187,  440.50730005,  842.78343333, 1426.45777984,
+       2043.20257784, 1009.74049842,  712.91500964, 2093.0587752 ,
+        546.46572118, 1048.96602102,  148.88544439,  577.38509907,
+       1214.97654739, 1089.72758208, 2132.60469276, 1864.32548582,
+        972.31539779,  358.49301072, 1654.00121042, 1660.0841994 ,
+        546.46572118, 2132.60469276, 1872.89320651,  833.7408532 ,
+       2086.57093587, 1873.90215968, 1520.46038335, 1660.0841994 ,
+        931.97330154, 1428.3251117 ,  288.85053321,  350.50796287,
+        550.09992032, 2131.72247475, 1704.47969635,  617.03161278,
+       1227.25756343, 1634.9952096 ,  151.47061196, 1633.74203427,
+        589.82780954,  343.65818421, 1556.29409324, 1333.25059394,
+       1257.59609576, 1158.12725915, 1776.55907349,  767.58724788,
+       2146.96546509, 1746.47645406, 1931.35582862,  712.91500964,
+       1220.6846197 , 1742.79463013,  455.08349177, 1261.14050115,
+       1751.27022219, 1464.02570525, 1654.00121042,  412.11944444,
+        584.78082909, 1136.96551802, 1812.77084986, 1017.71538885,
+        884.36167361, 2193.44581778, 1979.08965804,  936.45815002,
+        159.66386187,  988.75874219, 1214.97654739,  350.50796287,
+        985.59856903,  903.61028362,  352.34299104,  671.21865133,
+        887.29614679, 1444.71082451,  559.74865927, 1591.80798639,
+        666.18089363,  763.71805596,  623.63634724,  617.03161278,
+       1290.06319966,  209.50756867,  206.65014936, 1391.70571246,
+       1058.62223288, 1522.51920688, 1654.00121042,  704.5576087 ,
+       1562.72066881, 1965.44714737, 1744.24439664,  747.67676829,
+       2189.68823849,  847.51359206, 2175.26134674, 1185.16027039,
+       1276.13013398, 2051.87881389,  496.30562984,  395.62638889,
+       2056.39743626, 1742.79463013,  413.40025253, 1087.25304518,
+        764.76252336, 1567.76897799, 1932.97694663, 1444.71082451,
+       1837.42103308, 1837.42103308, 1324.58586432, 1012.81291767,
+        546.46572118,  159.66386187, 1446.57824875, 1186.981126  ,
+       1821.57960068, 1002.0525268 , 1599.32878259, 1088.10636996,
+        704.5576087 ,  317.33165616, 1605.38101631,  226.58801685,
+       2122.82828283,  992.60442984,  748.45250593, 1753.96205308,
+        568.1612637 , 2124.54917606, 1281.03164914,  903.61028362,
+       1333.25059394, 2151.35495146, 1608.07798601, 1522.03800155,
+       1815.1592337 ,  587.08941495, 2189.68823849, 1009.8432207 ,
+       1635.82597883,  675.38251673, 1650.76311518, 1636.64405096,
+       1697.83254377,  194.57206883, 1186.26381127, 1047.46782477,
+        209.50756867, 2100.80011336, 1561.14447203,  283.79858516,
+        815.1861289 ,  902.85154706,  413.40025253, 1259.27791395,
+        617.03161278,  317.33165616,  930.86615868,  969.74613372,
+       1572.53759038,  395.62638889, 1967.39866252, 1772.43714025,
+       2121.87962963,  584.78082909, 1197.07492998,  209.50756867,
+        631.26756198, 2184.42204766, 1350.63327675,  936.45815002,
+       1283.09259955,  958.9850947 , 1979.08965804, 1290.06319966,
+        955.56590278, 1004.69829063, 1112.55258615, 2195.06220896,
+        842.78343333,  709.00898554,  305.29859504,  153.71175293,
+       1324.58586432,  366.74503994,  846.52657908, 1346.25204508,
+        550.45749607,  617.84728022, 1428.3251117 ,  395.68142136,
+       1593.9570357 , 1935.52617135, 1601.39098761, 1185.16027039,
+       2195.06220896,  675.38251673,  190.15367056, 1389.6462719 ,
+        930.86615868, 1825.59430656, 1654.00121042, 2047.68827484,
+        995.04201357, 1490.64499391, 1391.70571246,  712.91500964,
+        209.50756867, 2075.30655634,  286.99045675, 1052.55693011,
+       1876.50829455,  154.10048209,  395.68142136,  828.3425848 ,
+       1754.12424317, 1376.39265314,  583.27876298,  290.30356508,
+       1593.9570357 ,  835.71425471, 1261.14050115, 1054.4798558 ,
+        317.33165616, 1567.76897799, 1873.90215968, 1701.74488143,
+       1810.74963774, 1705.86058391, 1391.70571246,  209.50756867,
+       1795.00657212, 1158.12725915,  496.30562984,  496.30562984,
+       1223.92383539, 2176.98162646, 1202.15240932, 2115.02443553,
+       1314.19020263, 2146.96546509,  931.97330154,  209.50756867,
+       2232.88281841, 1062.35897531, 1992.99600202,  590.81770853,
+        214.80807372, 1876.50829455, 1114.79734139, 1176.79598796,
+       1979.08965804, 1331.17625448, 2005.07738884, 1446.57824875,
+       1612.03919813,  288.85053321,  399.9854798 , 2086.57093587,
+        850.41842921,  498.02112698, 1405.69907467,  190.15367056,
+        287.18386655, 2243.67967651,  190.15367056, 2146.96546509,
+       1873.90215968,  407.33156566,  988.75874219, 1772.43714025,
+       1583.77276338,  606.82896066,  153.71175293, 1523.19934021,
+        159.66386187, 1910.98726875,  617.84728022,  760.15119157,
+        452.7957555 ,  455.79020237,  871.78862088,  770.59964457,
+        709.00898554, 1684.06061752, 1185.16027039,  287.18386655,
+       1561.14447203, 2229.23715069,  159.66386187,  617.84728022,
+       1589.39322452, 1935.52617135, 1567.76897799, 1049.12662708,
+       2193.44581778, 1524.54304756,  474.35405138, 1654.00121042,
+        350.50796287, 2049.79548056,  395.62638889,  709.46366931,
+        586.07780954,  209.50756867, 1436.99139445, 1728.14189229,
+       2082.25654193, 1992.99600202,  842.78343333, 1158.12725915,
+       1910.26991513, 2146.96546509, 2239.43435372,  546.46572118,
+       1282.81926596, 1043.61974003, 1112.55258615, 1391.70571246,
+       1833.74193089, 2231.23746377,  159.66386187, 1392.73740359,
+       2124.54917606,  440.50730005,  194.57206883, 1938.89069322,
+        793.21440087, 1837.42103308,  548.27062739,  548.27062739,
+       1850.88471588, 1801.09315566,  581.10467797,  287.18386655,
+       1314.19020263,  317.33165616, 1717.33994424,  197.84184451,
+       1593.9570357 , 2038.70261032,  564.28398022, 1109.37449179,
+       2161.38958244,  584.78082909, 1202.15240932, 1772.43714025,
+       1193.97059114,  502.93704633, 2189.68823849, 1866.83674123,
+       2193.44581778,  911.15718117,  559.74865927])}
+
+At Step: Modelling regression 
+Sequence executed:
+Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.base.LinearRegression'>, 'param': {'normalize': 'True'}}, 'score': 3.5651357822800733, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None,
+         normalize='True'), 'y_pred': array([1382.20407438, 1240.11631375, 2148.67748738, 1404.2176711 ,
+       1426.23126782,  885.8975302 , 1208.0965367 , 2249.73990867,
+        459.6342483 , 1239.11569572,  857.88022528, 1075.01433836,
+        887.89876626,  888.89938429,  646.7498204 , 1402.21643503,
+       1507.28132846, 1346.18182521, 1914.53286774,  837.86786463,
+       1332.17317275,  663.76032695,  614.73004335, 2100.64782181,
+       1509.28256453, 1627.35549238,  267.51558603, 1770.44387104,
+        761.82089415, 1057.00321378,  541.68492697,  216.48406637,
+       1709.40617105, 1463.25413502, 2199.70900704,  386.58913191,
+        471.64166469, 1067.0093941 , 1423.22941372, 1323.16761046,
+        688.77577777, 1956.55882511,  778.83140071,  232.49395489,
+        342.56193848, 1041.99394329, 1142.05574655, 1902.52545135,
+       1623.35302025,  747.81224169,  382.58665978,  948.93646625,
+       1494.27329404, 1355.1873875 , 2056.62062838,  246.50260735,
+       1653.37156122,  619.73313352,  970.95006297, 1659.37526942,
+       1117.04029573, 1055.00197771, 2243.73620048, 1476.26216945,
+        166.45316473,  424.61261715,  835.86662857, 1422.22879569,
+       2040.61073985, 1007.97293018,  730.80173514, 2083.63731526,
+        538.68307287, 1030.98714493,  151.44389425,  590.71521057,
+       1215.10086293, 1084.01990066, 2125.66327263, 1890.51803496,
+        979.95562526,  354.56935487, 1671.38268581, 1654.37217926,
+        536.68183681, 2122.66141853, 1883.51370873,  827.8616843 ,
+       2098.64658575, 1882.5130907 , 1533.29739731, 1656.37341532,
+        925.9222515 , 1417.22570552,  283.52547455,  351.56750077,
+        533.67998271, 2106.65153001, 1705.40369892,  642.74734827,
+       1212.09900883, 1639.36290877,  145.44018605, 1631.35796451,
+        604.72386303,  335.55761225, 1552.30913993, 1330.17193669,
+       1244.11878588, 1155.06378097, 1778.4488153 ,  776.83016464,
+       2146.67625131, 1732.4203858 , 1948.55388085,  729.80111711,
+       1235.11322359, 1751.43212842,  454.63115813, 1258.12743834,
+       1745.42842023, 1469.25784322, 1672.38330384,  404.6002565 ,
+        599.72077286, 1136.05203835, 1808.46735628, 1019.98034657,
+        867.88640561, 2206.71333327, 1973.56933167,  920.91916134,
+        169.45501883,  997.96674985, 1220.1039531 ,  347.56502864,
+        999.96798592,  911.91359905,  355.5699729 ,  665.76156302,
+        886.89814823, 1432.23497601,  563.69852369, 1590.33262517,
+        654.75476466,  779.83201874,  632.74116794,  644.74858433,
+       1273.13670883,  238.49766308,  215.48344833, 1398.2139629 ,
+       1069.01063017, 1531.29616124, 1669.38144975,  721.79617285,
+       1560.31408419, 1967.56562347, 1731.41976777,  744.8103876 ,
+       2192.70468081,  841.87033676, 2174.69355623, 1201.09221048,
+       1300.15339571, 2044.61321198,  504.66205976,  399.59716634,
+       2065.62619067, 1752.43274646,  408.60272863, 1095.02669902,
+        768.82522038, 1566.31779239, 1943.55079069, 1433.23559405,
+       1829.48033497, 1828.47971694, 1322.16699242, 1012.97602034,
+        543.68616304,  176.45934506, 1437.23806618, 1206.09530064,
+       1821.47539071,  988.96118756, 1588.3313891 , 1079.01681049,
+        722.79679088,  305.53907127, 1612.34622189,  244.50137128,
+       2113.65585624,  991.96304166,  735.8048253 , 1737.42347597,
+        547.68863517, 2129.66574476, 1293.14906948,  909.91236298,
+       1338.17688095, 2137.67068902, 1608.34374976, 1497.27514813,
+       1804.46488415,  603.72324499, 2193.70529885, 1017.9791105 ,
+       1646.367235  ,  678.76959744, 1663.37774155, 1637.3616727 ,
+       1697.39875466,  207.47850407, 1184.08170392, 1040.99332525,
+        236.49642702, 2103.64967591, 1548.3066678 ,  279.52300242,
+        794.84128923,  904.90927282,  410.6039647 , 1243.11816785,
+        640.7461122 ,  306.5396893 ,  931.9259597 ,  978.95500723,
+       1574.32273665,  397.59593027, 1963.56315134, 1761.43830875,
+       2117.65832837,  600.7213909 , 1179.07861376,  224.48901063,
+        627.73807778, 2185.70035458, 1349.1836793 ,  922.9203974 ,
+       1289.14659735,  947.93584822, 1975.57056773, 1271.13547276,
+        949.93708429, 1011.97540231, 1119.0415318 , 2203.71147917,
+        833.8653925 ,  696.78072203,  292.53103685,  160.44945654,
+       1320.16575636,  369.57862536,  839.8691007 , 1359.18985963,
+        527.67627451,  618.73251548, 1415.22446946,  384.58789585,
+       1579.32582681, 1933.54461036, 1622.35240221, 1202.09282851,
+       2202.71086114,  679.77021547,  202.47541391, 1401.215817  ,
+        932.92657773, 1818.47353661, 1668.38083171, 2063.6249546 ,
+       1004.97107608, 1487.26896781, 1397.21334487,  728.80049907,
+        237.49704505, 2076.63298903,  271.51805816, 1028.98590886,
+       1863.50134808,  144.43956802,  383.58727782,  825.86044824,
+       1744.42780219, 1360.19047766,  593.71706467,  325.55143192,
+       1578.32520878,  831.86415643, 1257.1268203 , 1060.00506787,
+        301.53659914, 1565.31717435, 1876.5093825 , 1698.39937269,
+       1810.46859235, 1699.39999073, 1390.20901864,  240.49889915,
+       1790.4562317 , 1158.06563507,  512.66700403,  509.66514993,
+       1228.10889736, 2170.6910841 , 1174.07552359, 2104.65029394,
+       1316.16328423, 2151.67934148,  926.92286953,  226.49024669,
+       2233.73002015, 1064.00754001, 1985.57674806,  610.72757122,
+        242.50013521, 1865.50258414, 1110.03596951, 1169.07243343,
+       1972.56871363, 1326.16946455, 2000.58601855, 1444.2423924 ,
+       1614.34745795,  284.52609259,  392.59284011, 2096.64534968,
+        850.87589905,  487.65155321, 1408.22014323,  201.47479588,
+        285.52671062, 2226.72569392,  199.47355981, 2144.67501525,
+       1881.51247266,  402.59902044,  995.96551379, 1759.43707268,
+       1598.33756943,  611.72818926,  161.45007457, 1514.28565469,
+        178.46058113, 1921.53719397,  612.72880729,  752.81533186,
+        464.63733846,  435.61941551,  874.89073184,  769.82583841,
+        699.78257613, 1682.38948417, 1205.09468261,  286.52732865,
+       1550.30790386, 2251.74114474,  173.45749096,  616.73127942,
+       1576.32397271, 1928.5415202 , 1567.31841042, 1025.98405477,
+       2212.71704147, 1524.29183502,  482.64846305, 1670.38206778,
+        344.56317454, 2049.61630215,  395.59469421,  725.79864498,
+        609.72695319,  241.49951718, 1448.24486454, 1713.40864318,
+       2094.64411362, 1990.57983822,  836.8672466 , 1157.06501704,
+       1894.52050709, 2145.67563328, 2228.72692999,  539.68369091,
+       1268.13361866, 1023.9828187 , 1127.04647606, 1392.21025471,
+       1847.49145956, 2232.72940212,  171.4562549 , 1380.20283832,
+       2130.66636279,  420.61014502,  208.47912211, 1958.56006118,
+        810.85117775, 1826.47848087,  530.67812861,  528.67689255,
+       1851.49393169, 1793.45808579,  580.70903024,  288.52856472,
+       1318.16452029,  314.54463356, 1720.41296941,  210.48035817,
+       1577.32459074, 2055.62001034,  560.69666959, 1099.02917115,
+       2162.68613983,  596.71891877, 1173.07490556, 1760.43769072,
+       1171.0736695 ,  500.65958763, 2195.70653491, 1856.49702185,
+       2214.71827753,  914.91545314,  561.69728762])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestRegressor'>, 'param': {'criterion': 'mse', 'max_depth': 1, 'max_features': 2, 'n_estimators': 15}}, 'score': 126.92682350646984, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=1,
+           max_features=2, max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=15, n_jobs=None, oob_score=False,
+           random_state=None, verbose=0, warm_start=False), 'y_pred': array([1.98527413, 2.25928624, 2.8486484 , 2.17475317, 2.17475317,
+       2.17475317, 2.25928624, 2.20741394, 2.20741394, 2.70920225,
+       2.72579815, 2.76411532, 2.20741394, 2.67654147, 2.8936469 ,
+       2.17475317, 2.79677609, 2.20741394, 2.17475317, 2.76411532,
+       2.17475317, 2.67654147, 2.17475317, 2.17475317, 2.20741394,
+       2.17475317, 2.20741394, 2.76411532, 2.20741394, 2.72841378,
+       2.80680422, 2.22662547, 2.20741394, 2.89209513, 2.64312286,
+       2.20741394, 2.20741394, 2.20741394, 2.17475317, 2.20741394,
+       2.67654147, 2.67654147, 2.81598762, 2.22662547, 2.17475317,
+       2.20741394, 2.20741394, 2.79677609, 2.86098613, 2.0698072 ,
+       2.20741394, 2.20741394, 2.0179349 , 2.79677609, 2.20741394,
+       2.17475317, 2.22662547, 2.17475317, 2.22662547, 2.70920225,
+       2.17475317, 2.17475317, 2.31932888, 2.17475317, 2.25928624,
+       2.8936469 , 2.22662547, 2.65579465, 2.20741394, 2.20741394,
+       2.17475317, 2.17475317, 2.17475317, 2.70920225, 2.17475317,
+       2.59125056, 2.0179349 , 2.25928624, 2.20741394, 2.70920225,
+       2.79677609, 2.25928624, 2.20741394, 2.10377522, 2.20741394,
+       2.20741394, 2.59125056, 2.20741394, 2.17475317])}
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.base.LinearRegression'>, 'param': {'normalize': 'False'}}, 'score': 135.96990478901628, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None,
+         normalize='False'), 'y_pred': array([ 2.14860712,  2.26468328,  2.80101512,  2.47305185,  2.1592201 ,
+        2.69330231,  2.2424076 ,  2.6736803 ,  1.9625026 ,  2.00234728,
+        2.54459341,  2.60876115,  1.8556088 ,  2.32898112,  3.11434021,
+        2.53073403,  2.45521026,  2.21156636,  2.05675956,  2.67181457,
+        2.49568762,  1.9030044 ,  2.07238288,  2.26707132,  2.55147356,
+        2.49568762,  2.04103985,  2.71236752,  2.19279731,  2.352716  ,
+       -1.78015342,  2.24838865,  2.15955076,  3.05155373,  0.44443047,
+        2.48503657,  2.02676992,  1.65404101,  2.39012805,  2.07084672,
+        2.130853  ,  2.63670121,  2.93079084,  2.06911596,  1.98253522,
+        2.80136221,  2.13191136,  2.29359861,  3.17847015,  2.3179778 ,
+        1.86864653,  2.00002019,  1.93424588,  2.37082914,  1.81381501,
+        2.10427604,  2.66791305,  2.12546013,  2.65249729,  2.07343453,
+        2.32473407,  2.08427478,  2.54179913,  2.45063555,  2.24495761,
+        3.10224294,  2.6900354 ,  3.2644967 ,  2.14447346,  2.04405249,
+        2.65360345,  1.81859192,  2.17068496,  2.69592682,  2.57823108,
+       -3.44096651,  2.24901808,  2.2265778 ,  1.64352413,  2.39066628,
+        2.68990907,  2.47088108,  2.27026348,  1.76912224,  1.80164   ,
+        1.87930402,  0.31666218,  1.73399887,  2.39747412])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 16, 'max_features': 6, 'n_estimators': 11}}, 'score': 0.8541666666666666, 'conf_matrix': array([[84, 13],
+       [ 8, 39]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=16, max_features=4, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=18, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1,
+       0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1,
+       0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0,
+       0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0,
+       1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1])}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 0.22159554149622437, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.7777777777777778, 'conf_matrix': array([[79, 19],
+       [13, 33]], dtype=int64), 'pickle_file': LogisticRegression(C=0.5014180294448091, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='lbfgs', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0,
+       0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1,
+       0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1,
+       0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0,
+       0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1,
+       1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestRegressor'>, 'param': {'criterion': 'mae', 'max_depth': 6, 'max_features': 2, 'n_estimators': 9}}, 'score': 985.8138538418667, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=6,
+           max_features=2, max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=9, n_jobs=None, oob_score=False, random_state=None,
+           verbose=0, warm_start=False), 'y_pred': array([ 972.15393282, 1185.19956203,  209.5742215 , 1716.98111659,
+       1316.13368758, 2199.23748647, 1450.01152982,  665.91984758,
+        571.4469375 ,  206.47189307,  504.91550859,  345.30412841,
+       1710.68587849, 1603.15643144,  804.26535891, 1930.96510065,
+        376.70055741, 1066.10168284,  859.81407485,  851.09211626,
+       1745.91254821, 1144.53248355,  415.92447272,  200.02461502,
+       1518.17367988,  136.88099067, 1545.74519596, 1144.53248355,
+        619.54960821, 1975.25446447, 1979.26140891, 1745.91254821,
+       1936.42648594,  502.08773081, 1320.28152007, 1275.97653377,
+       1772.89632991, 1879.06593762,  280.59439967, 2132.40832694,
+        958.13705814, 1710.68587849,  914.44970679, 1710.68587849,
+        863.4982285 ,  575.20619675, 1144.53248355,  452.34807943,
+       1810.00694462,  348.19153086, 1225.92600875,  689.64652906,
+        646.66322306,  948.48650237, 1111.59360998, 2132.40832694,
+        452.34807943, 2164.13901334,  810.30492289,  766.25716311,
+        310.36492495, 2203.00843433,  984.35801433,  685.37734047,
+       1185.19956203, 2123.3274734 ,  662.24704816, 1589.36259808,
+        910.57391732, 1934.60045419, 2183.42358937, 1111.41522566,
+       1518.17367988,  411.26168202,  696.86270944, 2008.77155549,
+        429.52326323, 1363.43159689, 1804.42798987, 1697.26053018,
+        795.82433153, 2049.91026258, 1982.96362649, 1745.91254821,
+        504.91550859, 1605.77439681,  815.35647215, 2224.77959163,
+        938.38889234, 1804.42798987, 2224.77959163,  376.70055741,
+        859.81407485,  863.4982285 ,  452.34807943, 2132.40832694,
+        200.02461502, 1185.19956203, 1066.10168284,  161.4996227 ,
+       1252.34076673,  429.52326323,  779.95670293,  924.83869928,
+       1007.47964009, 1975.25446447, 1763.66808201,  209.5742215 ,
+        763.63174223,  452.34807943,  348.19153086, 1036.95065981,
+       1509.10629355, 1066.10168284,  543.41535595, 2046.88164305,
+       1520.70085379, 1518.17367988,  665.91984758,  310.36492495,
+        976.62123441, 1390.26345198,  950.74508823, 1869.99931505,
+        964.02330153,  411.26168202, 1930.96510065, 1275.97653377,
+       1144.53248355, 1197.89185185, 1869.99931505, 2046.88164305,
+       1381.78567768,  766.25716311, 1697.26053018,  348.19153086,
+        157.51956572, 1781.51388322,  543.41535595,  571.4469375 ,
+       1723.31976624,  938.38889234, 1007.47964009,  176.33979344,
+       1007.47964009, 2012.42561927, 2107.7402825 , 1453.46708537,
+        206.47189307, 2094.09172352, 1564.1894614 ,  795.82433153,
+       2224.77959163, 2136.19450647,  234.7067511 , 1585.51974829,
+       1394.7030655 ,  938.38889234, 1643.22285599,  452.34807943,
+        543.41535595, 1643.22285599, 1875.79393185, 1536.47526435,
+       2147.34311537, 1684.56550632, 1052.74047683, 2221.47212481,
+        757.52640819, 1772.89632991, 1252.34076673, 2199.23748647,
+       1956.18823089, 1349.04187207,  282.18725682, 1869.99931505,
+       1185.19956203, 2227.60747834, 2005.13298588,  946.8808907 ,
+        200.02461502,  411.26168202,  313.64708869,  622.77663812,
+       1450.01152982, 1716.98111659,  948.48650237,  924.83869928,
+        619.54960821, 2199.23748647,  348.19153086, 1803.52226667,
+        282.18725682, 2043.2892729 , 1643.22285599,  571.4469375 ,
+        421.0506376 , 1869.99931505, 1403.48648301, 1975.25446447,
+       2176.8661022 ,  563.53938556, 2246.23424221,  415.92447272,
+       1647.2231218 , 1697.26053018, 1660.82417482, 1453.46708537,
+        856.5079088 ,  429.52326323, 1185.19956203,  678.96903531,
+       1807.01661421, 1975.25446447,  161.4996227 ,  504.91550859,
+       1223.71109647, 1908.62859941,  313.64708869,  563.53938556,
+       1869.99931505, 1520.70085379, 1275.97653377, 1341.71504281,
+       2136.19450647,  980.06716034, 1384.96206657, 1316.13368758,
+        728.88886299, 1078.69554901,  817.99839559, 2180.69062952,
+       1410.45817292, 1928.27491306,  856.5079088 ,  296.82143526,
+        886.59799177,  563.53938556, 1036.95065981, 1364.20812153,
+       2132.40832694, 2136.19450647, 1403.48648301,  754.61699878,
+       1975.25446447, 1520.70085379, 1324.31428955,  845.88469405,
+       2005.13298588, 1441.3101475 ,  313.64708869, 2046.88164305,
+       1066.10168284,  452.34807943, 1073.35831378, 1108.30326116,
+       1807.01661421,  585.77435436, 2224.77959163, 1007.47964009,
+       1565.31067352,  421.0506376 , 2134.24642218, 1936.42648594,
+       1223.71109647,  704.63751426, 1450.01152982, 2224.77959163,
+        170.41164529,  376.70055741, 1845.75677802,  984.35801433,
+        946.8808907 ,  795.82433153, 1792.86162498,  231.25455472,
+       1351.08118332,  502.08773081,  766.25716311,  779.95670293,
+       1111.59360998,  938.38889234,  543.41535595, 1589.36259808,
+       1078.69554901,  209.5742215 , 1394.7030655 , 1647.2231218 ,
+       1803.52226667,  429.52326323,  455.48360132, 1225.92600875,
+       1697.26053018,  678.96903531, 1848.68534944,  856.5079088 ,
+       2043.2892729 , 2176.8661022 , 1845.75677802, 1636.67800237,
+       2168.64377524,  940.48167012,  161.4996227 ,  575.20619675,
+        435.51853901,  914.44970679, 2134.24642218,  710.62384583,
+       1460.51992652,  310.36492495,  499.23372565, 2046.88164305,
+        704.63751426,  154.11744932, 2246.23424221, 1520.70085379,
+        345.30412841, 2129.63795657,  543.41535595, 1807.01661421,
+       1043.86999532,  563.53938556,  646.66322306, 2077.52850635,
+       1328.48641257, 1643.22285599, 1643.22285599, 2176.8661022 ,
+       1565.31067352, 1066.10168284, 2183.42358937,  757.52640819,
+        136.88099067,  795.82433153,  609.0463926 , 1807.01661421,
+       1349.04187207, 1807.01661421,  726.13076114, 1716.98111659,
+        502.08773081, 1225.92600875, 1875.79393185,  499.23372565,
+       1124.80164922, 1524.30322005, 1988.71239975,  581.93573002,
+       1981.48955242, 1869.99931505,  341.45556806, 1144.53248355,
+       1869.99931505, 1394.7030655 , 1975.25446447, 1803.52226667,
+       1697.26053018, 1390.26345198,  348.19153086,  452.34807943,
+        191.7776861 , 1807.01661421,  296.82143526, 2060.69759629,
+        502.08773081, 1807.01661421, 2199.23748647, 1755.47788578,
+        485.51011793, 1745.91254821,  886.59799177, 1875.79393185,
+       1930.96510065, 1144.53248355, 1324.31428955,  950.74508823,
+       2199.23748647,  282.18725682, 1623.149031  , 1966.24995166,
+       1879.06593762, 2002.66328891, 1078.69554901,  665.91984758,
+       1680.83402484, 1036.95065981,  530.06443529, 1520.70085379,
+        856.5079088 ,  455.48360132, 1639.43698104, 2086.92334465,
+       1966.24995166,  599.10802743, 1394.7030655 , 2176.8661022 ,
+        835.26451505,  976.62123441, 1450.01152982, 1185.19956203,
+       1745.91254821,  662.24704816,  280.59439967,  463.78403813,
+       1975.25446447,  599.10802743,  662.24704816, 2002.66328891,
+        914.44970679, 1599.58824962, 1716.98111659,  206.47189307,
+       1185.19956203, 1845.75677802,  609.0463926 , 1515.43668076,
+       2070.86502947,  859.81407485,  405.98596186, 1451.7980877 ,
+       1643.22285599, 1956.18823089, 1491.69314672])}
+
+At Step: Modelling regression 
+Sequence executed:
+Null Handling with mean,Building Regression Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.base.LinearRegression'>, 'param': {'normalize': 'True'}}, 'score': 905.968244802149, 'residual': <Figure size 640x480 with 1 Axes>, 'pickle_file': LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None,
+         normalize='False'), 'y_pred': array([ 961.03624896, 1189.25457189,  224.33148721, 1716.75920428,
+       1321.38096938, 2210.23127974, 1450.50449419,  670.75855751,
+        578.67046229,  213.32095409,  506.60151821,  348.45022424,
+       1699.74292582, 1605.65291548,  814.89644568, 1940.97369699,
+        376.47703583, 1061.13200463,  859.93953573,  840.92134215,
+       1733.77548274, 1149.21626962,  405.50480498,  198.30659074,
+       1506.55811737,  141.25201   , 1547.59737719, 1151.21818473,
+        623.71355234, 1978.00912658, 1982.01295681, 1744.78601587,
+       1949.982315  ,  493.58906997, 1306.36660602, 1291.35224267,
+       1767.80803967, 1881.91720114,  259.3650017 , 2123.14797231,
+        953.0285885 , 1706.74962871,  908.98645601, 1700.74388337,
+        877.95677175,  583.67525007, 1146.21339695,  454.55172526,
+       1830.86836575,  363.4645876 , 1231.29478927,  695.78249643,
+        646.73557615,  939.01518271, 1122.19041559, 2124.14892986,
+        463.56034327, 2165.18818969,  816.89836079,  774.85814341,
+        298.40234641, 2218.2389402 ,  985.05923032,  691.7786662 ,
+       1190.25552945, 2104.12977873,  666.75472728, 1595.64333992,
+        898.97688044, 1941.97465454, 2188.21021349, 1100.16934934,
+       1521.57248072,  397.49714452,  708.79494466, 2016.04551374,
+        424.52299856, 1361.41927164, 1826.86453552, 1694.73813803,
+        793.87633698, 2061.08860379, 1989.01965971, 1741.7831432 ,
+        509.60439088, 1621.66823639,  821.90314857, 2234.2542611 ,
+        934.01039493, 1828.86645063, 2229.24947332,  380.48086606,
+        857.93762061,  875.95485664,  446.5440648 , 2127.15180253,
+        191.29988784, 1194.25935967, 1055.12625929,  166.27594892,
+       1250.31298285,  423.522041  ,  785.86867653,  914.99220135,
+       1005.07838145, 1967.99955102, 1754.79559144,  229.33627499,
+        763.84761028,  455.55268281,  357.45884225, 1020.0927448 ,
+       1493.54566913, 1050.1214715 ,  538.63216002, 2048.07615555,
+       1532.58301384, 1522.57343828,  677.76526041,  295.39947374,
+        978.05252742, 1385.44225301,  945.02092805, 1859.89613489,
+        956.03146117,  401.50097475, 1915.94975807, 1289.35032756,
+       1148.21531206, 1203.26797768, 1854.89134711, 2044.07232533,
+       1374.43171988,  767.85144051, 1695.73909559,  356.4578847 ,
+        158.26828847, 1777.81761524,  540.63407513,  568.66088672,
+       1724.76686473,  930.0065647 , 1003.07646634,  182.29126983,
+       1006.07933901, 2017.0464713 , 2102.12786362, 1456.51023953,
+        209.31712386, 2099.12499095, 1555.60503765,  791.87442187,
+       2233.25330355, 2145.16903856,  249.35542613, 1586.63472191,
+       1401.45757391,  920.99794669, 1648.69409042,  434.53257412,
+        543.6369478 , 1657.70270843, 1886.92198892, 1544.59450452,
+       2163.18627458, 1680.72473224, 1044.11572616, 2225.24564309,
+        748.83324693, 1760.80133678, 1252.31489796, 2198.21978906,
+       1957.98997545, 1353.41161119,  268.37361971, 1862.89900756,
+       1193.25840212, 2226.24660065, 2013.04264107,  948.02380072,
+        196.30467562,  400.50001719,  323.42628533,  627.71738257,
+       1446.50066397, 1714.75728917,  941.01709782,  912.99028623,
+        626.71642501, 2206.22744952,  367.46841782, 1799.83868149,
+        266.37170459, 2029.05796198, 1658.70366599,  576.66854718,
+        410.50959276, 1872.90858313, 1407.46331925, 1973.0043388 ,
+       2185.20734082,  558.65131116, 2248.2676669 ,  404.50384742,
+       1671.71611423, 1691.73526536, 1674.7189869 , 1457.51119709,
+        850.93091772,  425.52395611, 1171.23733587,  680.76813308,
+       1807.84634194, 1972.00338124,  167.27690648,  504.59960309,
+       1219.28329859, 1900.93539472,  305.40904931,  566.65897161,
+       1858.89517733, 1538.58875918, 1265.3273462 , 1342.40107807,
+       2148.17191123,  966.04103674, 1375.43267744, 1320.38001182,
+        732.81792602, 1088.15785866,  823.90506369, 2187.20925594,
+       1413.46906459, 1912.9468854 ,  848.9290026 ,  287.39181328,
+        887.96634732,  549.64269314, 1028.10040526, 1371.42884721,
+       2132.15659032, 2146.16999611, 1408.46427681,  741.82654404,
+       1969.00050857, 1531.58205629, 1338.39724784,  836.91751192,
+       2011.04072596, 1433.48821573,  310.41383709, 2056.08381601,
+       1064.1348773 ,  442.54023458, 1083.15307088, 1099.16839178,
+       1805.84442683,  592.68386808, 2230.25043088, 1007.08029657,
+       1556.6059952 ,  413.51246543, 2138.16233566, 1946.97944233,
+       1216.28042592,  717.80356267, 1453.50736686, 2236.25617622,
+        181.29031227,  382.48278117, 1838.8760262 ,  982.05635765,
+        947.02284316,  796.87920965, 1790.83006348,  239.34585056,
+       1358.41639897,  496.59194264,  777.86101608,  784.86771897,
+       1124.1923307 ,  931.00752226,  535.62928735, 1598.64621259,
+       1087.1569011 ,  225.33244477, 1392.4489559 , 1667.712284  ,
+       1793.83293615,  420.51916833,  467.56417349, 1230.29383171,
+       1693.73718048,  682.77004819, 1844.88177154,  852.93283283,
+       2023.05221664, 2178.20063793, 1840.87794131, 1629.67589685,
+       2169.19201992,  937.0132676 ,  160.27020358,  584.67620763,
+        430.5287439 ,  902.98071067, 2136.16042055,  725.81122313,
+       1472.52556044,  301.40521908,  490.5861973 , 2052.07998578,
+        713.79973245,  153.26350068, 2247.26670934, 1530.58109873,
+        344.44639402, 2111.13648163,  537.63120246, 1822.86070529,
+       1041.11285349,  552.64556582,  647.7365337 , 2080.10679737,
+       1339.3982054 , 1663.70845377, 1649.69504798, 2183.20542571,
+       1564.61365566, 1065.13583486, 2189.21117105,  752.83707716,
+        144.25488267,  795.8782521 ,  610.7011041 , 1812.85112972,
+       1352.41065363, 1823.86166285,  730.81601091, 1717.76016184,
+        492.58811241, 1222.28617126, 1885.92103137,  489.58523974,
+       1132.19999116, 1541.59163185, 1997.02732016,  589.68099541,
+       1986.01678704, 1852.88943199,  336.43873356, 1152.21914229,
+       1869.90571046, 1397.45374369, 1964.99667835, 1791.83102103,
+       1696.74005315, 1381.43842278,  362.46363004,  445.54310725,
+        183.29222739, 1811.85017217,  288.39277084, 2068.09530669,
+        495.59098508, 1819.85783262, 2201.22266173, 1752.79367632,
+        477.57374906, 1748.78984609,  884.96347465, 1889.92486159,
+       1918.95263074, 1138.2057365 , 1334.39341761,  944.01997049,
+       2217.23798264,  274.37936505, 1624.67110906, 1960.99284812,
+       1884.92007381, 2006.03593817, 1084.15402843,  675.76334529,
+       1679.72377468, 1029.10136281,  524.61875423, 1533.5839714 ,
+        853.93379039,  466.56321594, 1633.67972707, 2084.1106276 ,
+       1963.99572079,  600.69152854, 1390.44704079, 2186.20829838,
+        828.90985147,  977.05156986, 1448.50257908, 1198.2631899 ,
+       1737.77931297,  665.75376972,  265.37074704,  468.56513105,
+       1980.0110417 ,  602.69344365,  667.75568484, 1999.02923527,
+        900.97879555, 1601.64908526, 1712.75537405,  215.3228692 ,
+       1172.23829342, 1835.87315353,  614.70493433, 1496.5485418 ,
+       2076.10296714,  863.94336595,  391.49139918, 1464.51789999,
+       1654.69983576, 1956.98901789, 1489.5418389 ])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 10, 'max_features': 2, 'n_estimators': 12}}, 'score': 0.8714285714285714, 'conf_matrix': array([[87, 13],
+       [ 5, 35]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=10, max_features=2, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=12, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1,
+       0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+       1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0,
+       1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0,
+       1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1,
+       1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 0])}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 1.2329639290190333, 'penalty': 'l2', 'solver': 'lbfgs'}}, 'score': 0.7785714285714286, 'conf_matrix': array([[76, 15],
+       [16, 33]], dtype=int64), 'pickle_file': LogisticRegression(C=1.4414815887773176, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='lbfgs', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1,
+       0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0,
+       1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0,
+       0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0,
+       0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1,
+       1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1,
+       1, 0, 0, 0, 0, 0, 1, 1])}
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: Encoding 
+Sequence executed:
+  Encoding with label,
+
+At Step: textProcessing 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,
+
+At Step: Modelling classification 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'gini', 'max_depth': 17, 'max_features': 519, 'n_estimators': 8}}, 'score': 0.9348837209302325, 'conf_matrix': array([[84,  7,  1,  0],
+       [ 3, 34,  2,  0],
+       [ 1,  0, 76,  0],
+       [ 0,  0,  0,  7]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=19, max_features=648, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=18, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([2, 2, 0, 2, 1, 2, 2, 0, 0, 0, 0, 2, 3, 0, 2, 0, 2, 2, 1, 1, 0, 0,
+       2, 0, 1, 2, 1, 2, 0, 0, 2, 1, 3, 1, 3, 2, 0, 2, 1, 0, 2, 0, 1, 0,
+       2, 2, 1, 2, 1, 1, 2, 0, 3, 0, 0, 0, 2, 0, 2, 0, 1, 0, 2, 0, 2, 0,
+       2, 2, 0, 0, 1, 0, 2, 1, 2, 0, 1, 0, 2, 0, 3, 2, 2, 1, 0, 0, 2, 1,
+       1, 0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 2, 1, 0, 0, 2, 0, 0, 1,
+       0, 2, 0, 1, 2, 0, 0, 0, 1, 0, 2, 0, 1, 1, 2, 0, 2, 3, 0, 2, 2, 2,
+       3, 0, 0, 0, 2, 2, 0, 0, 0, 2, 2, 0, 0, 2, 0, 1, 2, 1, 0, 1, 0, 1,
+       0, 1, 1, 2, 0, 0, 0, 2, 1, 2, 2, 0, 0, 0, 2, 1, 0, 0, 1, 0, 0, 2,
+       0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 2, 1, 0, 2, 2, 0, 2, 0, 2, 0,
+       0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 0, 2, 1])}
+
+At Step: Modelling classification 
+Sequence executed:
+  Encoding with label,  Text Processing with BOW,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 4.862135629891862, 'penalty': 'l2', 'solver': 'newton-cg'}}, 'score': 0.9627906976744186, 'conf_matrix': array([[86,  6,  0,  0],
+       [ 1, 35,  0,  0],
+       [ 1,  0, 79,  0],
+       [ 0,  0,  0,  7]], dtype=int64), 'pickle_file': LogisticRegression(C=4.9270374169771864, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='newton-cg', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([2, 2, 0, 2, 0, 2, 2, 0, 0, 0, 1, 2, 3, 0, 0, 0, 2, 2, 1, 1, 0, 0,
+       2, 0, 1, 2, 1, 2, 0, 0, 2, 1, 3, 1, 3, 2, 0, 2, 1, 0, 2, 0, 1, 0,
+       2, 2, 1, 2, 1, 1, 2, 0, 3, 0, 0, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0,
+       2, 2, 0, 0, 1, 0, 2, 1, 2, 0, 1, 0, 2, 0, 3, 2, 2, 1, 0, 0, 2, 1,
+       1, 0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 2, 1, 0, 0, 2, 0, 0, 1,
+       0, 2, 0, 1, 2, 0, 0, 0, 1, 0, 2, 0, 1, 1, 2, 0, 2, 3, 0, 2, 2, 2,
+       3, 0, 0, 0, 2, 2, 0, 0, 0, 2, 2, 0, 0, 2, 2, 1, 2, 0, 0, 1, 0, 2,
+       0, 0, 1, 2, 0, 0, 1, 2, 1, 2, 2, 0, 0, 0, 2, 1, 0, 0, 1, 0, 1, 2,
+       0, 2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 0, 2, 0, 0, 2, 2, 0, 2, 0, 2, 0,
+       0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 0, 2, 1])}
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.ensemble.forest.RandomForestClassifier'>, 'param': {'criterion': 'entropy', 'max_depth': 10, 'max_features': 4, 'n_estimators': 19}}, 'score': 0.8611111111111112, 'conf_matrix': array([[86,  7],
+       [13, 38]], dtype=int64), 'pickle_file': RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=10, max_features=4, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=19, n_jobs=None,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False), 'y_pred': array([1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1,
+       1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1,
+       0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1,
+       1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0,
+       0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0])}
+
+At Step: Modelling classification 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,Building Classification Model
+
+{'Hyperparameter': {'model': <class 'sklearn.linear_model.logistic.LogisticRegression'>, 'param': {'C': 0.09691542939947027, 'penalty': 'l2', 'solver': 'liblinear'}}, 'score': 0.8125, 'conf_matrix': array([[85, 13],
+       [14, 32]], dtype=int64), 'pickle_file': LogisticRegression(C=0.16293102481263544, class_weight=None, dual=False,
+          fit_intercept=True, intercept_scaling=1, max_iter=100,
+          multi_class='warn', n_jobs=None, penalty='l2', random_state=None,
+          solver='liblinear', tol=0.0001, verbose=0, warm_start=False), 'y_pred': array([1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0,
+       0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1,
+       0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1,
+       1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1,
+       1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0])}
+

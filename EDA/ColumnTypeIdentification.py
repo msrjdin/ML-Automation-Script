@@ -52,8 +52,8 @@ class ColumnTypeConfirmation:
         self.col_types_confirmation()
 
     def col_types_confirmation(self):
-       # columnTypesConfirmation=[]
-        print('Please Confirm/Map the columns with their type:\n')
+    #    # columnTypesConfirmation=[]
+    #     print('Please Confirm/Map the columns with their type:\n')
         # for col in self.dtypes.keys():
         #     colView=self.df[col].copy()
         #     colView=colView[colView.notna()].head(3).values

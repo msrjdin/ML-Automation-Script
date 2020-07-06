@@ -18,3 +18,39 @@ At Step: Encoding
 Sequence executed:
 Null Handling with imputezero,  Feature Reduction with pearson,  Outlier Handling with zscore,  Encoding with one-hot,
 
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+
+At Step: nullHandling 
+Sequence executed:
+Null Handling with mean,
+
+At Step: Outlier Handling 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,
+
+At Step: Encoding 
+Sequence executed:
+Null Handling with mean,  Outlier Handling with removing,  Encoding with label,
+

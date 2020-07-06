@@ -9,9 +9,12 @@ from MLAccelerator import MLAccelerator
 from flask import Flask, render_template, request, redirect, url_for
 import pandas as pd
 import numpy as np
+# from flask_cachebuster import cache_bust
+# cache_bust.init_cache_busting(app)
 
 app = Flask(__name__)
 MLAcc = MLAccelerator()
+
 
 def percentage_error(actual, predicted):
     res = np.empty(actual.shape)
@@ -67,10 +70,15 @@ def submit():
         flag_list['feature']=request.form.getlist('feature')
         flag_list['encoding']=request.form.getlist('encoding')
         flag_list['metric']=request.form.getlist('metric')
-        flag_list['model']=request.form.getlist('model')
+        #flag_list['model']=request.form.getlist('model')
         flag_list['vector']=request.form.getlist('vector')
         flag_list['textp']= request.form.getlist('textp')
         cols_list = request.form.getlist('columns')
+        if MLAcc.targetType == 'Categorical':
+            flag_list['model'] = ['classification']
+        else: 
+            flag_list['model'] = ['regression']
+        print(flag_list['model'])
         for key in flag_list:
             if not flag_list[key]:
                 final_list[key] = [None]
@@ -84,6 +92,8 @@ def submit():
         print(flag_list['textp'])
         if len(flag_list['textp']) > 0 or len(flag_list['vector']) > 0:
             columns = MLAcc.colTypes['Text']
+        elif MLAcc.targetType in ['Numeric', 'Identity']:
+            columns = ['0residual','1residual']
         else:
             columns = []
         result = MLAcc.execute()

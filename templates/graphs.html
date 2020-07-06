@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <!-- saved from url=(0072)file:///C:/Users/SindhuKarnati/Desktop/MLAccelarator/templates/Home.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta Http-Equiv="Cache" content="no-cache">
+<meta Http-Equiv="Pragma-Control" content="no-cache">
+<meta Http-Equiv="Cache-directive" Content="no-cache">
+<meta Http-Equiv="Pragma-directive" Content="no-cache">
+<meta Http-Equiv="Cache-Control" Content="no-cache">
+<meta Http-Equiv="Pragma" Content="no-cache">
+<meta Http-Equiv="Expires" Content="0">
+<meta Http-Equiv="Pragma-directive: no-cache">
+<meta Http-Equiv="Cache-directive: no-cache">
+  <meta http-equiv="expires" content="timestamp">
 <link rel="stylesheet" href="./Home_files/font-awesome.min.css">
 <style>
 * {box-sizing: border-box;}
@@ -120,11 +130,11 @@ font-weight: bold;
 </div>
 
 <div style ="padding-top:20px;padding-left:30px" >
-    <img src="{{url_for('static', filename='corr_pic1.png')}}" align style="width:500px;height:400px">
+    <img class="NO-CACHE" src="/static/corr_pic.png?hash=" . filemtime('corr_pic.png') . "" align style="width:500px;height:400px">
 </div>
 
 <div style ="padding-top:20px;padding-left:30px" >
-  <img src="{{url_for('static', filename='target_distribution.png')}}" align style="width:500px;height:400px">
+  <img class="NO-CACHE" src="/static/target_distribution.png?hash=" . filemtime('target_distribution.png') . "" align style="width:500px;height:400px">
 </div>
 
 
@@ -169,19 +179,6 @@ font-weight: bold;
 </div>
 </div>
 
-<div style="padding-top:20px;padding-left:400px;width:600px;float:center;">
-<p>Model:</p>
-<div>
-  <input type="checkbox" id="classify" name="model" value="classification">
-  <label for="classify">classification</label>
-</div>
-
-<div>
-  <input type="checkbox" id="regression" name="model" value="regression">
-  <label for="regression">regression</label>
-</div>
-</div>
-
 <div style="padding-top:30px;padding-left:30px;width:400px;float: right;">
 <p>Encoding:</p>
 <div>
@@ -195,7 +192,7 @@ font-weight: bold;
 </div>
 </div>
 
-<div style="padding-top:20px;padding-left:50px;width:400px;float: left";>
+<div style="padding-top:20px;padding-left:50px;width:400px;float: right";>
 <p>Outlier Handling:</p>
 <div>
   <input type="checkbox" id="remove" name="outlier" value="removing">
