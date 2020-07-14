@@ -27,20 +27,19 @@ class Insights:
         x=self.df[self.targetName].values
         y=self.df[feature].values
         data={'x_'+self.targetName: x, 'y_'+feature : y }
-        plotting_data={'plot_name_'+feature:"Scatter", 'data_'+feature : data}
-        return plotting_data
+        plotting_data={'plot_type':"Scatter", 'data' : data}
+        return {'plot_'+feature : plotting_data}
+
 
     def ShowViolinPlot(self, feature):
         x = self.df[self.targetName].values
         y = self.df[feature].values
         data = {'x_' + self.targetName: x, 'y_' + feature: y}
-        plotting_data = {'plot_name_' + feature: "Violin", 'data_' + feature: data}
-        # ax = sns.violinplot(x="Sex", y="Fare", data=df)
-        return plotting_data
-
+        plotting_data = {'plot_type': "Violin", 'data': data}
+        return {'plot_' + feature: plotting_data}
 
     def returnValues(self):
-        print(self.insights)
+        # print(self.insights)
         return self.insights
 
 
@@ -51,6 +50,7 @@ class Insights:
 
     # target distribution (bar)
     # df.describe()
+    # graphs for more nulls (check on box plot)
     # numeric column and target numerical: scatter
     # numeric column and target categorical: violin
     #
