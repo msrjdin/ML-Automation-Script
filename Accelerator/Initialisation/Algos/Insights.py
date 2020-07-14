@@ -26,7 +26,7 @@ class Insights:
     def ShowScatterPlot(self,feature):
         x=self.df[self.targetName].values
         y=self.df[feature].values
-        data={'x_'+self.targetName: x, 'y_'+feature : y }
+        data = {'x' : x, 'y' : y}
         plotting_data={'plot_type':"Scatter", 'data' : data}
         return {'plot_'+feature : plotting_data}
 
@@ -34,7 +34,7 @@ class Insights:
     def ShowViolinPlot(self, feature):
         x = self.df[self.targetName].values
         y = self.df[feature].values
-        data = {'x_' + self.targetName: x, 'y_' + feature: y}
+        data = {'x' : x, 'y' : y}
         plotting_data = {'plot_type': "Violin", 'data': data}
         return {'plot_' + feature: plotting_data}
 
