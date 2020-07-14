@@ -33,17 +33,20 @@ class InitFlow:
         obj = DetectingColTypes(self.df)
         self.colTypes = obj.returnValues()
 
+    # Input from the UI
+    def targetCol(self, targetName):
+        self.targetName = targetName
+
+    def insights(self):
+        obj = Insights(self.df, self.colTypes, self.targetName)
+        self.ins = obj.returnValues()
+
+
     #Confirmation of the COlTypes taken from the UI via API
     def confirmingColTypes(self, confirmedColTypes):
         self.colTypes = confirmedColTypes
 
-    def insights(self):
-        obj = Insights(self.df)
-        self.ins = obj.returnValues()
 
-    #Input from the UI
-    def targetCol(self, targetName):
-        self.targetName = targetName
 
     #Saving Config File
     def save(self):

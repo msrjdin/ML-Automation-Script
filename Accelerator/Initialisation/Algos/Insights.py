@@ -1,9 +1,61 @@
 import pandas as pd
+# df = pd.read_csv(r"C:\Users\SatyaSindhuMolleti\Downloads\sample_train.csv")
+# df=df.head()
+
 
 class Insights:
-    def __init__(self, df):
-        print('Insights')
+    def __init__(self, df,colTypes,targetName):
+        self.colTypes=colTypes
+        self.df=df
+        self.targetName=targetName
+        self.insights={}
+        for key, value in colTypes.items():
+            if key == self.targetName:
+               self.targetType = value
+
+        for key,value in colTypes.items():
+            if(self.targetType == 'Numeric') :
+                if(value =='Numeric') :
+                    self.insights.update(self.ShowScatterPlot(key))
+            elif (self.targetType == 'Categorical'):
+                if (value == 'Numeric'):
+                    self.insights.update(self.ShowViolinPlot(key))
+
+        self.returnValues()
+
+    def ShowScatterPlot(self,feature):
+        x=self.df[self.targetName].values
+        y=self.df[feature].values
+        data={'x_'+self.targetName: x, 'y_'+feature : y }
+        plotting_data={'plot_name_'+feature:"Scatter", 'data_'+feature : data}
+        return plotting_data
+
+    def ShowViolinPlot(self, feature):
+        x = self.df[self.targetName].values
+        y = self.df[feature].values
+        data = {'x_' + self.targetName: x, 'y_' + feature: y}
+        plotting_data = {'plot_name_' + feature: "Violin", 'data_' + feature: data}
+        # ax = sns.violinplot(x="Sex", y="Fare", data=df)
+        return plotting_data
+
 
     def returnValues(self):
-        insights = 'A>0 and B is 90% null'
-        return insights
+        print(self.insights)
+        return self.insights
+
+
+
+# ob=Insights(df,{'PassengerId': 'Numeric', 'Survived': 'Categorical', 'Pclass': 'Categorical', 'Name': 'Text', 'Sex': 'Categorical', 'Age': 'Numeric', 'SibSp': 'Categorical', 'Parch': 'Categorical', 'Ticket': 'Categorical', 'Fare': 'Numeric', 'Cabin': 'Categorical', 'Embarked': 'Categorical'}
+# ,'Survived')
+
+
+    # target distribution (bar)
+    # df.describe()
+    # numeric column and target numerical: scatter
+    # numeric column and target categorical: violin
+    #
+    # categorical column and target numerical : violin
+    # both cat : confusion matrix
+
+
+
