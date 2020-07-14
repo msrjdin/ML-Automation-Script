@@ -1,0 +1,5 @@
+#Ignore IDE Files
+.idea
+
+#IgnoreApplication Run Files
+ApplicationRuns/
