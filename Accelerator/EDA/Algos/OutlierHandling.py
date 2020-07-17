@@ -9,7 +9,7 @@ import numpy as np
 
 
 class OutlierHandling:
-    def __init__(self,df,col_map):
+    def __init__(self, df, col_map):
         self.df = df.copy()
         self.col_map=col_map
         self.df_final=df.copy(deep=True)

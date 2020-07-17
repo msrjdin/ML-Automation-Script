@@ -1,5 +1,5 @@
+from EDA.Algos import *
 from EDA.EDAFlow import EDAFlow
-#from EDA.Algos import *
 #from Initialisation.Algos import *
 from Initialisation.InitFlow import *
 
@@ -11,7 +11,9 @@ if __name__ =="__main__":
     miniFlow.targetCol('Survived')
     miniFlow.insights()
     miniFlow.save()
-    nullcolTypes = {}
-    outcolTypes = {}
-    edaflow = EDAFlow(app_name,nullcolTypes,outcolTypes)
-    
+    nullcolTypes = {'impute mean':['Fare'],'impute knn':['PassengerId'],'categorical impute':['Sex']}
+    outcolTypes = {'capping':['Fare','Age'],'zscore':['PassengerId']}
+    enccolTypes = {'label':['Sex'] ,'one-hot':['Embarked']}
+    #textcolTypes = {'ingredients': ['stemming', 'lemmetize'],'ingredient': ['stemming']} 
+    textcolTypes = { }
+    eda = EDAFlow(app_name,nullcolTypes,outcolTypes,enccolTypes,textcolTypes)
