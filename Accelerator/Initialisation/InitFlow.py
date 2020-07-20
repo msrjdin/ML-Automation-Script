@@ -4,17 +4,14 @@ from Algos.DetectingColTypes import DetectingColTypes
 # noinspection PyUnresolvedReferences
 from Algos.Insights import Insights
 import os, shutil, sys
-sys.path.append('..')
+#sys.path.append('..')
 from Accelerator.GlobalParameters import *
 import json
 
 class InitFlow:
-    def __init__(self, appName, inputFile):
-        print('Initialisation Class')
+    def __init__(self, appName, inputFile, separator=','):
         self.appName = appName
-        self.df = pd.read_csv(inputFile, sep=',')
-        print(self.df.head())
-
+        self.df = pd.read_csv(inputFile, sep=separator)
         self.projectStructure()
 
     def projectStructure(self):
@@ -48,11 +45,9 @@ class InitFlow:
     #Confirmation of the COlTypes taken from the UI via API
     def confirmingColTypes(self, confirmedColTypes):
         self.colTypes = confirmedColTypes
-
-
-
+        
     #Saving Config File
-    def save(self):
+    def save_results(self):
         config = {'appName': self.appName,
                 'colTypes': self.colTypes,
                 'targetCol': self.targetName}

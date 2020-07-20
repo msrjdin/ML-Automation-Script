@@ -1,6 +1,4 @@
 import pandas as pd
-df = pd.read_csv(r"C:\Users\SatyaSindhuMolleti\Downloads\sample_train.csv")
-df=df.head()
 
 
 class Insights:
