@@ -20,12 +20,15 @@ class Insights:
                 if (value == 'Numeric'):
                     self.insights.update(self.ShowViolinPlot(key))
 
-    def ShowScatterPlot(self, feature):  # {"scatter": [col, data]}
-        x = self.df[self.targetName].values
-        y = self.df[feature].values
-        data = {'x': x, 'y': y}
-        plotting_data = {'plot_type': "Scatter", 'data': data}
-        return {'plot_' + feature: plotting_data}
+
+
+    def ShowScatterPlot(self,feature): # {"scatter": [col, data]}
+        x=self.df[self.targetName].values
+        y=self.df[feature].values
+        data = {'x' : x, 'y' : y}
+        plotting_data={'plot_type':"Scatter", 'data' : data}
+        return {'plot_'+feature : plotting_data}
+
 
     def ShowViolinPlot(self, feature):
         x = self.df[self.targetName].values
@@ -38,16 +41,19 @@ class Insights:
         # print(self.insights)
         return self.insights
 
+
 # ob=Insights(df,{'PassengerId': 'Numeric', 'Survived': 'Categorical', 'Pclass': 'Categorical', 'Name': 'Text', 'Sex': 'Categorical', 'Age': 'Numeric', 'SibSp': 'Categorical', 'Parch': 'Categorical', 'Ticket': 'Categorical', 'Fare': 'Numeric', 'Cabin': 'Categorical', 'Embarked': 'Categorical'}
 # ,'Survived')
 
 
-# target distribution (bar)
-# df.describe()
-# graphs for more nulls (check on box plot)
-# numeric column and target numerical: scatter
-# numeric column and target categorical: violin
-#
-# categorical column and target numerical : violin
-# both cat : confusion matrix
+    # target distribution (bar)
+    # df.describe()
+    # graphs for more nulls (check on box plot)
+    # numeric column and target numerical: scatter
+    # numeric column and target categorical: violin
+    #
+    # categorical column and target numerical : violin
+    # both cat : confusion matrix
+
+
 
