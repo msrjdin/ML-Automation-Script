@@ -3,22 +3,23 @@ import pandas as pd
 from Algos.DetectingColTypes import DetectingColTypes
 # noinspection PyUnresolvedReferences
 from Algos.Insights import Insights
-import os, shutil
+import os, shutil, sys
+# sys.path.append('..')
 from Accelerator.GlobalParameters import *
 import json
-
 
 class InitFlow:
     def __init__(self, appName, inputFile):
         print('Initialisation Class')
         self.appName = appName
-        self.df = pd.read_csv(inputFile, sep='|')
+        self.df = pd.read_csv(inputFile, sep=',')
+        print(self.df.head())
 
         self.projectStructure()
 
     def projectStructure(self):
         shutil.rmtree(RunFilePath1 + self.appName, ignore_errors=True)
-        os.mkdir(RunFilePath1 + self.appName)
+        os.makedirs(RunFilePath1 + self.appName)
         os.mkdir(RunFilePath1 + self.appName + '/' + InitialisationFolder)
         os.mkdir(RunFilePath1 + self.appName + '/' + EDAFolder)
         os.mkdir(RunFilePath1 + self.appName + '/' + FRFolder)
@@ -32,6 +33,7 @@ class InitFlow:
     def detectingColType(self):
         obj = DetectingColTypes(self.df)
         self.colTypes = obj.returnValues()
+        print(self.colTypes)
 
     # Input from the UI
     def targetCol(self, targetName):
@@ -40,6 +42,7 @@ class InitFlow:
     def insights(self):
         obj = Insights(self.df, self.colTypes, self.targetName)
         self.ins = obj.returnValues()
+        print(self.ins)
 
 
     #Confirmation of the COlTypes taken from the UI via API
@@ -57,8 +60,10 @@ class InitFlow:
         self.df.to_csv(RunFilePath1 + '/' + self.appName + '/' + inputFileName, index=False)
 
 
-miniFlow = InitFlow('App1', '../../../Account_Master.txt')
-miniFlow.detectingColType()
-miniFlow.insights()
-miniFlow.targetCol('Target')
-miniFlow.save()
+if __name__ =="__main__":
+    print(sys.path)
+    miniFlow = InitFlow('App2', "dataframe.csv")
+    miniFlow.detectingColType()
+    miniFlow.targetCol('Survived')
+    miniFlow.insights()
+    miniFlow.save()
