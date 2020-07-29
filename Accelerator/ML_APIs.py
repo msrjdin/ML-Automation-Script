@@ -1,52 +1,55 @@
 from flask import Flask, request
 from .Initialisation.InitFlow import InitFlow
-from.EDA.EDAFlow import EDAFlow
+from .EDA.EDAFlow import EDAFlow
+from .GlobalParameters import *
 
 app = Flask(__name__)
 
 @app.route('/', method = ['POST'])
 def inputs():
     if request.method=='POST':
+        appName = request.form.get('appName')
         filePath = request.form.get('filePath')
         sep = request.form.get('sep')
-        appName = request.form.get('appName')
-        app.name = appName
 
         obj = InitFlow(appName, filePath, sep)
 
-        app.config['initObject'] = obj
+        saveObj(obj, RunFilePath+appName+'/'+InitialisationFolder+'/', 'classObject')
 
         return "Accelerator Initialised"
 
 @app.route('/settingTarget', method = ['POST'])
 def settingTarget():
     if request.method=='POST':
+        appName = request.form.get('appName')
         targetColName = request.form.get('targetColumn')
 
-        obj = app.config['initObject']
+        obj = readObj(RunFilePath+appName+'/'+InitialisationFolder+'/', 'classObject')
         obj.targetCol(targetColName)
 
-        app.config['initObject'] = obj
+        saveObj(obj, RunFilePath+appName+'/'+InitialisationFolder+'/', 'classObject')
 
         return 'Target Column Set'
 
 @app.route('/detectingColTypes', method= ['GET'])
 def colTypesDetection():
     if request.method == 'GET':
-        obj = app.config['initObject']
+        appName = request.form.get('appName')
+        obj = readObj(RunFilePath+appName+'/'+InitialisationFolder+'/', 'classObject')
         obj.detectingColTypes()
-        app.config['initObject'] = obj
+        saveObj(obj, RunFilePath+appName+'/'+InitialisationFolder+'/', 'classObject')
 
         return obj.colTypes
 
 @app.route('/initSave', method = ['POST'])
 def initSave():
     if request.method=='POST':
+        appName = request.form.get('appName')
         confirmedColTypes = request.form.get('confirmedColTypes')
 
-        obj = app.config['initObject']
+        obj = readObj(RunFilePath+appName+'/'+InitialisationFolder+'/', 'classObject')
         obj.confirmingColTypes(confirmedColTypes)
-        app.config['initObject'] = obj
+        saveObj(obj, RunFilePath+appName+'/'+InitialisationFolder+'/', 'classObject')
 
         obj.save_results()
         return 'Column Types Updated'
@@ -54,26 +57,31 @@ def initSave():
 @app.route('/eda', method=['GET'])
 def edaSuggestion():
     if request.method == 'GET':
-        obj = EDAFlow(app.name)
+        appName = request.form.get('appName')
+
+        obj = EDAFlow(appName)
         suggestions = obj.suggestions()
 
-        app.config['EDAObject'] = obj
+        saveObj(obj, RunFilePath+appName+'/'+EDAFolder+'/', 'classObject')
 
         return suggestions
 
 @app.route('EDATransformations', method = ['POST'])
 def edaTransform():
     if request.method == 'POST':
+        appName = request.form.get('appName')
         nullcolTypes = request.form.get('nullcolTypes')
         outcolTypes = request.form.get('outcolTypes')
         enccolTypes = request.form.get('enccolTypes')
         textcolTypes = request.form.get('textcolTypes')
 
-        obj = app.config['EDAObject']
+        obj = readObj(RunFilePath+appName+'/'+EDAFolder+'/', 'classObject')
         obj.trasformations(nullcolTypes, outcolTypes, enccolTypes, textcolTypes)
-        app.config['EDAObject'] = obj
+        saveObj(obj, RunFilePath+appName+'/'+EDAFolder+'/', 'classObject')
 
         return  "EDA Transformation Complete"
+
+
 
 
 
