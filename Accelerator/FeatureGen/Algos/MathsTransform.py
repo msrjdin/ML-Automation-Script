@@ -1,37 +1,73 @@
 import pandas as pd
 import numpy as np
 
-coltype = {'PassengerId': 'Numeric', 'Survived': 'Categorical', 'Sex': 'Categorical', 'Pclass': 'Categorical',
-           'Name': 'Text', 'Age': 'Numeric', 'SibSp': 'Categorical', 'Parch': 'Categorical', 'Fare': 'Numeric'}
-
+# coltype = {'PassengerId': 'Numeric', 'Survived': 'Categorical', 'Sex': 'Categorical', 'Pclass': 'Categorical',
+#            'Name': 'Text', 'Age': 'Numeric', 'SibSp': 'Categorical', 'Parch': 'Categorical', 'Fare': 'Numeric'}
+# df=pd.read_csv('C://Users//SindhuKarnati//Desktop//MLAccelarator_v2//Accelerator//dataframe.csv')
+# df=df.head()
+# col_map = {'log':['Fare'],'reciprocal':['Age']}
 
 class MathsTransform:
 
-    def __init__(self, df, coltype):
+    def __init__(self, df,col_map):
 
         self.df = df
-        self.coltype = coltype
-        self.feature_generation()
-
-    def feature_generation(self):
-
-        numeric_columns = []
-        for key, value in coltype.items():
-            if value == 'Numeric':
-                numeric_columns.append(key)
-        numeric_sqrt = ['sqrt_' + s for s in numeric_columns]
-        numeric_cr = ['cr_' + s for s in numeric_columns]
-        numeric_log = ['log_' + s for s in numeric_columns]
-        numeric_reciprocal = ['rec_' + s for s in numeric_columns]
-        self.df[numeric_sqrt] = self.df[numeric_columns].apply(lambda x: np.sqrt(x))
-        self.df[numeric_cr] = self.df[numeric_columns].apply(lambda x: np.cbrt(x))
-        self.df[numeric_log] = self.df[numeric_columns].apply(lambda x: np.log(x))
-        self.df[numeric_log].fillna(0, inplace=True)
-        self.df[numeric_reciprocal] = self.df[numeric_columns].apply(lambda x: np.reciprocal(x))
-        self.df[numeric_reciprocal].fillna(0, inplace=True)
-
-    def return_result(self):
-        return self.df
+        self.col_map = col_map
+        self.df_final = pd.DataFrame()
+        for key,value in self.col_map.items():
+            if key == 'sqrt':
+                self.sqrt_(self.df[value])
+            if key == 'cbrt':
+                self.cbrt_(self.df[value])
+            if key == 'log':
+                self.log_(self.df[value])
+            if key == 'reciprocal':
+                self.reciprocal_(self.df[value])
 
 
+    def sqrt_(self,df):
+        print('hi sqrt')
+        df_ = df.copy(deep=True)
+        for col in df.columns:
+            self.df_final['sqrt_'+col] = np.sqrt(df[col])
 
+        return self.df_final
+
+
+    def log_(self,df):
+        df1 = df.copy(deep=True)
+        for col in df1.columns:
+            df1['log_'+col] = np.log(df1[col])
+            df1.fillna(0, inplace=True)
+            self.df_final['log_'+col]=df1['log_'+col].copy()
+
+        return self.df_final
+
+
+    def cbrt_(self,df):
+        df_ = df.copy(deep=True)
+        for col in df.columns:
+            self.df_final['cbrt_'+col] = np.cbrt(df[col])
+
+        return self.df_final
+
+
+    def reciprocal_(self,df):
+        df1= df.copy(deep=True)
+        for col in df1.columns:
+            df1['reciprocal_'+col] = np.reciprocal(df1[col])
+            df1.fillna(0, inplace=True)
+            self.df_final['reciprocal_'+col]=df1['reciprocal_'+col].copy()
+
+        return self.df_final
+
+
+
+    # def return_result(self):
+    #     print(self.df_final)
+    #     return self.df_final
+
+
+#
+# ct=MathsTransform(df,col_map)
+# ct.return_result()
