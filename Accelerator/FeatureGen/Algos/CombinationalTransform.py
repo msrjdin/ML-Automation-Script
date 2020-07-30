@@ -1,13 +1,13 @@
 import pandas as pd
 
-# col_map = {'sub:['add':['Age','Fare','X']],'C']}
-col_map = {'add':['Age','Fare','X']}
-# {'add':['a','b']}, {'add':['c','d']},{'sub:['add':['Age','Fare','X']],'C']}
-df=pd.read_csv('C://Users//SindhuKarnati//Desktop//MLAccelarator_v2//Accelerator//dataframe.csv')
-df=df.head()
-print(df)
+# # col_map = {'sub:['add':['Age','Fare','X']],'C']}
+# col_map = {'add':['Age','Fare','X']}
+# # {'add':['a','b']}, {'add':['c','d']},{'sub:['add':['Age','Fare','X']],'C']}
+# df=pd.read_csv('C://Users//SindhuKarnati//Desktop//MLAccelarator_v2//Accelerator//dataframe.csv')
+# df=df.head()
+# print(df)
 
-[a+b-c, c+b]
+# [a+b-c, c+b]
 
 class CombinationalTransform:
 
@@ -65,7 +65,6 @@ class CombinationalTransform:
         self.df_temp.rename(columns={'multiply':col_name},inplace=True)
         return self.df_temp
 
-
     def divide(self,df):
         df_=df.copy(deep=True)
         self.col_list = df.columns
@@ -77,8 +76,10 @@ class CombinationalTransform:
         self.df_temp.rename(columns={'divide':col_name},inplace=True)
         return self.df_temp
 
+    def return_value(self):
+        return self.df 
 
-ct=CombinationalTransform(df,col_map)
+#ct=CombinationalTransform(df,col_map)
 
 
 

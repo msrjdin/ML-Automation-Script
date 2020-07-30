@@ -1,7 +1,8 @@
 import pandas as pd 
 import numpy as np
 import os, shutil, sys
-#sys.path.append('..')
+#
+sys.path.append('..')
 from Accelerator.GlobalParameters import *
 import json
 #from Accelerator.Initialisation.Algos.DetectingColTypes import DetectingColTypes

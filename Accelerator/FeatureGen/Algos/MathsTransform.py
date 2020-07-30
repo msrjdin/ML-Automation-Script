@@ -61,6 +61,9 @@ class MathsTransform:
 
         return self.df_final
 
+    def return_value(self):
+        return self.df_final
+
 
 #dictionary of list:
 #log_: [col1,col2,col3], sqrt: [col2,col3]
