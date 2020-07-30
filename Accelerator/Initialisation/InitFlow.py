@@ -38,8 +38,8 @@ class InitFlow:
 
     def insights(self):
         obj = Insights(self.df, self.colTypes, self.targetName)
-        self.ins = obj.returnValues()
-        print(self.ins)
+        ins = obj.returnValues()
+        return ins
 
 
     #Confirmation of the COlTypes taken from the UI via API

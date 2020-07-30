@@ -3,11 +3,12 @@ from Algos.NullHandling import NullHandling
 from Algos.OutlierHandling import OutlierHandling
 from Algos.Encoding import Encoding 
 from Algos.TextProcessing import TextProcessing
+from Algos.AutoSuggest import AutoSuggest
 import os, shutil, sys
 # sys.path.append('..')
-# from Accelerator.GlobalParameters import *
-import json
 from Accelerator.GlobalParameters import *
+import json
+#from Accelerator.GlobalParameters import *
 
 
 class EDAFlow:
@@ -17,12 +18,10 @@ class EDAFlow:
         self.suggestions()
     
     def suggestions(self):
-        self.nullcolTypes = {}
-        self.outcolTypes = {}
-        self.enccolTypes = {}
-        self.textcolTypes = {}
+        sugg = AutoSuggest(self.df, self.appName)
+        self.transformations(sugg.nullcolTypes, sugg.outcolTypes, sugg.enccolTypes, sugg.textcolTypes)
 
-    def trasformations(self, nullcolTypes, outcolTypes, enccolTypes, textcolTypes):
+    def transformations(self, nullcolTypes, outcolTypes, enccolTypes, textcolTypes):
         self.nullhandlings(nullcolTypes)
         self.outlierhandling(outcolTypes)
         self.encoding(enccolTypes)
@@ -35,12 +34,14 @@ class EDAFlow:
             self.df = null_obj.return_result()
     
     def outlierhandling(self,outcolTypes):
-        outlier_obj = OutlierHandling(self.df, outcolTypes)
-        self.df = outlier_obj.return_result()
+        if outcolTypes is not None:
+            outlier_obj = OutlierHandling(self.df, outcolTypes)
+            self.df = outlier_obj.return_result()
     
     def encoding(self, enccolTypes):
-        encoding_obj = Encoding(self.df, enccolTypes)
-        self.df = encoding_obj.return_result()
+        if enccolTypes is not None:
+            encoding_obj = Encoding(self.df, enccolTypes)
+            self.df = encoding_obj.return_result()
     
     def textprocessing(self, textcolTypes):
         if textcolTypes:
