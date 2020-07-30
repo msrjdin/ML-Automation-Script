@@ -23,7 +23,7 @@ import seaborn as sns
 # Parameters
 # List of dfs, targetCol and the metric under consideration
 
-class RandomForestRegressor:
+class RandomForestsRegressor:
     def __init__(self, dfs, targetCol, metric, test_size=0.2):
         self.dfs = dfs
         self.y = targetCol

@@ -18,7 +18,7 @@ from sklearn.metrics import confusion_matrix
 # Parameters
 # List of dfs, targetCol and the metric under consideration
 
-class RandomForestClassifier:
+class RandomForestsClassifier:
     def __init__(self, dfs, targetCol, metric, test_size=0.2):
 
         self.dfs = dfs
