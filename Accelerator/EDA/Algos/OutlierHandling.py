@@ -18,11 +18,11 @@ class OutlierHandling:
             self.col_methods.extend(key)
             self.df_final.drop(columns=value, inplace=True, axis=1)
             if key == 'capping':
-                self.df_final=pd.concat([self.df_final,self.capping_outlier(df[value])],axis=1)
+                self.df_final=pd.concat([self.df_final,self.capping_outlier(self.df[value])],axis=1)
             elif key == 'removing':
-                self.df_final = pd.concat([self.df_final, self.remove_outlier(df[value])], axis=1)
+                self.df_final = pd.concat([self.df_final, self.remove_outlier(self.df[value])], axis=1)
             elif key == 'zscore':
-                self.df_final = pd.concat([self.df_final, self.zscore_outlier(df[value])], axis=1)
+                self.df_final = pd.concat([self.df_final, self.zscore_outlier(self.df[value])], axis=1)
 
 
     # capping the values to the predefined lower and upper percentiles

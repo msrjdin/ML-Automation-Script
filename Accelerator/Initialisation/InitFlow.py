@@ -1,10 +1,7 @@
 import pandas as pd
-# noinspection PyUnresolvedReferences
-from Algos.DetectingColTypes import DetectingColTypes
-# noinspection PyUnresolvedReferences
-from Algos.Insights import Insights
+from .Algos.DetectingColTypes import DetectingColTypes
+from .Algos.Insights import Insights
 import os, shutil, sys
-#sys.path.append('..')
 from Accelerator.GlobalParameters import *
 import json
 
@@ -30,7 +27,7 @@ class InitFlow:
     def detectingColType(self):
         obj = DetectingColTypes(self.df)
         self.colTypes = obj.returnValues()
-        print(self.colTypes)
+
 
     # Input from the UI
     def targetCol(self, targetName):
@@ -55,10 +52,9 @@ class InitFlow:
         self.df.to_csv(RunFilePath1 + '/' + self.appName + '/' + inputFileName, index=False)
 
 
-if __name__ =="__main__":
-    print(sys.path)
-    miniFlow = InitFlow('App2', "dataframe.csv")
-    miniFlow.detectingColType()
-    miniFlow.targetCol('Survived')
-    miniFlow.insights()
-    miniFlow.save()
+# if __name__ =="__main__":
+#     miniFlow = InitFlow('App2', "dataframe.csv")
+#     miniFlow.detectingColType()
+#     miniFlow.targetCol('Survived')
+#     miniFlow.insights()
+#     miniFlow.save()

@@ -1,27 +1,43 @@
+
 import pandas as pd
+
+df = pd.read_csv(r"C:\Users\SindhuKarnati\Desktop\MLAccelarator_v2\Accelerator\dataframe.csv")
+df=df.head()
 
 
 class Insights:
-    def __init__(self, df,colTypes,targetName):
-        self.colTypes=colTypes
-        self.df=df
-        self.targetName=targetName
-        self.insights={}
+    def __init__(self, df, colTypes, targetName):
+        self.colTypes = colTypes
+        self.df = df
+        self.targetName = targetName
+        self.insights = {}
+
+
         for key, value in colTypes.items():
             if key == self.targetName:
-               self.targetType = value
+                self.targetType = value
 
-        for key,value in colTypes.items():
-            if(self.targetType == 'Numeric') :
-                if(value =='Numeric') :
+        describe_df=df.describe()
+        data = {'x' : describe_df}
+        plotting_data={'plot_type': "describe_table", 'data': data}
+        self.insights.update({'plot_describe':plotting_data})
+
+
+        for key, value in colTypes.items():
+            if (self.targetType == 'Numeric'):
+                if (value == 'Numeric'):
                     self.insights.update(self.ShowScatterPlot(key))
+                elif (value == 'Categorical'):
+                    self.insights.update(self.ShowViolinPlot(key))
             elif (self.targetType == 'Categorical'):
                 if (value == 'Numeric'):
                     self.insights.update(self.ShowViolinPlot(key))
+                elif (value == 'Categorical'):
+                    self.insights.update(self.ShowStackedBarPlot(key))
 
-        self.returnValues()
 
-    def ShowScatterPlot(self,feature):
+
+    def ShowScatterPlot(self,feature): # {"scatter": [col, data]}
         x=self.df[self.targetName].values
         y=self.df[feature].values
         data = {'x' : x, 'y' : y}
@@ -32,13 +48,22 @@ class Insights:
     def ShowViolinPlot(self, feature):
         x = self.df[self.targetName].values
         y = self.df[feature].values
-        data = {'x' : x, 'y' : y}
+        data = {'x': x, 'y': y}
         plotting_data = {'plot_type': "Violin", 'data': data}
         return {'plot_' + feature: plotting_data}
 
-    def returnValues(self):
-        print(self.insights)
-        return self.insights
+
+    def ShowStackedBarPlot(self, feature):
+        x = self.df[self.targetName].values
+        y = self.df[feature].values
+        data = {'x': x, 'y': y}
+        plotting_data = {'plot_type': "Stacked_Bar", 'data': data}
+        return {'plot_' + feature: plotting_data}
+
+
+    # def returnValues(self):
+    #     print(self.insights)
+    #     return self.insights
 
 
 

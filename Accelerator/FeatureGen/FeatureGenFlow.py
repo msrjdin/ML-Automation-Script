@@ -1,6 +1,6 @@
 import pandas as pd
-from Algos.CombinationalTransform import CombinationalTransform
-from Algos.MathsTransform import MathsTransform
+from .Algos.CombinationalTransform import CombinationalTransform
+from .Algos.MathsTransform import MathsTransform
 import os, shutil, sys 
 sys.path.append('..')
 from Accelerator.GlobalParameters import *

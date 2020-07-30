@@ -44,8 +44,3 @@ class NullHandling:
 
     def return_result(self):
         return self.df
-
-
-    
-
-    
