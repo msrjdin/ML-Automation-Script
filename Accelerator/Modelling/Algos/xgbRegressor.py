@@ -19,10 +19,13 @@ matplotlib.use('Agg')
 import seaborn as sns
 
 
+# df1 = pd.read_csv(r"C:\Users\SatyaSindhuMolleti\Desktop\ML-Automation-Script-master\ML-Automation-Script\Accelerator\dataframe.csv")
+# df=df1[['Survived','Pclass','Fare']]
+
 # Parameters
 # List of dfs, targetCol and the metric under consideration
 
-class XGBRegressor:
+class xgbRegressor:
     def __init__(self, dfs, targetCol, metric, test_size=0.2):
         self.dfs = dfs
         self.y = targetCol
@@ -42,15 +45,15 @@ class XGBRegressor:
         if args['model'] == XGBRegressor:
             n_estimators = args['param']['n_estimators']
             max_depth = args['param']['max_depth']
-            max_features = args['param']['max_features']
             criterion = args['param']['criterion']
             min_child_weight = args['param']['min_child_weight']
             subsample = args['param']['subsample']
             gamma = args['param']['gamma']
             colsample_bytree = args['param']['colsample_bytree']
-            clf = XGBRegressor(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features,
-                                criterion=criterion, min_child_weight=min_child_weight,
+            clf = XGBRegressor(n_estimators=n_estimators, max_depth=max_depth,
+                                min_child_weight=min_child_weight,
                                 subsample=subsample, gamma=gamma, colsample_bytree=colsample_bytree)
+
         clf.fit(self.x_train, self.y_train)
         y_pred_train = clf.predict(self.x_train)
         y_pred_test = clf.predict(self.x_test)
@@ -66,14 +69,13 @@ class XGBRegressor:
         # using Hyperopt for parameter tuning
         self.space = hp.choice('regression', [
             {'model': XGBRegressor,
-             'param':  {'max_depth': hp.choice('max_depth', range(1, 20)),
-                       'max_features': hp.choice('max_features', range(1, self.max_feat)),
-                       'n_estimators': hp.choice('n_estimators', range(1, 20)),
-                       'criterion': hp.choice('criterion', ["gini", "entropy"]),
+             'param': {'max_depth': hp.choice('max_depth', range(3, 10)),
+                       'n_estimators': hp.choice('n_estimators', range(100, 200)),
                        'min_child_weight': hp.quniform('min_child_weight', 1, 6, 1),
                        'subsample': hp.quniform('subsample', 0.5, 1, 0.05),
                        'gamma': hp.quniform('gamma', 0.5, 1, 0.05),
-                       'colsample_bytree': hp.quniform('colsample_bytree', 0.5, 1, 0.05)
+                       'colsample_bytree': hp.quniform('colsample_bytree', 0.5, 1, 0.05),
+                       'criterion': hp.choice('criterion', ["gini", "entropy"]),
 
                        }
              }
@@ -118,4 +120,9 @@ class XGBRegressor:
 
 
     def return_results(self):
+        print(self.final_results)
         return self.final_results
+
+
+# cl=xgbRegressor(df,"Survived",accuracy_score)
+# cl.return_results()

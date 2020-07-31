@@ -11,8 +11,9 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics import confusion_matrix
 
-# df1 = pd.read_csv(r"C:\Users\SindhuKarnati\Desktop\MLAccelarator_v2\Accelerator\dataframe.csv")
+# df1 = pd.read_csv(r"C:\Users\SatyaSindhuMolleti\Desktop\ML-Automation-Script-master\ML-Automation-Script\Accelerator\dataframe.csv")
 # df=df1[['Survived','Pclass','Fare']]
+
 
 
 # Parameters
@@ -39,7 +40,11 @@ class RandomForestsClassifier:
             n_estimators = args['param']['n_estimators']
             max_depth = args['param']['max_depth']
             max_features = args['param']['max_features']
-            clf = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features)
+            min_sample_split = args['param']['min_sample_split']
+            criterion = args['param']['criterion']
+
+            clf = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features,
+                                         criterion=criterion)
 
 
         clf.fit(self.x_train, self.y_train)
@@ -58,9 +63,10 @@ class RandomForestsClassifier:
 
         self.space = hp.choice('classifier', [
             {'model': RandomForestClassifier,
-             'param': {'max_depth': hp.choice('max_depth', range(1, 20)),
+             'param': {'max_depth': hp.choice('max_depth', range(1, 30)),
+                       'min_sample_split': hp.choice('min_sample_split', range(1, 40)),
                        'max_features': hp.choice('max_features', range(1, self.max_feat)),
-                       'n_estimators': hp.choice('n_estimators', range(1, 20)),
+                       'n_estimators': hp.choice('n_estimators', range(50, 400)),
                        'criterion': hp.choice('criterion', ["gini", "entropy"])
                        }
              }
@@ -107,3 +113,5 @@ class RandomForestsClassifier:
         return self.final_results
 
 
+# cl=RandomForestsClassifier(df,"Survived",accuracy_score)
+# cl.return_results()

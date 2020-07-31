@@ -20,8 +20,8 @@ from sklearn.metrics import (confusion_matrix, precision_recall_curve, auc,
 import seaborn as sns
 
 
-# Parameters
-# List of dfs, targetCol and the metric under consideration
+# df1 = pd.read_csv(r"C:\Users\SatyaSindhuMolleti\Desktop\ML-Automation-Script-master\ML-Automation-Script\Accelerator\dataframe.csv")
+# df=df1[['Survived','Pclass','Fare']]
 
 class RandomForestsRegressor:
     def __init__(self, dfs, targetCol, metric, test_size=0.2):
@@ -44,7 +44,11 @@ class RandomForestsRegressor:
             n_estimators = args['param']['n_estimators']
             max_depth = args['param']['max_depth']
             max_features = args['param']['max_features']
-            clf = RandomForestRegressor(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features)
+            min_sample_split = args['param']['min_sample_split']
+            criterion = args['param']['criterion']
+            clf = RandomForestRegressor(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features,
+                                        criterion=criterion, min_sample_split=min_sample_split
+                                        )
 
         clf.fit(self.x_train, self.y_train)
         y_pred_train = clf.predict(self.x_train)
@@ -61,10 +65,11 @@ class RandomForestsRegressor:
         # using Hyperopt for parameter tuning
         self.space = hp.choice('regression', [
             {'model': RandomForestRegressor,
-             'param': {'max_depth': hp.choice('max_depth', range(1, 20)),
+             'param': {'max_depth': hp.choice('max_depth', range(1, 30)),
+                       'min_sample_split': hp.choice('min_sample_split', range(1, 40)),
                        'max_features': hp.choice('max_features', range(1, self.max_feat)),
-                       'n_estimators': hp.choice('n_estimators', range(1, 20)),
-                       'criterion': hp.choice('criterion', ["mse", "mae"])
+                       'n_estimators': hp.choice('n_estimators', range(50, 400)),
+                       'criterion': hp.choice('criterion', ["gini", "entropy"])
                        }
              }
         ])
@@ -111,3 +116,7 @@ class RandomForestsRegressor:
 
     def return_results(self):
         return self.final_results
+
+
+# cl=RandomForestsRegressor(df,"Survived",accuracy_score)
+# cl.return_results()
