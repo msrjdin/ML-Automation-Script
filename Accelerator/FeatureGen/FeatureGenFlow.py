@@ -22,6 +22,7 @@ class FeatureGenFlow:
         file_path = RunFilePath1 + '/' +self.appName + '/' + 'config.json'
         with open(file_path) as json_file:
             json_data = json.load(json_file)
+        self.target = json_data['targetCol']
         col_map = {}
         numeric_list = []
         math_oper = ['sqrt','cbrt','log','reciprocal']
@@ -35,14 +36,19 @@ class FeatureGenFlow:
                         col_map[oper] = [key]
         print(numeric_list)
         self.df = self.mathstransform(self.df,col_map)
-        self.correlations(self.df,numeric_list)
+        print(self.target)
+        self.df = self.correlations(self.df,numeric_list)
+        print(self.df.head())
         #self.combtransform(self.df)
 
     def correlations(self, df, numeric_list):
         sel_col = []
+        numeric_list.append(self.target)
         for col in numeric_list:
             df_red = df.filter(regex=col)
-            sel_col.append(Correlations(df_red,numeric_list))
+            #df_red[self.target] = df[self.target]
+            print(df_red.head())
+            sel_col.append(Correlations(df_red,numeric_list, self.target,True))
         self.df = df[sel_col]
         return self.df
 

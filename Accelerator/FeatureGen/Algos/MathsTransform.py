@@ -36,11 +36,12 @@ class MathsTransform:
 
     def log_(self,df):
         df1 = df.copy(deep=True)
+        print('before log')
         for col in df1.columns:
             df1['log_'+col] = np.log(df1[col])
             df1.fillna(0, inplace=True)
             self.df_final['log_'+col]=df1['log_'+col].copy()
-
+        print('after log')
         return self.df_final
 
 
