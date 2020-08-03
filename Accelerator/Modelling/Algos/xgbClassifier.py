@@ -37,14 +37,13 @@ class xgbClassifier:
         if args['model'] == XGBClassifier:
             n_estimators = args['param']['n_estimators']
             max_depth = args['param']['max_depth']
-            max_features = args['param']['max_features']
             criterion = args['param']['criterion']
             min_child_weight = args['param']['min_child_weight']
             subsample = args['param']['subsample']
             gamma = args['param']['gamma']
             colsample_bytree = args['param']['colsample_bytree']
-            clf = XGBClassifier(n_estimators=n_estimators, max_depth=max_depth, max_features=max_features,
-                                    criterion=criterion,min_child_weight=min_child_weight,
+            clf = XGBClassifier(n_estimators=n_estimators, max_depth=max_depth,
+                                   min_child_weight=min_child_weight,
                                 subsample=subsample,gamma=gamma,colsample_bytree=colsample_bytree)
 
         clf.fit(self.x_train, self.y_train)
@@ -62,14 +61,13 @@ class xgbClassifier:
         # using Hyperopt for parameter tuning
         self.space = hp.choice('classifier', [
             {'model': XGBClassifier,
-             'param': {'max_depth': hp.choice('max_depth', range(1, 20)),
-                       'max_features': hp.choice('max_features', range(1, self.max_feat)),
-                       'n_estimators': hp.choice('n_estimators', range(1, 20)),
-                       'criterion': hp.choice('criterion', ["gini", "entropy"]),
+             'param': {'max_depth': hp.choice('max_depth', range(3, 10)),
+                       'n_estimators': hp.choice('n_estimators', range(100, 200)),
                        'min_child_weight': hp.quniform('min_child_weight', 1, 6, 1),
                        'subsample': hp.quniform('subsample', 0.5, 1, 0.05),
                        'gamma': hp.quniform('gamma', 0.5, 1, 0.05),
-                       'colsample_bytree': hp.quniform('colsample_bytree', 0.5, 1, 0.05)
+                       'colsample_bytree': hp.quniform('colsample_bytree', 0.5, 1, 0.05),
+                       'criterion': hp.choice('criterion', ["gini", "entropy"]),
 
                        }
              }

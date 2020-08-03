@@ -3,8 +3,8 @@ import numpy as np
 
 # coltype = {'PassengerId': 'Numeric', 'Survived': 'Categorical', 'Sex': 'Categorical', 'Pclass': 'Categorical',
 #            'Name': 'Text', 'Age': 'Numeric', 'SibSp': 'Categorical', 'Parch': 'Categorical', 'Fare': 'Numeric'}
-# df=pd.read_csv('C://Users//SindhuKarnati//Desktop//MLAccelarator_v2//Accelerator//dataframe.csv')
-# df=df.head()
+# df = pd.read_csv(r"C:\Users\SatyaSindhuMolleti\Downloads\sample_train.csv")
+# col_map = {'log':['Fare','Age'],'reciprocal':['Fare','Age']}
 # col_map = {'log':['Fare'],'reciprocal':['Age']}
 
 class MathsTransform:
@@ -31,18 +31,14 @@ class MathsTransform:
         for col in df.columns:
             self.df_final['sqrt_'+col] = np.sqrt(df[col])
 
-        return self.df_final
 
 
     def log_(self,df):
         df1 = df.copy(deep=True)
-        print('before log')
         for col in df1.columns:
             df1['log_'+col] = np.log(df1[col])
             df1.fillna(0, inplace=True)
             self.df_final['log_'+col]=df1['log_'+col].copy()
-        print('after log')
-        return self.df_final
 
 
     def cbrt_(self,df):
@@ -50,7 +46,6 @@ class MathsTransform:
         for col in df.columns:
             self.df_final['cbrt_'+col] = np.cbrt(df[col])
 
-        return self.df_final
 
 
     def reciprocal_(self,df):
@@ -60,20 +55,13 @@ class MathsTransform:
             df1.fillna(0, inplace=True)
             self.df_final['reciprocal_'+col]=df1['reciprocal_'+col].copy()
 
+
+
+
+    def return_result(self):
         return self.df_final
 
-    def return_value(self):
-        return self.df_final
 
 
-#dictionary of list:
-#log_: [col1,col2,col3], sqrt: [col2,col3]
-
-    # def return_result(self):
-    #     print(self.df_final)
-    #     return self.df_final
-
-
-#
 # ct=MathsTransform(df,col_map)
 # ct.return_result()

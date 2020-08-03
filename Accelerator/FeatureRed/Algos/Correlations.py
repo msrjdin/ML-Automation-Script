@@ -6,14 +6,19 @@ from sklearn.preprocessing import LabelEncoder
 from scipy.stats import chi2_contingency
 
 
+
 # df = pd.read_csv(r"C:\Users\SatyaSindhuMolleti\Downloads\sample_train.csv")
-# # df=df[:10]
+# df=df[['PassengerId','Survived']]
 # colTypes={'PassengerId': 'Numeric', 'Survived': 'Categorical', 'Pclass': 'Categorical', 'Name': 'Text', 'Sex': 'Categorical', 'Age': 'Numeric', 'SibSp': 'Categorical', 'Parch': 'Categorical', 'Ticket': 'Categorical', 'Fare': 'Numeric', 'Cabin': 'Categorical', 'Embarked': 'Categorical'}
+# df pid,pi_srt,target : true
+# entire df :false
+
 
 class Correlations:
-    def __init__(self, df,colTypes):
+    def __init__(self, df,colTypes,targetCol,with_target):
         self.df = df.copy()
         self.colTypes=colTypes
+        self.targetCol=targetCol
         numeric_cols=[]
         cat_cols=[]
         for col,type in self.colTypes.items():
@@ -22,14 +27,22 @@ class Correlations:
             elif type=='Categorical':
                 cat_cols.append(col)
 
-        if len(numeric_cols)>0 :
-            self.df=self.pearson_correlation(numeric_cols)
-        if len(cat_cols) > 0:
-            self.df=self.cramersv_correlation(cat_cols)
+        if with_target==True:
+            self.col=self.pearson_correlation_with_target()
+        else:
+            if len(numeric_cols)>0 :
+                self.df=self.pearson_correlation_with_cols(numeric_cols)
+            if len(cat_cols) > 0:
+                self.df=self.cramersv_correlation(cat_cols)
 
-        self.return_result()
+        # self.return_result()
 
-    def pearson_correlation(self,numeric_cols):
+    def pearson_correlation_with_target(self):
+        corr=self.df.drop(self.targetCol, axis=1).apply(lambda x: x.corr(self.df[self.targetCol]))
+        return corr.idxmax(abs(corr))
+
+
+    def pearson_correlation_with_cols(self,numeric_cols):
         corr = self.df[numeric_cols].corr(method="pearson").abs()
         upper = corr.where(np.triu(np.ones(corr.shape), k=1).astype(np.bool))
         to_drop = [column for column in upper.columns if any(upper[column] > 0.80)]
@@ -61,9 +74,11 @@ class Correlations:
         mini = min(crosstab.shape) - 1  # Take the minimum value between the columns and the rows of the cross table
         return (stat / (obs * mini))
 
-
+    #
     def return_result(self):
-        return self.df
+        # print(self.df,self.col)
+        return (self.df,self.col)
+
 
 
 # oh=Correlations(df,colTypes)
