@@ -25,10 +25,12 @@ class TextProcessing:
         self.df = df.copy()
         self.col_map=col_map
         self.transaformed_data={}
+        print(col_map,'..------------')
         for col,methods in self.col_map.items() :
             processed_text = self.preprocessText(self.df[col].values)
             # lemmetize
             if "lemmetize" in methods:
+                print('------------')
                 processed_text = self.lemmetizer(processed_text)
 
             # stemming
@@ -67,6 +69,7 @@ class TextProcessing:
 
 
     def lemmetizer(self, cleaned_text):
+        print("LEMMMATIZE*******************")
         lemmetized_text = []
         nlp = spacy.load('en_core_web_sm', disable=['parser', 'ner'])
         for row in cleaned_text:

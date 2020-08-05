@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import os, shutil, sys
 #
-sys.path.append('..')
+# sys.path.append('..')
 from Accelerator.GlobalParameters import *
 import json
 #from Accelerator.Initialisation.Algos.DetectingColTypes import DetectingColTypes
@@ -57,9 +57,9 @@ class AutoSuggest:
 
     def textproc_suggest(self, column):
         if 'lemmetize' in self.textcolTypes:
-            self.textcolTypes['lemmetize'].append(column)
+            self.textcolTypes[column].append('lemmetize')
         else:
-            self.textcolTypes['lemmetize'] = [column]
+            self.textcolTypes[column] = ['lemmetize']
 
     def return_values(self):
         print(self.nullcolTypes)

@@ -1,7 +1,6 @@
 import requests
 from .GlobalParameters import *
 
-
 class AutoPilot:
     def __init__(self, appName):
         self.payload = {'appName': appName}

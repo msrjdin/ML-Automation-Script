@@ -46,7 +46,7 @@ class EDAFlow:
         if enccolTypes is not None:
             encoding_obj = Encoding(self.df, enccolTypes)
             self.df = encoding_obj.return_result()
-    
+
     def textprocessing(self, textcolTypes):
         if textcolTypes:
             text_obj = TextProcessing(self.df, textcolTypes)
