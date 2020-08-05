@@ -63,7 +63,7 @@ class TextProcessing:
 
             cleaned_text.append(text_manipulated)
 
-        return cleaned_text;
+        return cleaned_text
 
 
     def lemmetizer(self, cleaned_text):

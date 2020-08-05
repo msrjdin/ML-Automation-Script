@@ -1,6 +1,6 @@
 import pandas as pd
-from .Algos.DetectingColTypes import DetectingColTypes
-from .Algos.Insights import Insights
+from Accelerator.Initialisation.Algos.DetectingColTypes import DetectingColTypes
+from Accelerator.Initialisation.Algos.Insights import Insights
 import os, shutil, sys
 from Accelerator.GlobalParameters import *
 import json
@@ -24,7 +24,7 @@ class InitFlow:
 
 
     #Detection of ColTypes from the Algorithm
-    def detectingColType(self):
+    def detectingColTypes(self):
         obj = DetectingColTypes(self.df)
         self.colTypes = obj.returnValues()
 

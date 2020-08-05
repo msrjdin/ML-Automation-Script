@@ -1,9 +1,4 @@
-
 import pandas as pd
-
-df = pd.read_csv(r"C:\Users\SindhuKarnati\Desktop\MLAccelarator_v2\Accelerator\dataframe.csv")
-df=df.head()
-
 
 class Insights:
     def __init__(self, df, colTypes, targetName):

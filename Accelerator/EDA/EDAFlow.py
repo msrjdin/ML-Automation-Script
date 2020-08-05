@@ -10,7 +10,7 @@ from Accelerator.GlobalParameters import *
 import json
 #from Accelerator.GlobalParameters import *
 #sys.path.append('..')
-import .Algos.AutoSuggest import AutoSuggest
+from .Algos.AutoSuggest import AutoSuggest
 
 class EDAFlow:
     def __init__(self, appName):
@@ -19,13 +19,17 @@ class EDAFlow:
 
     def suggestions(self):
         sugg = AutoSuggest(self.df, self.appName)
-        self.transformations(sugg.nullcolTypes, sugg.outcolTypes, sugg.enccolTypes, sugg.textcolTypes)
+        sugg = {'nullcolTypes': sugg.nullcolTypes,
+                'outcolTypes':sugg.outcolTypes,
+                'enccolTypes':sugg.enccolTypes,
+                'textcolTypes':sugg.textcolTypes}
+        return sugg
 
-    def transformations(self, nullcolTypes, outcolTypes, enccolTypes, textcolTypes):
-        self.df = self.nullhandlings(nullcolTypes)
-        self.outlierhandling(outcolTypes)
-        self.encoding(enccolTypes)
-        self.textprocessing(textcolTypes)
+    def transformations(self, suggestions):
+        self.df = self.nullhandlings(suggestions['nullcolTypes'])
+        self.outlierhandling(suggestions['outcolTypes'])
+        self.encoding(suggestions['enccolTypes'])
+        self.textprocessing(suggestions['textcolTypes'])
         self.save_results()
 
     def nullhandlings(self, nullcolTypes):
@@ -51,12 +55,12 @@ class EDAFlow:
     def save_results(self):
         self.df.to_csv(RunFilePath1 + '/' + self.appName + '/' + EDAFolder + '/' + inputFileName, index=False)
 
-# if __name__ =="__main__":
-#     #'remove columns':[]
-#     nullcolTypes = {'impute mean':['Fare'],'impute knn':['PassengerId'],'categorical impute':['Sex']}
-#     outcolTypes = {'capping':['Fare','Age'],'zscore':['PassengerId']}
-#     enccolTypes = {'label':['Sex'] ,'one-hot':['Embarked']}
-#     #textcolTypes = {'ingredients': ['stemming', 'lemmetize'],'ingredient': ['stemming']}
-#     textcolTypes = { }
-#     eda = EDAFlow('App2')
-#     eda.trasformations(nullcolTypes,outcolTypes,enccolTypes,textcolTypes)
+if __name__ =="__main__":
+    #'remove columns':[]
+    nullcolTypes = {'impute mean':['Fare'],'impute knn':['PassengerId'],'categorical impute':['Sex']}
+    outcolTypes = {'capping':['Fare','Age'],'zscore':['PassengerId']}
+    enccolTypes = {'label':['Sex'] ,'one-hot':['Embarked']}
+    #textcolTypes = {'ingredients': ['stemming', 'lemmetize'],'ingredient': ['stemming']}
+    textcolTypes = { }
+    eda = EDAFlow('App2')
+    eda.trasformations(nullcolTypes,outcolTypes,enccolTypes,textcolTypes)
