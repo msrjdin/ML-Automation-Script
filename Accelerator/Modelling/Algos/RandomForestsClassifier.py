@@ -110,7 +110,7 @@ class RandomForestsClassifier:
 
 
     def return_results(self):
-        print(self.final_results)
+        # print(self.final_results)
         return self.final_results
 
 

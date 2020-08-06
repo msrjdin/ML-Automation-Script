@@ -10,9 +10,9 @@ from Accelerator.Modelling.Algos.xgbClassifier import xgbClassifier
 from sklearn.metrics import accuracy_score,f1_score,mean_squared_error
 import json
 
-df1 = pd.read_csv(r"C:\Users\SindhuKarnati\Desktop\MLAccelarator_v2\Accelerator\dataframe.csv")
-df=df1[['Survived','Age','Pclass','Fare']]
-df.dropna(inplace=True)
+# df1 = pd.read_csv(r"C:\Users\SindhuKarnati\Desktop\MLAccelarator_v2\Accelerator\dataframe.csv")
+# df=df1[['Survived','Age','Pclass','Fare']]
+# df.dropna(inplace=True)
 
 
 class ClassificationFlow:
@@ -24,6 +24,10 @@ class ClassificationFlow:
         self.metric_lst=metric_lst
 
         self.metric_dict = {'accuracy_score': accuracy_score, 'f1_score': f1_score, 'mean_squared_error': mean_squared_error}
+        self.execute()
+
+
+    def execute(self):
 
         metric_list1 = []
         for i in self.metric_lst:
@@ -91,7 +95,7 @@ class ClassificationFlow:
 
 
 
-cl=ClassificationFlow(df,'Survived',['accuracy_score','f1_score'])
+# cl=ClassificationFlow(df,'Survived',['accuracy_score','f1_score'])
 
 # if __name__ == "__main__":
 #     classflow = ClassificationFlow('App2')
