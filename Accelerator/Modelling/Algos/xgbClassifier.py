@@ -107,10 +107,11 @@ class xgbClassifier:
         self.final_results['conf_matrix'] = conf_matrix
         self.final_results['pickle_file'] = clf
         self.final_results['y_pred'] = y_pred_test
+        self.final_results['metric'] = self.metric
 
 
     def return_results(self):
-        print(self.final_results)
+        # print(self.final_results)
         return self.final_results
 
 

@@ -106,6 +106,7 @@ class RandomForestsClassifier:
         self.final_results['conf_matrix'] = conf_matrix
         self.final_results['pickle_file'] = clf
         self.final_results['y_pred'] = y_pred_test
+        self.final_results['metric'] = self.metric
 
 
     def return_results(self):
