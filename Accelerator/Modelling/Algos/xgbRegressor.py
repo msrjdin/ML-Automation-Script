@@ -114,9 +114,10 @@ class xgbRegressor:
         self.final_results['Hyperparameter'] = hyperparam
         self.final_results[score_key] = score
         self.final_results['Data'] = self.dfs
-        self.final_results['residual'] = fig
+        self.final_results['residual'] = {'prediction': y_pred_test,'test': self.y_test}
         self.final_results['pickle_file'] = clf
         self.final_results['y_pred'] = y_pred_test
+        self.final_results['metric'] = self.metric
 
 
     def return_results(self):
